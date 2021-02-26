@@ -1,0 +1,144 @@
+
+body{
+    /* font-family: 'Roboto', sans-serif; */
+     color: #DADADA;   
+    background-color: #0B2B53;
+}
+div{
+    margin: 0px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+} 
+h3{ 
+    align-content: center;
+}
+
+.whitespace{
+    height: 40px;
+}
+.internal-link{
+    margin-top: 30px;
+}
+
+.internal-link a{
+    color: #DADADA;
+}
+.internal-link li{
+    padding: 4px 0px;
+    margin: 0px 60px;
+}
+
+.project-box, .skill-box{
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+#skills{
+    background-image: url(image/background/mike-yukhtenko-hvbIl1XfMlM-unsplash.jpg);
+    background-size: cover;
+    background-position: 0% 50%;
+}
+.minus-plus{
+    height: 35px;
+    width: auto;
+    cursor: pointer;
+    background-color:  #049A9E;
+    border-radius: 50%;
+}
+
+.hide{
+    display: none;
+}
+.divider{
+    height: 110px;
+    width: 100%;
+}
+.modal-content{
+    color:  #DADADA;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #0B2B53;
+}
+img.project-img{
+    width: 85%;
+    height: auto;
+}
+img.deco{
+    height: 80px;
+    width: auto;
+    padding: 0px 20px;
+}
+img.portrait-r{
+    height: 80px;
+    width:  80px;
+    border-radius: 50%;
+}
+img.portrait-s{
+    width:   250px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+img.icon{
+    height: 40px;
+    width:  40px;
+    border-radius: 50%;
+   
+}
+#skills p{
+    font-size: 1.25rem;
+    color: #DADADA;
+}
+
+#side-bar{
+    height: 100vh;
+    background-color: #464646;/*/#091f36;*/
+    text-align: center;
+    font-size: 1.2rem;
+}
+#col2{
+    background-color: #464646;
+}
+#main{
+    min-height: 200px;
+}
+#about-me{
+    text-align: center;
+    font-size: 1.4rem;
+    color: #6eb2f6;
+    background-image: url(image/background/mouse_scroll-wallpaper-1366x768.jpg);
+    /* image/background/freestocks-BStW5kYXw4E-unsplash.jpg */
+    background-size: cover; 
+    background-position: 50% 0%;
+    padding-left:   60px;
+    padding-right:   60px;
+    padding-bottom: 40px;
+    margin-bottom:  40px;
+    margin-right:    0px;
+    width: 100%;
+}
+#projects, #skills{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+#footer{
+    height: 40px;
+}
+.form{
+    background-color: #4f5f76;
+    color: #DADADA;
+    width: 400px;
+}
+label.needed::after{
+    content: '* required';
+    color: #DADADA;
+    
+}
+input.needed, textarea.needed{
+    background-color: red;
+}
