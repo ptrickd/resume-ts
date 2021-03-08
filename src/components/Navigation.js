@@ -2,7 +2,7 @@ import React from 'react'
 import GithubIcon from '../images/icon/github_icon.ico';
 import LinkedInIcon from '../images/icon/linkedin.svg';
 import GmailIcon from '../images/icon/gmail-icon-bw.png';
-import { Wrapper, Icon, Switch } from '../styles/NavigationStyled.js';
+import { Wrapper, Icon } from '../styles/NavigationStyled.js';
 
 function Navigation({ handleClickNav, isDetailPage }) {
     return (
