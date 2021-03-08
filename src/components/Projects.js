@@ -2,7 +2,7 @@ import React from 'react'
 
 import projectsData from '../files/projectsData';
 import ProjectCards from './ProjectCards';
-import '../styles/projects.scss';
+import { Wrapper } from '../styles/ProjectsStyled.js';
 
 function Projects({ handleClickDetails }) {
 
@@ -24,9 +24,9 @@ function Projects({ handleClickDetails }) {
     }
 
     return (
-        <div id="projects" className="project-container">
+        <Wrapper id="projects" className="project-container">
             {displayProjects()}
-        </div>
+        </Wrapper>
     )
 }
 

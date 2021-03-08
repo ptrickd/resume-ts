@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { ProjectBox, Img, TopSection, MidSection, Button } from '../styles/ProjectsStyled';
 // import plusIcon from '../images/icon/plus.svg'
 // import ProjectModal from './ProjectModal';
 function ProjectCards({ id, title, screenshot, description, skills, handleClickDetails }) {
@@ -11,18 +12,18 @@ function ProjectCards({ id, title, screenshot, description, skills, handleClickD
     // }
 
     return (
-        <div className="px-5 project-box">
-            <div className="spacing top-section">
+        <ProjectBox className="px-5 project-box">
+            <TopSection className="spacing top-section">
                 <span><h2>{title}</h2></span>
-                <span><img src={screenshot}
+                <span><Img src={screenshot}
                     className="project-img"
                     alt='screenshot'
                 /></span>
-            </div>
+            </TopSection>
 
-            <div className="centered spacing">
+            <MidSection className="centered spacing">
                 <p>{description}</p>
-            </div>
+            </MidSection>
             {/* 
             <div className="centered spacing ">
                 <ul >
@@ -30,18 +31,18 @@ function ProjectCards({ id, title, screenshot, description, skills, handleClickD
                 </ul>
 
             </div> */}
-            <div className="centered spacing">
+            <MidSection className="centered spacing">
                 {/* <a className="project-lnk" role="button" href="#!" data-toggle="modal"
                     data-target={`#projectModal${id}`}>
                     <img src={plusIcon} className="minus-plus" alt='plus icon' />
                 </a> */}
-                <button
+                <Button
                     onClick={() => handleClickDetails(id)}
                     className="btn-project"
-                >See More</button>
-            </div>
+                >See More</Button>
+            </MidSection>
             {/* <ProjectModal id={id} /> */}
-        </div>
+        </ProjectBox>
     )
 }
 

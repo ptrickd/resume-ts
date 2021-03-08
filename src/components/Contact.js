@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
-import '../styles/contact.scss';
+import { Input, TextArea, Label } from '../styles/ContactStyled.js';
 
 
 // const myEmail = process.env.MY_EMAIL;
@@ -79,31 +79,31 @@ function Contact() {
                             name="contact_number"
 
                         />
-                        <label id="labelName" htmlFor="name">Name:</label>
+                        <Label id="labelName" htmlFor="name">Name:</Label>
                         {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null}
-                        <input id="name" name="name" type="text" className="form form-control"
+                        <Input id="name" name="name" type="text" className="form form-control"
                             placeholder="Name" autoComplete="off"
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.name}
                         />
-                        <label id="labelEmail" htmlFor="email">Email:</label>
+                        <Label id="labelEmail" htmlFor="email">Email:</Label>
                         {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null}
-                        <input
+                        <Input
                             id="email" name="email" type="email" className="form form-control"
                             placeholder="my_name@email.com" autoComplete="off"
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.email}
                         />
-                        <label id="labelCommentBox" htmlFor="commentBox">Leave a comment:</label>
+                        <Label id="labelCommentBox" htmlFor="commentBox">Leave a comment:</Label>
                         {formik.touched.commentBox && formik.errors.commentBox ? <span>{formik.errors.commentBox}</span> : null}
-                        <textarea id="commentBox" name="commentBox" rows="4"
+                        <TextArea id="commentBox" name="commentBox" rows="4"
                             className="form form-control" placeholder="Write a comment"
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.commentBox}
-                        ></textarea>
+                        ></TextArea>
                         {/* <!-- </div>
                             <div className="d-flex button-form"> --> */}
                         <div className="d-flex justify-content-center">

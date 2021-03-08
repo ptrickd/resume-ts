@@ -1,10 +1,10 @@
 import React from 'react'
 import resumePdf from '../files/myresume.pdf';
-import '../styles/about.scss';
+import { Wrapper } from '../styles/AboutStyled';
 
 function About() {
     return (
-        <div id="about-me" className="d-flex flex-column align-items-center flex-wrap ">
+        <Wrapper id="about-me" className="d-flex flex-column align-items-center flex-wrap ">
             <div className="whitespace"></div>
             {/* <!-- <img src="/image/doc_brown.jpg"
                 className="portrait-s img-fluid rounded float-right sticky-top" /> --> */}
@@ -28,7 +28,7 @@ function About() {
                     View Portfolio &raquo;</a> --> */}
             </div>
             <div className="whitespace"></div>
-        </div>
+        </Wrapper>
     )
 }
 

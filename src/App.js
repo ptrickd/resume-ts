@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { Wrapper, MainViewStyled } from './styles/App.style.js';
+import { Wrapper, MainViewStyled } from './styles/AppStyled.js';
 
 import About from './components/About';
 import Contact from './components/Contact';

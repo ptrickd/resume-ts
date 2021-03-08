@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/skills.scss';
+import { Wrapper, SkillBox } from '../styles/SkillsStyled.js';
 
 function Skills() {
     return (
@@ -7,8 +7,8 @@ function Skills() {
             <div className="container">
 
                 {/* <!-- Example row of columns --> */}
-                <div id="skills" className="row pt-4">
-                    <div className="col-md-4  skill-box">
+                <Wrapper id="skills" className="row pt-4">
+                    <SkillBox className="col-md-4  skill-box">
                         <h2>Language</h2>
                         <p>
                             HTML/CSS<br />
@@ -17,10 +17,10 @@ function Skills() {
                                                 SQL<br />
                         </p>
 
-                    </div>
-                    <div className="col-md-4 skill-box">
-                    </div>
-                    <div className="col-md-4 skill-box">
+                    </SkillBox>
+                    <SkillBox className="col-md-4 skill-box">
+                    </SkillBox>
+                    <SkillBox className="col-md-4 skill-box">
                         <h2>Framework</h2>
                         <p>
                             ReactJS<br />
@@ -29,8 +29,8 @@ function Skills() {
                                                 NodeJs <br />
                                                 MongoDB<br />
                         </p>
-                    </div>
-                </div>
+                    </SkillBox>
+                </Wrapper>
             </div>
         </div>
     )

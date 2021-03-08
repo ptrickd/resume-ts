@@ -2,12 +2,12 @@ import React from 'react'
 import GithubIcon from '../images/icon/github_icon.ico';
 import LinkedInIcon from '../images/icon/linkedin.svg';
 import GmailIcon from '../images/icon/gmail-icon-bw.png';
-import '../styles/navigation.scss';
+import { Wrapper, Icon, Switch } from '../styles/NavigationStyled.js';
 
 function Navigation({ handleClickNav, isDetailPage }) {
     return (
         <>
-            <div id="side-bar" className="sticky-top d-flex flex-column align-items-center">
+            <Wrapper id="side-bar" className="sticky-top d-flex flex-column align-items-center">
                 <div className="whitespace"></div>
                 <div id="side-header" className="d-flex flex-column align-items-center">
                     <h3>Patrick</h3>
@@ -24,7 +24,7 @@ function Navigation({ handleClickNav, isDetailPage }) {
                             <a className="nav-link" href="https://github.com/ptrickd" target="blank" role="tooltip"
                                 data-container="body" data-toggle="popover" data-placement="top"
                                 data-content="github:ptrickd">
-                                <img
+                                <Icon
                                     alt='Github'
                                     src={GithubIcon}
                                     className="icon mx-0 px-0 img-fluid"
@@ -34,7 +34,7 @@ function Navigation({ handleClickNav, isDetailPage }) {
                         <li className="nav-item">
                             <a className="nav-link" href="#!" role="tooltip" data-container="body"
                                 data-toggle="popover" data-placement="top" data-content="Linked In.">
-                                <img
+                                <Icon
                                     alt='Linked In'
                                     src={LinkedInIcon}
                                     className="icon mx-0 px-0 img-fluid"
@@ -45,7 +45,7 @@ function Navigation({ handleClickNav, isDetailPage }) {
                             <a className="nav-link" href="mailto:patrickdion8@gmail.com" role="tooltip"
                                 data-container="body" data-toggle="popover" data-placement="top"
                                 data-content="email me">
-                                <img
+                                <Icon
                                     alt='Email'
                                     src={GmailIcon}
                                     className="icon mx-0 px-0 img-fluid"
@@ -86,14 +86,14 @@ function Navigation({ handleClickNav, isDetailPage }) {
                         </li>
                     </ul>
                 </div>
-                <div id="toggle-switch">
-                    <label className="switch">
+                {/* <div id="toggle-switch">
+                    <Switch className="switch">
 
                         <input type='checkbox' />
                         <span className="slider round"></span>
-                    </label>
-                </div>
-            </div>
+                    </Switch>
+                </div> */}
+            </Wrapper>
         </>
     )
 }
