@@ -42,9 +42,14 @@ export const SkillsSectionStyled = styled.div`
     font-size: 1.6rem; 
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin: 3% auto;
-
     justify-content: space-evenly;
+
+    h4, ul {
+        align-self: center;
+    }
 `
 export const ListStyled = styled.ul`
       
@@ -72,3 +77,17 @@ export const ButtonStyled = styled.button`
     }
 `
 
+export const LinksSectionStyled = styled.div`
+    font-size: 1.6rem;
+    widht: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+        color: #66a6f4;
+    }
+    span {
+        align-self: center;
+    }
+`
