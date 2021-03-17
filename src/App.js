@@ -24,6 +24,21 @@ import cssIcon from './images/icon/css-icon-bw.png';
 import jsIcon from './images/icon/javascript-icon-bw.png';
 import nodeJsIcon from './images/icon/nodejs-icon-bw.ico';
 
+const Icon1 = [
+  { text: 'ReactJs', icon: reactIcon },
+  { text: 'Postgres', icon: postgresqlIcon },
+  { text: 'GitHub', icon: githubIcon },
+  { text: 'JQuery', icon: jqueryIcon },
+  { text: 'Python', icon: pythonIcon }
+]
+
+const Icon2 = [
+  { text: 'Flask', icon: flaskIcon },
+  { text: 'HTML', icon: htmlIcon },
+  { text: 'CSS', icon: cssIcon },
+  { text: 'JavaScript', icon: jsIcon },
+  { text: 'NodeJs', icon: nodeJsIcon }
+]
 function App() {
 
   const [showDetails, setShowDetails] = useState(false);
@@ -79,22 +94,14 @@ function App() {
                   <About />
 
                   <Icons
-                    icon1={reactIcon}
-                    icon2={postgresqlIcon}
-                    icon3={githubIcon}
-                    icon4={jqueryIcon}
-                    icon5={pythonIcon}
+                    iconsArr={Icon1}
                   />
                   <Projects
                     handleClickDetails={id => handleClickDetails(id)}
 
                   />
                   <Icons
-                    icon1={flaskIcon}
-                    icon2={htmlIcon}
-                    icon3={cssIcon}
-                    icon4={jsIcon}
-                    icon5={nodeJsIcon}
+                    iconsArr={Icon2}
                   />
 
                   <Skills />

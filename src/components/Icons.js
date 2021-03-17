@@ -1,17 +1,30 @@
 import React from 'react';
 
 import { Wrapper, IconStyled } from '../styles/Icons';
+import { TooltipText, TooltipBox, TooltipCard } from '../styles/TooltipStyled';
 
-function Icons({ icon1, icon2, icon3, icon4, icon5 }) {
+function Icons({ iconsArr }) {
+
+    const WrappedInTooltips = () => {
+        return iconsArr.map(iconObj => {
+            return (
+                <TooltipCard key={iconObj.text}>
+                    <TooltipText>
+                        <IconStyled src={iconObj.icon} alt='icon' />
+                    </TooltipText>
+                    <TooltipBox>
+                        <p>{iconObj.text}</p>
+                    </TooltipBox>
+                </TooltipCard>
+            )
+        })
+    }
 
 
     return (
         <Wrapper >
-            <IconStyled src={icon1} alt='icon' />
-            <IconStyled src={icon2} alt='icon' />
-            <IconStyled src={icon3} alt='icon' />
-            <IconStyled src={icon4} alt='icon' />
-            <IconStyled src={icon5} alt='icon' />
+            {WrappedInTooltips()}
+
         </Wrapper>
     )
 }
