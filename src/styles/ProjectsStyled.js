@@ -59,6 +59,12 @@ export const Button = styled.button`
 
 `
 
+export const ClickableTitle = styled.span`
+    cursor: pointer;
+    &:hover{
+        color:#04569e;
+    }
+`
 // .project-box {
 //     min-height: 100%;
 //     max-width: 300px;

@@ -17,7 +17,7 @@ import projectsData from '../files/projectsData';
 
 function ProjectDetails({ id, handleClickNav }) {
 
-    const { title, screenshot, description, skills, repo, website } = projectsData[id];
+    const { title, screenshot, description, skills, repo, website, haveRepo, haveWebsite } = projectsData[id];
     const displayList = () => {
         return skills.map((skill, index) => {
             return (
@@ -43,12 +43,19 @@ function ProjectDetails({ id, handleClickNav }) {
                     <ListStyled>{displayList()}</ListStyled>
                 </SkillsSectionStyled>
                 <LinksSectionStyled>
-                    <span><a
-                        href={`${website}`}
-                    >Website</a></span>
-                    <span><a
-                        href={`${repo}`}
-                    >Github Repo</a></span>
+
+                    {
+                        haveWebsite ? <span><a
+                            href={`${website}`}
+                        >Website</a></span>
+                            : <span>Not yet available</span>
+                    }
+                    {
+                        haveRepo ? <span><a
+                            href={`${repo}`}
+                        >Github Repo</a></span>
+                            : <span>Not yet available</span>
+                    }
 
                 </LinksSectionStyled>
                 <ButtonSectionStyled>

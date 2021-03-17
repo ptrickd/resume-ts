@@ -1,5 +1,12 @@
 import React from 'react';
-import { ProjectBox, Img, TopSection, MidSection, Button } from '../styles/ProjectsStyled';
+import {
+    ProjectBox,
+    Img,
+    TopSection,
+    MidSection,
+    Button,
+    ClickableTitle
+} from '../styles/ProjectsStyled';
 // import plusIcon from '../images/icon/plus.svg'
 // import ProjectModal from './ProjectModal';
 function ProjectCards({ id, title, screenshot, description, skills, handleClickDetails }) {
@@ -14,7 +21,10 @@ function ProjectCards({ id, title, screenshot, description, skills, handleClickD
     return (
         <ProjectBox className="px-5 project-box">
             <TopSection className="spacing top-section">
-                <span><h2>{title}</h2></span>
+                <ClickableTitle
+                    onClick={() => handleClickDetails(id)}>
+                    <h2>{title}</h2>
+                </ClickableTitle>
                 <span><Img src={screenshot}
                     className="project-img"
                     alt='screenshot'
