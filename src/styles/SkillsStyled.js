@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import backgroundImg from '../images/background/mike-yukhtenko-hvbIl1XfMlM-unsplash.jpg';
 
 export const Wrapper = styled.div`
+    width:100%;
     background-image: url(${backgroundImg});
     background-size: cover;
     background-position: 0% 50%;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 20px;
     margin-bottom: 20px;
 
