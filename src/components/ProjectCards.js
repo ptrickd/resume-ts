@@ -3,9 +3,7 @@ import {
     ProjectBox,
     Img,
     TopSection,
-    MidSection,
-    Button,
-    ClickableTitle
+    MidSection
 } from '../styles/ProjectsStyled';
 function ProjectCards({ id, title, screenshot, description, handleClickDetails, darkTheme }) {
 

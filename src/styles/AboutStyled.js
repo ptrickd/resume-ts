@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import aboutImg from '../images/background/mouse_scroll-wallpaper-1366x768.jpg';
-import aboutImgLight from '../images/background/wesley-tingey-.jpg';
-import aboutImg2 from '../images/background/william-iven.jpg'
+// import aboutImgLight from '../images/background/wesley-tingey-.jpg';
+// import aboutImg2 from '../images/background/william-iven.jpg'
 import aboutImg3 from '../images/background/caleb-moreno.jpg'
 
 import { colorAboutDark, colorAboutLight } from '../constants/Colors';

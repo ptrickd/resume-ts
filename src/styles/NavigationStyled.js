@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { navBgDark, navBgLight, fontColorDark, fontColorLight, backgroundDark, backgroundLight } from '../constants/Colors';
+import { navBgDark, navBgLight, fontColorDark, fontColorLight, backgroundDark } from '../constants/Colors';
 
 export const Wrapper = styled.div`
   height: 100vh;

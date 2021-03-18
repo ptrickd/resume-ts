@@ -36,9 +36,9 @@ function Contact({ darkTheme }) {
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
 
-    const handleReset = () => {
-        console.log('handleReset')
-    }
+    // const handleReset = () => {
+    //     console.log('handleReset')
+    // }
 
     const emailTemplate = (values) => {
         return {
