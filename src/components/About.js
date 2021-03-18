@@ -2,9 +2,12 @@ import React from 'react'
 import resumePdf from '../files/myresume.pdf';
 import { Wrapper } from '../styles/AboutStyled';
 
-function About() {
+function About({ darkTheme }) {
     return (
-        <Wrapper id="about-me" className="d-flex flex-column align-items-center flex-wrap ">
+        <Wrapper
+            darkTheme={darkTheme}
+            id="about-me"
+            className="d-flex flex-column align-items-center flex-wrap ">
             <div className="whitespace"></div>
             {/* <!-- <img src="/image/doc_brown.jpg"
                 className="portrait-s img-fluid rounded float-right sticky-top" /> --> */}

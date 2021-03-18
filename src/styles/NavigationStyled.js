@@ -1,13 +1,26 @@
 import styled from 'styled-components';
+import { navBgDark, navBgLight, fontColorDark, fontColorLight, backgroundDark, backgroundLight } from '../constants/Colors';
 
 export const Wrapper = styled.div`
   height: 100vh;
-  background-color: #464646;/*/#091f36;*/
+  background-color: ${props => props.darkTheme ? navBgDark : navBgLight};
   text-align: center;
   font-size: 1.2rem;
-  padding: 3%;
-    // position: fixed;
-//     // width: 20%;
+
+  padding: 3% 0%;
+
+  .internal-link a{
+    color: ${props => props.darkTheme ? fontColorDark : fontColorLight};
+  }
+
+  .internal-link{
+    margin-top: 30px;
+  }
+
+  .internal-link li{
+    padding: 4px 0px;
+    margin: 0px 10px;
+  }
 `
 export const Portrait = styled.img`
      height: 80px;
@@ -21,9 +34,6 @@ export const Icon = styled.img`
      border-radius: 50%;
 `
 
-// #col2{
-//     background-color: #464646;
-// }
 
 // /******Toggle Switch******/
 export const Switch = styled.label`
@@ -41,7 +51,7 @@ export const Switch = styled.label`
   }
 
   // /* The slider */
-  span {
+  .slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -51,44 +61,45 @@ export const Switch = styled.label`
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-
-    &:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
-
-      input:checked + & {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-      }
-    }
   }
 
-  input:checked  + &  {
-   background-color: #2196F3;
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  input:checked + .slider:before{
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+
+
+  input:checked  + .slider {
+   background-color: ${backgroundDark};
  }
-  input:focus  + & {
-   box-shadow: 0 0 1px #2196F3;
+  input:focus + .slider {
+   box-shadow: 0 0 1px ${backgroundDark};
  }
 
 
 
 
-// /* Rounded sliders */
-// .slider.round {
-//   border-radius: 34px;
-// }
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
 
-// .slider.round:before {
-//   border-radius: 50%;
-// }
+.slider.round:before {
+  border-radius: 50%;
+}
 
 `
 

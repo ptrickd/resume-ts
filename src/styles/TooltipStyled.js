@@ -6,9 +6,9 @@ export const TooltipText = styled.div`
   color: #fff;
   width: 200px;
   text-align: center;
-  line-height: 44px;
+  line-height: 34px;
   border-radius: 3px;
-  cursor: pointer;
+  // cursor: pointer;
 `;
 export const TooltipBox = styled.div`
   position: absolute;

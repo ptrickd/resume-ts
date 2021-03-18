@@ -44,11 +44,11 @@ function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [detailsId, setDetailsId] = useState(null);
   const [showSideBar, setShowSideBar] = useState(true);
-  // const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(true);
   const [columnStyle, setColumnStyle] = useState(
-    'col-sm-8 col-md-9 col-lg-10 col-7'
+    'col-sm-8 col-md-9 col-lg-10 col-7 '
   );
-
+  // col-sm-8 col-md-9 col-lg-10 col-7
   const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
   useEffect(() => {
     isSmallScreen ? setShowSideBar(false) : setShowSideBar(true)
@@ -56,7 +56,7 @@ function App() {
   }, [isSmallScreen])
 
   useEffect(() => {
-    showSideBar ? setColumnStyle('col-sm-8 col-md-9 col-lg-10 col-7') : setColumnStyle('')
+    showSideBar ? setColumnStyle('col-sm-8 col-md-9 col-lg-10 ') : setColumnStyle('')
   }, [showSideBar])
 
   const handleClickDetails = (id) => {
@@ -69,62 +69,64 @@ function App() {
   }
 
   return (
-    <Wrapper >
-      <div className="row">
-        {showSideBar &&
-          <div
-            id="col2"
-            className="col-sm-4 col-md-3 col-lg-2 col-5"
-          >
-            <Navigation
-              handleClickNav={data => handleClickNav(data)}
-              isDetailPage={showDetails}
-            />
-          </div>
-        }
+    <Wrapper className="row no-gutters" darkTheme={darkTheme}>
+      {/* <div > */}
+      {showSideBar &&
+        <div
+          id=""
+          className="col-sm-4 col-md-3 col-lg-2 col-5"
+        >
+          <Navigation
+            handleClickNav={data => handleClickNav(data)}
+            isDetailPage={showDetails}
+            isDarkTheme={darkTheme}
+            toggleTheme={() => setDarkTheme(!darkTheme)}
+          />
+        </div>
+      }
 
-        <div id=""
-          className={`${columnStyle}`}>
+      <div id=""
+        className={`${columnStyle}`}>
 
-          <div className="row">
-            <MainViewStyled id="main" >
-              {/* If true will show the detail page corresponding with id */}
-              {
-                !showDetails ? <>
-                  <About />
+        <div className="row">
+          <MainViewStyled id="main" >
+            {/* If true will show the detail page corresponding with id */}
+            {
+              !showDetails ? <>
+                <About darkTheme={darkTheme} />
 
-                  <Icons
-                    iconsArr={Icon1}
+                <Icons
+                  iconsArr={Icon1}
+                />
+                <Projects
+                  handleClickDetails={id => handleClickDetails(id)}
+                  darkTheme={darkTheme}
+                />
+                <Icons
+                  iconsArr={Icon2}
+                />
+
+                <Skills />
+                <Contact darkTheme={darkTheme} />
+
+                <Footer />
+              </>
+                :
+                <>
+                  <ProjectDetails
+                    id={detailsId}
+                    handleClickNav={handleClickNav}
                   />
-                  <Projects
-                    handleClickDetails={id => handleClickDetails(id)}
-
-                  />
-                  <Icons
-                    iconsArr={Icon2}
-                  />
-
-                  <Skills />
-                  <Contact />
 
                   <Footer />
                 </>
-                  :
-                  <>
-                    <ProjectDetails
-                      id={detailsId}
-                      handleClickNav={handleClickNav}
-                    />
 
-                    <Footer />
-                  </>
+            }
 
-              }
-
-            </MainViewStyled>
-          </div>
+          </MainViewStyled>
         </div>
       </div>
+      {/* </div> */}
     </Wrapper >
   );
 }

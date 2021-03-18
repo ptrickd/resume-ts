@@ -2,12 +2,15 @@ import React from 'react'
 import GithubIcon from '../images/icon/github_icon.ico';
 import LinkedInIcon from '../images/icon/linkedin.svg';
 import GmailIcon from '../images/icon/gmail-icon-bw.png';
-import { Wrapper, Icon } from '../styles/NavigationStyled.js';
+import { Wrapper, Icon, Switch } from '../styles/NavigationStyled.js';
 
-function Navigation({ handleClickNav, isDetailPage }) {
+function Navigation({ handleClickNav, isDarkTheme, toggleTheme }) {
     return (
         <>
-            <Wrapper id="side-bar" className="sticky-top d-flex flex-column align-items-center">
+            <Wrapper
+                darkTheme={isDarkTheme}
+                id="side-bar"
+                className="sticky-top d-flex flex-column align-items-center">
                 <div className="whitespace"></div>
                 <div id="side-header" className="d-flex flex-column align-items-center">
                     <h3>Patrick</h3>
@@ -86,13 +89,17 @@ function Navigation({ handleClickNav, isDetailPage }) {
                         </li>
                     </ul>
                 </div>
-                {/* <div id="toggle-switch">
-                    <Switch className="switch">
+                <div id="toggle-switch">
+                    <Switch >
 
-                        <input type='checkbox' />
+                        <input
+                            type='checkbox'
+                            checked={isDarkTheme}
+                            onClick={toggleTheme}
+                        />
                         <span className="slider round"></span>
                     </Switch>
-                </div> */}
+                </div>
             </Wrapper>
         </>
     )

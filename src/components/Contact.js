@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
-import { Input, TextArea, Label } from '../styles/ContactStyled.js';
+import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.js';
 
 
 // const myEmail = process.env.MY_EMAIL;
@@ -30,7 +30,7 @@ const validate = values => {
 };
 
 
-function Contact() {
+function Contact({ darkTheme }) {
 
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
@@ -71,7 +71,7 @@ function Contact() {
 
     return (
 
-        <div id="comment" className="container">
+        <Wrapper darkTheme={darkTheme} id="comment" className="container">
             <div className="col d-flex justify-content-center">
                 <form id="commentForm" onSubmit={formik.handleSubmit}>
                     <div className="form-group ">
@@ -86,6 +86,7 @@ function Contact() {
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.name}
+                            darkTheme={darkTheme}
                         />
                         <Label id="labelEmail" htmlFor="email">Email:</Label>
                         {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null}
@@ -95,6 +96,7 @@ function Contact() {
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.email}
+                            darkTheme={darkTheme}
                         />
                         <Label id="labelCommentBox" htmlFor="commentBox">Leave a comment:</Label>
                         {formik.touched.commentBox && formik.errors.commentBox ? <span>{formik.errors.commentBox}</span> : null}
@@ -103,22 +105,23 @@ function Contact() {
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             value={formik.values.commentBox}
+                            darkTheme={darkTheme}
                         ></TextArea>
                         {/* <!-- </div>
                             <div className="d-flex button-form"> --> */}
                         <div className="d-flex justify-content-center">
-                            <button id="btn-send" className="btn btn-primary btn-small" type="submit"
+                            <button id="btn-send" className="btn  btn-small" type="submit"
                             >Send&nbsp;</button>
-                            <button id="btn-reset" className="btn btn-danger btn-small" href="#!"
+                            {/* <button id="btn-reset" className="btn btn-danger btn-small" href="#!"
                                 onClick={handleReset}
-                            >Reset</button>
+                            >Reset</button> */}
                         </div>
 
                     </div>
 
                 </form>
             </div>
-        </div>
+        </Wrapper>
 
     )
 }

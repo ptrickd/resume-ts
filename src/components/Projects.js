@@ -4,7 +4,7 @@ import projectsData from '../files/projectsData';
 import ProjectCards from './ProjectCards';
 import { Wrapper } from '../styles/ProjectsStyled.js';
 
-function Projects({ handleClickDetails }) {
+function Projects({ handleClickDetails, darkTheme }) {
 
     const displayProjects = () => {
         return projectsData.map((project, index) => {
@@ -18,6 +18,7 @@ function Projects({ handleClickDetails }) {
                     description={project.description}
                     skills={project.skills}
                     handleClickDetails={id => handleClickDetails(id)}
+                    darkTheme={darkTheme}
                 />
             )
         })

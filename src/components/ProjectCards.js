@@ -7,24 +7,13 @@ import {
     Button,
     ClickableTitle
 } from '../styles/ProjectsStyled';
-// import plusIcon from '../images/icon/plus.svg'
-// import ProjectModal from './ProjectModal';
-function ProjectCards({ id, title, screenshot, description, skills, handleClickDetails }) {
+function ProjectCards({ id, title, screenshot, description, handleClickDetails, darkTheme }) {
 
-
-    // const displaySkills = () => {
-    //     return skills.map((skill, index) => {
-    //         return <li key={skill + index}>{skill}</li>
-    //     })
-    // }
 
     return (
-        <ProjectBox className="px-5 project-box">
+        <ProjectBox onClick={() => handleClickDetails(id)} className="px-5 project-box">
             <TopSection className="spacing top-section">
-                <ClickableTitle
-                    onClick={() => handleClickDetails(id)}>
-                    <h2>{title}</h2>
-                </ClickableTitle>
+                <h2>{title}</h2>
                 <span><Img src={screenshot}
                     className="project-img"
                     alt='screenshot'
@@ -34,24 +23,14 @@ function ProjectCards({ id, title, screenshot, description, skills, handleClickD
             <MidSection className="centered spacing">
                 <p>{description}</p>
             </MidSection>
-            {/* 
-            <div className="centered spacing ">
-                <ul >
-                    {displaySkills()}
-                </ul>
-
-            </div> */}
             <MidSection className="centered spacing">
-                {/* <a className="project-lnk" role="button" href="#!" data-toggle="modal"
-                    data-target={`#projectModal${id}`}>
-                    <img src={plusIcon} className="minus-plus" alt='plus icon' />
-                </a> */}
-                <Button
+
+                {/* <Button
                     onClick={() => handleClickDetails(id)}
-                    className="btn-project"
-                >See More</Button>
+                    darkTheme={darkTheme}
+                >See More</Button> */}
             </MidSection>
-            {/* <ProjectModal id={id} /> */}
+
         </ProjectBox>
     )
 }
