@@ -4,7 +4,7 @@ import { fontColorDark, contactFormBgDark, contactFormBgLight, btnPrimary } from
 export const Wrapper = styled.div`
     
 #btn-send{
-        background-color: ${props => props.darkTheme ? btnPrimary : '#C9F0FF'};
+        background-color: ${props => props.darkTheme ? btnPrimary : '#D5CAD6'};
         color: ${props => props.darkTheme ? 'white' : 'black'};
         border-color: ${props => props.darkTheme ? btnPrimary : 'black'};
         margin-top: 5px;

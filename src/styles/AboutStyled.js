@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import aboutImg from '../images/background/mouse_scroll-wallpaper-1366x768.jpg';
-import aboutImgLight from '../images/background/wesley-tingey-.jpg'
+import aboutImgLight from '../images/background/wesley-tingey-.jpg';
+import aboutImg2 from '../images/background/william-iven.jpg'
+import aboutImg3 from '../images/background/caleb-moreno.jpg'
+
 import { colorAboutDark, colorAboutLight } from '../constants/Colors';
 
 export const Wrapper = styled.div`
@@ -9,7 +12,7 @@ export const Wrapper = styled.div`
     text-align: center;
     font-size: 1.4rem;
     color: ${props => props.darkTheme ? colorAboutDark : colorAboutLight};
-    background-image: ${props => props.darkTheme ? `url(${aboutImg})` : `url(${aboutImg})`};
+    background-image: ${props => props.darkTheme ? `url(${aboutImg})` : `url(${aboutImg3})`};
     background-size: cover;
     background-position: 50 % 0 %;
     padding-left: 60px;

@@ -11,7 +11,11 @@ function ProjectCards({ id, title, screenshot, description, handleClickDetails, 
 
 
     return (
-        <ProjectBox onClick={() => handleClickDetails(id)} className="px-5 project-box">
+        <ProjectBox
+            darkTheme={darkTheme}
+            onClick={() => handleClickDetails(id)}
+            className="px-5 project-box"
+        >
             <TopSection className="spacing top-section">
                 <h2>{title}</h2>
                 <span><Img src={screenshot}

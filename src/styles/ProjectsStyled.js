@@ -32,6 +32,8 @@ export const ProjectBox = styled.div`
         border:1px solid black;
         cursor: pointer;
         box-shadow: 1px 2px;
+        background-color: ${props => props.darkTheme ? '' : '#D5CAD6'};
+        transform: scale(1.05);
     }
 `
 export const Img = styled.img`
