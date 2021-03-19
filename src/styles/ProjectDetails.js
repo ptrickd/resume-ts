@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { btnPrimary, navBgLight } from '../constants/Colors';
 
 export const ContainerStyled = styled.div`
 fon
@@ -16,13 +17,35 @@ export const TitleStyled = styled.div`
     `
 
 export const ImgSectionStyled = styled.div`
-        display: flex;
-        justify-content: center;
-         margin: 3% auto;
+
+        .main{
+            grid-area: main
+        }
+        .side1{
+            grid-area: side1
+        } 
+        .side2{
+            grid-area: side2
+        }
+        
+        margin: 3% auto;
+        padding: 2% auto;
+        display: grid;
+        gap: 5px;
+        grid-template-areas:
+        "main main main side1"
+        "main main main side2";
+         align-items: center;
     `
 
 export const ImgStyled = styled.img`
-        width: 85%;
+        width: 100%;
+        height:100%;
+        margin: 0%;
+        padding:0%;
+        object-fit:cover;
+       
+        border: 1px solid black;
     `
 
 export const DescSectionStyled = styled.div`
@@ -73,13 +96,13 @@ export const ButtonSectionStyled = styled.div`
 export const ButtonStyled = styled.button`
     font-size: 1.4rem;
     width: auto;
-    background-color:  #04569e;
+    background-color:  ${props => props.darkTheme ? '#04569e' : navBgLight};
     color: white;
     border-radius: 8%;
-    border-color: #04569e;
+    // border-color: #04569e;
     &: hover{
-        background-color: rgb(123, 162, 241);
-        color:#04569e;
+        background-color: ${props => props.darkTheme ? 'rgb(123, 162, 241)' : 'white'};
+        color:
         box-shadow: 2px 4px;
     }
 `
@@ -92,7 +115,7 @@ export const LinksSectionStyled = styled.div`
     justify-content: center;
 
     a {
-        color: #66a6f4;
+        color: ${props => props.darkTheme ? '#66a6f4' : navBgLight};
     }
     span {
         align-self: center;

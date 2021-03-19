@@ -116,6 +116,7 @@ function App() {
                   <ProjectDetails
                     id={detailsId}
                     handleClickNav={handleClickNav}
+                    darkTheme={darkTheme}
                   />
 
                   <Footer />

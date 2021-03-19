@@ -15,9 +15,18 @@ import {
 import projectsData from '../files/projectsData';
 
 
-function ProjectDetails({ id, handleClickNav }) {
+function ProjectDetails({ id, handleClickNav, darkTheme }) {
 
-    const { title, screenshot, description, skills, repo, website, haveRepo, haveWebsite } = projectsData[id];
+    const {
+        title,
+        screenshot,
+        description,
+        skills,
+        repo,
+        website,
+        haveRepo,
+        haveWebsite
+    } = projectsData[id];
     const displayList = () => {
         return skills.map((skill, index) => {
             return (
@@ -31,9 +40,9 @@ function ProjectDetails({ id, handleClickNav }) {
             <ContainerStyled>
                 <TitleStyled>{title}</TitleStyled>
                 <ImgSectionStyled>
-                    <ImgStyled
-                        src={screenshot}
-                    />
+                    <ImgStyled src={screenshot} className='main' />
+                    <ImgStyled src={screenshot} className='side1' />
+                    <ImgStyled src={screenshot} className='side2' />
                 </ImgSectionStyled>
                 <DescSectionStyled>
                     <PStyled>{description}</PStyled>
@@ -61,6 +70,7 @@ function ProjectDetails({ id, handleClickNav }) {
                 <ButtonSectionStyled>
                     <ButtonStyled
                         onClick={() => handleClickNav()}
+                        darkTheme={darkTheme}
                     >
                         Go Back
                     </ButtonStyled>
