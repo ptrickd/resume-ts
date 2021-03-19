@@ -14,7 +14,7 @@ function Projects({ handleClickDetails, darkTheme }) {
                     key={index}
                     id={index}
                     title={project.title}
-                    screenshot={project.screenshot}
+                    screenshots={project.screenshots}
                     description={project.description}
                     skills={project.skills}
                     handleClickDetails={id => handleClickDetails(id)}

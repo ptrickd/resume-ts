@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     ContainerStyled,
     TitleStyled,
@@ -19,7 +19,7 @@ function ProjectDetails({ id, handleClickNav, darkTheme }) {
 
     const {
         title,
-        screenshot,
+        screenshots,
         description,
         skills,
         repo,
@@ -27,6 +27,9 @@ function ProjectDetails({ id, handleClickNav, darkTheme }) {
         haveRepo,
         haveWebsite
     } = projectsData[id];
+
+    const [images, setImages] = useState(screenshots);
+
     const displayList = () => {
         return skills.map((skill, index) => {
             return (
@@ -35,14 +38,34 @@ function ProjectDetails({ id, handleClickNav, darkTheme }) {
         })
     }
 
+    const handleClickImage = (position) => {
+        let newArray = [...images];
+        let oldMainImage = newArray[0];
+        newArray[0] = newArray[position];
+        newArray[position] = oldMainImage;
+        setImages(newArray)
+    }
+
     return (
         <>
-            <ContainerStyled>
+            <ContainerStyled >
                 <TitleStyled>{title}</TitleStyled>
                 <ImgSectionStyled>
-                    <ImgStyled src={screenshot} className='main' />
-                    <ImgStyled src={screenshot} className='side1' />
-                    <ImgStyled src={screenshot} className='side2' />
+                    <ImgStyled
+
+                        src={images[0]}
+                        className='main'
+                    />
+                    <ImgStyled
+                        onClick={() => handleClickImage(1)}
+                        src={images[1]}
+                        className='side1'
+                    />
+                    <ImgStyled
+                        onClick={() => handleClickImage(2)}
+                        src={images[2]}
+                        className='side2'
+                    />
                 </ImgSectionStyled>
                 <DescSectionStyled>
                     <PStyled>{description}</PStyled>
@@ -51,7 +74,9 @@ function ProjectDetails({ id, handleClickNav, darkTheme }) {
                     <h4>Some of the technology used!</h4>
                     <ListStyled>{displayList()}</ListStyled>
                 </SkillsSectionStyled>
-                <LinksSectionStyled>
+                <LinksSectionStyled
+                    darkTheme={darkTheme}
+                >
 
                     {
                         haveWebsite ? <span><a

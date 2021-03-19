@@ -5,7 +5,7 @@ import {
     TopSection,
     MidSection
 } from '../styles/ProjectsStyled';
-function ProjectCards({ id, title, screenshot, description, handleClickDetails, darkTheme }) {
+function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme }) {
 
 
     return (
@@ -16,7 +16,7 @@ function ProjectCards({ id, title, screenshot, description, handleClickDetails, 
         >
             <TopSection className="spacing top-section">
                 <h2>{title}</h2>
-                <span><Img src={screenshot}
+                <span><Img src={screenshots[0]}
                     className="project-img"
                     alt='screenshot'
                 /></span>

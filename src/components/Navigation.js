@@ -95,7 +95,7 @@ function Navigation({ handleClickNav, isDarkTheme, toggleTheme }) {
                         <input
                             type='checkbox'
                             checked={isDarkTheme}
-                            onClick={toggleTheme}
+                            onChange={toggleTheme}
                         />
                         <span className="slider round"></span>
                     </Switch>

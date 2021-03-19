@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { btnPrimary, navBgLight } from '../constants/Colors';
+import { navBgLight } from '../constants/Colors';
 
 export const ContainerStyled = styled.div`
 fon
@@ -101,8 +101,8 @@ export const ButtonStyled = styled.button`
     border-radius: 8%;
     // border-color: #04569e;
     &: hover{
-        background-color: ${props => props.darkTheme ? 'rgb(123, 162, 241)' : 'white'};
-        color:
+        background-color: ${props => props.darkTheme ? 'white' : 'white'};
+        color:${props => props.darkTheme ? 'rgb(123, 162, 241)' : navBgLight};
         box-shadow: 2px 4px;
     }
 `
