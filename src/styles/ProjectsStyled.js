@@ -27,6 +27,7 @@ export const ProjectBox = styled.div`
     // flex-grow: 2;
     // flex-shrink: 1;
     box-shadow: 5% 10%;
+    border-radius: 5%;
 
     &:hover{
         border:1px solid black;
@@ -34,6 +35,9 @@ export const ProjectBox = styled.div`
         box-shadow: 1px 2px;
         background-color: ${props => props.darkTheme ? '' : '#D5CAD6'};
         transform: scale(1.05);
+//          color: #ff7a59;
+//   border: #ff7a59 solid 1px;
+//   background:#fff;
     }
 `
 export const Img = styled.img`

@@ -52,10 +52,17 @@ export const SkillsSectionStyled = styled.div`
     }
 `
 export const ListStyled = styled.ul`
-      
+    width: 100%;
     display:flex;
-    flex-direction: column;
+    justify-content: space-between;
+    // flex-direction: column;
     flex-wrap: wrap;
+    // list-style-type: circle;
+
+    li{
+        padding: auto 5%;
+        margin: auto 5%;
+    }
 `
 export const ButtonSectionStyled = styled.div`
     display: flex;
@@ -68,7 +75,7 @@ export const ButtonStyled = styled.button`
     width: auto;
     background-color:  #04569e;
     color: white;
-    border-radius: 5%;
+    border-radius: 8%;
     border-color: #04569e;
     &: hover{
         background-color: rgb(123, 162, 241);
