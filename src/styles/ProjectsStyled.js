@@ -33,7 +33,7 @@ export const ProjectBox = styled.div`
         border:1px solid black;
         cursor: pointer;
         box-shadow: 1px 2px;
-        background-color: ${props => props.darkTheme ? '' : '#D5CAD6'};
+        background-color: ${props => props.darkTheme ? '#4F5F76' : '#D5CAD6'};
         transform: scale(1.05);
 //          color: #ff7a59;
 //   border: #ff7a59 solid 1px;
