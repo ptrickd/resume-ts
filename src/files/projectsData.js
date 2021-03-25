@@ -8,7 +8,11 @@ const projectsData = [
         ],
         shortDescription: 'Personal Project',
         description: "It's a portfolio of projects. Originaly, it was made with HTML/CSS, Javascript and Jquery only. And I changed it to be a frontend react app.",
-        skills: ['Javascript', 'HTML', 'CSS', 'ReactJs'],
+        skills: [
+            'Javascript', 'HTML',
+            'CSS', 'ReactJs',
+            'Styled-Components', 'Netlify'
+        ],
         haveRepo: true,
         haveWebsite: true,
         repo: 'https://github.com/ptrickd/resume',
@@ -23,7 +27,11 @@ const projectsData = [
         ],
         description: "This app has been created with a goal in mind to showcase the projects of the EvolveU learners.",
         shortDescription: 'Team of 4',
-        skills: ['Javascript', 'ReactJs', 'NodeJs', 'MongoDb', 'JWT'],
+        skills: [
+            'Javascript', 'ReactJs',
+            'NodeJs', 'MongoDb', 'JWT',
+            'Redux', 'TalwindCSS', 'Heroku'
+        ],
         haveRepo: false,
         haveWebsite: true,
         repo: 'Not yet available',
@@ -38,7 +46,16 @@ const projectsData = [
         ],
         description: "This project is about to create an app to connect the residents and the manager in a multi-tenant building.",
         shortDescription: 'Team of 6',
-        skills: ['Agile', 'Javascript', 'ReactJs', 'NodeJs', 'MongoDb', 'Jest', 'JWT', 'Stripe'],
+        skills: [
+            'Agile', 'Javascript',
+            'ReactJs', 'NodeJs',
+            'MongoDb', 'Jest',
+            'JWT', 'Stripe',
+            'Redux', "Twilio",
+            "Google Api", 'Bootstrap',
+            'Heroku', 'Netlify',
+            'Formik'
+        ],
         haveRepo: true,
         haveWebsite: true,
         repo: 'https://github.com/raquelm9/Homy',
