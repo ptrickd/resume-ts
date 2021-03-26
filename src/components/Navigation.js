@@ -35,7 +35,7 @@ function Navigation({ handleClickNav, isDarkTheme, toggleTheme }) {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#!" role="tooltip" data-container="body"
+                            <a className="nav-link" href="https://www.linkedin.com/in/patrick-dion-335a50207/" target="blank" role="tooltip" data-container="body"
                                 data-toggle="popover" data-placement="top" data-content="Linked In.">
                                 <Icon
                                     alt='Linked In'
@@ -90,6 +90,7 @@ function Navigation({ handleClickNav, isDarkTheme, toggleTheme }) {
                     </ul>
                 </div>
                 <div id="toggle-switch">
+                    <label >{isDarkTheme ? "Light Theme" : "Dark Theme"}</label>
                     <Switch >
 
                         <input

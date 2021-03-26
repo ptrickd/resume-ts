@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
         color: ${props => props.darkTheme ? 'white' : 'black'};
         border-color: ${props => props.darkTheme ? btnPrimary : 'black'};
         margin-top: 5px;
+
+        &:hover{
+            background-color: #b097b2;
+        }
     }
 
     #btn-reset{

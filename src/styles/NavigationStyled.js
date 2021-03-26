@@ -21,6 +21,12 @@ export const Wrapper = styled.div`
     padding: 4px 0px;
     margin: 0px 10px;
   }
+
+  #toggle-switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 export const Portrait = styled.img`
      height: 80px;

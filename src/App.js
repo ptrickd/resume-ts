@@ -44,7 +44,7 @@ function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [detailsId, setDetailsId] = useState(null);
   const [showSideBar, setShowSideBar] = useState(true);
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [darkTheme, setDarkTheme] = useState(false);
   const [columnStyle, setColumnStyle] = useState(
     'col-sm-8 col-md-9 col-lg-10 col-7 '
   );

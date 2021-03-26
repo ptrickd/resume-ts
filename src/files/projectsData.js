@@ -54,7 +54,7 @@ const projectsData = [
             'Redux', "Twilio",
             "Google Api", 'Bootstrap',
             'Heroku', 'Netlify',
-            'Formik'
+            'Formik', 'Agile'
         ],
         haveRepo: true,
         haveWebsite: true,

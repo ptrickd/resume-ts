@@ -11,9 +11,10 @@ export const Wrapper = styled.div`
     padding-bottom: 20px;
     margin-bottom: 20px;
 
-    p {
+    h2, p {
      color: #DADADA;
     }
+    
 `
 export const SkillBox = styled.div`
     text-align: center;

@@ -110,7 +110,7 @@ function Contact({ darkTheme }) {
                         {/* <!-- </div>
                             <div className="d-flex button-form"> --> */}
                         <div className="d-flex justify-content-center">
-                            <button id="btn-send" className="btn  btn-small" type="submit"
+                            <button id="btn-send" className="btn  btn-small " type="submit"
                             >Send&nbsp;</button>
                             {/* <button id="btn-reset" className="btn btn-danger btn-small" href="#!"
                                 onClick={handleReset}
