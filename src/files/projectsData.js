@@ -1,6 +1,7 @@
 const projectsData = [
     {
         title: 'Webpage Resume',
+        sceenshotsNum: 3,
         screenshots: [
             '/images/screenshot/resume2.jpg',
             '/images/screenshot/resume3.jpg',
@@ -20,6 +21,7 @@ const projectsData = [
     },
     {
         title: 'Catalog Of Projects',
+        sceenshotsNum: 3,
         screenshots: [
             '/images/screenshot/catalog1.jpg',
             '/images/screenshot/catalog3.jpg',
@@ -30,7 +32,8 @@ const projectsData = [
         skills: [
             'Javascript', 'ReactJs',
             'NodeJs', 'MongoDb', 'JWT',
-            'Redux', 'TalwindCSS', 'Heroku'
+            'Redux', 'TalwindCSS', 'Heroku',
+            'React Router'
         ],
         haveRepo: false,
         haveWebsite: true,
@@ -39,6 +42,7 @@ const projectsData = [
     },
     {
         title: 'Communication Resident/Building Manager',
+        sceenshotsNum: 3,
         screenshots: [
             '/images/screenshot/homy1.jpg',
             '/images/screenshot/homy3.jpg',
@@ -54,12 +58,47 @@ const projectsData = [
             'Redux', "Twilio",
             "Google Api", 'Bootstrap',
             'Heroku', 'Netlify',
-            'Formik', 'Agile'
+            'Formik', 'Agile',
+            'React Router'
         ],
         haveRepo: true,
         haveWebsite: true,
         repo: 'https://github.com/raquelm9/Homy',
         website: 'https://adoring-leakey-4abb67.netlify.app/'
+    },
+    {
+        title: 'Staff Scheduler',
+        sceenshotsNum: 1,
+        screenshots: [
+            '/images/screenshot/scheduler1.jpg'
+        ],
+        description: "This project is about to create a desktop app to help schedule staff in commercial kitchen",
+        shortDescription: 'Personal',
+        skills: [
+            'Python', 'SQLite',
+            'TKinter'
+        ],
+        haveRepo: false,
+        haveWebsite: false,
+        repo: 'https://github.com/ptrickd/scheduler',
+        website: ''
+    },
+    {
+        title: 'Mobile App Projects Catalog',
+        sceenshotsNum: 1,
+        screenshots: [
+            '/images/screenshot/react-native1.jpg',
+        ],
+        description: "This project is the continuation of the projects catalog, with a react-native mobile app to get access to the API",
+        shortDescription: 'Personal',
+        skills: [
+            'React Native', 'React Navigation',
+            'Android Studio'
+        ],
+        haveRepo: true,
+        haveWebsite: false,
+        repo: 'https://github.com/ptrickd/projects_catalog_rn',
+        website: ''
     }
 ]
 
