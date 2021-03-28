@@ -76,9 +76,9 @@ const projectsData = [
         shortDescription: 'Personal',
         skills: [
             'Python', 'SQLite',
-            'TKinter'
+            'TKinter', 'Desktop App'
         ],
-        haveRepo: false,
+        haveRepo: true,
         haveWebsite: false,
         repo: 'https://github.com/ptrickd/scheduler',
         website: ''
@@ -93,7 +93,7 @@ const projectsData = [
         shortDescription: 'Personal',
         skills: [
             'React Native', 'React Navigation',
-            'Android Studio'
+            'Android Studio', 'Mobile'
         ],
         haveRepo: true,
         haveWebsite: false,

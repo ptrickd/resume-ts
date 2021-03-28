@@ -82,13 +82,13 @@ function ProjectDetails({ id, handleClickNav, darkTheme }) {
                         haveWebsite ? <span><a
                             href={`${website}`}
                         >Website</a></span>
-                            : <span>Not yet available</span>
+                            : null//<span>Not yet available</span>
                     }
                     {
                         haveRepo ? <span><a
                             href={`${repo}`}
                         >Github Repo</a></span>
-                            : <span>Not yet available</span>
+                            : null//<span>Not yet available</span>
                     }
 
                 </LinksSectionStyled>
