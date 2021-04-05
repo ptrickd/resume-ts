@@ -99,6 +99,27 @@ const projectsData = [
         haveWebsite: false,
         repo: 'https://github.com/ptrickd/projects_catalog_rn',
         website: ''
+    },
+    {
+        title: 'Server Flask Postgres',
+        sceenshotsNum: 3,
+        screenshots: [
+            '/images/screenshot/catalog1.jpg',
+            '/images/screenshot/catalog3.jpg',
+            '/images/screenshot/flask1.jpg'
+        ],
+        description: "This project use the Catalog Of Projects react app but is using a Python/Flask/Postgres backend",
+        shortDescription: 'Personal',
+        skills: [
+            'React', 'Python',
+            'Flask', 'SQLAlchemy',
+            'Postgres', 'SQL',
+            'Flask Restful'
+        ],
+        haveRepo: true,
+        haveWebsite: false,
+        repo: 'https://github.com/ptrickd/flask-postgres-server',
+        website: ''
     }
 ]
 
