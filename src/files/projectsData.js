@@ -114,7 +114,8 @@ const projectsData = [
             'React', 'Python',
             'Flask', 'SQLAlchemy',
             'Postgres', 'SQL',
-            'Flask Restful'
+            'Flask Restful', 'Flask-Bcrypt',
+            'PyJWT'
         ],
         haveRepo: true,
         haveWebsite: false,
