@@ -14,7 +14,8 @@ export const Wrapper = styled.div`
 
 `
 export const ProjectBox = styled.div`
-    min-height: 100%;
+    height: 400px;
+    overflow: hidden;
     max-width: 300px;
     text-align: center;
     font-size: 1.4rem;
@@ -28,13 +29,16 @@ export const ProjectBox = styled.div`
     // flex-shrink: 1;
     box-shadow: 5% 10%;
     border-radius: 5%;
+    background-color: ${props => props.darkTheme ? '#113869' : '#acaab3'};
+    // background-color: ${props => props.darkTheme ? '#1e3a63' : '#D5CAD6'};
+    box-shadow: 1px 2px;
 
     &:hover{
-        border:1px solid black;
+        // border:1px solid black;
         cursor: pointer;
-        box-shadow: 1px 2px;
-        background-color: ${props => props.darkTheme ? '#1e3a63' : '#D5CAD6'};
-        transform: scale(1.05);
+        
+        
+        // transform: scale(1.05);
 //          color: #ff7a59;
 //   border: #ff7a59 solid 1px;
 //   background:#fff;

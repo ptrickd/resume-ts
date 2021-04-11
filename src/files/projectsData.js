@@ -41,7 +41,7 @@ const projectsData = [
         website: 'https://evolveu-projects.herokuapp.com/'
     },
     {
-        title: 'Communication Resident/Building Manager',
+        title: 'Building Manager',
         sceenshotsNum: 3,
         screenshots: [
             '/images/screenshot/homy1.jpg',
@@ -67,7 +67,7 @@ const projectsData = [
         website: 'https://adoring-leakey-4abb67.netlify.app/'
     },
     {
-        title: 'Staff Scheduler',
+        title: 'Desktop Staff Scheduler',
         sceenshotsNum: 1,
         screenshots: [
             '/images/screenshot/scheduler1.jpg'

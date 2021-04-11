@@ -7,6 +7,12 @@ import {
 } from '../styles/ProjectsStyled';
 function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme }) {
 
+    const limitCharacter = (str) => {
+
+        if (str.length > 100) return str.substring(0, 100) + '...'
+        return str
+
+    }
 
     return (
         <ProjectBox
@@ -23,7 +29,7 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
             </TopSection>
 
             <MidSection className="centered spacing">
-                <p>{description}</p>
+                <p>{limitCharacter(description)}</p>
             </MidSection>
             <MidSection className="centered spacing">
 
