@@ -2,18 +2,23 @@ import styled from 'styled-components';
 import { navBgLight } from '../constants/Colors';
 
 export const ContainerStyled = styled.div`
-fon
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: auto 5%;
+        margin: 0;
+        padding: 0;
     `
 
-export const TitleStyled = styled.div`
+export const TitleStyled = styled.h2`
+        width: 94%;
         font-size: 2.5rem;
         display: flex;
         justify-content: center;
-        margin: 3% auto;
+        align-items: center;
+        flex-wrap: wrap;
+        align-self: cnter;
+        padding: 2% auto;
     `
 
 export const ImgSectionStyled = styled.div`
@@ -28,10 +33,10 @@ export const ImgSectionStyled = styled.div`
             grid-area: side2
         }
         
-        margin: 3% auto;
-        padding: 2% auto;
+        width: 94%;
+        padding: 2% 2%;
         display: grid;
-        gap: 5px;
+        gap: 8px;
         grid-template-areas:
         "main main main side1"
         "main main main side2";
@@ -49,12 +54,13 @@ export const ImgStyled = styled.img`
     `
 
 export const DescSectionStyled = styled.div`
-    padding: auto 30%;
-    margin: 3% auto;
+    width: 90%;
+    padding-left: 5%;
+    padding-rigth: 5%;
 `
 
 export const PStyled = styled.p`
-margin: auto 10%;
+   
     font-size: 1.6rem;
     display: flex;
     justify-content: center;
@@ -62,35 +68,35 @@ margin: auto 10%;
 `
 
 export const SkillsSectionStyled = styled.div`
+    width: 100%;
     font-size: 1.6rem; 
     display: flex;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 3% auto;
+   
     justify-content: space-evenly;
 
-    h4, ul {
+    h4 {
         align-self: center;
     }
 `
 export const ListStyled = styled.ul`
-    width: 100%;
+    width: 92%;
     display:flex;
-    justify-content: space-between;
-    // flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: row;
     flex-wrap: wrap;
-    // list-style-type: circle;
 
     li{
-        padding: auto 5%;
-        margin: auto 5%;
+        margin: 1% 4%;
+        flex 1 0 25%;
     }
 `
 export const ButtonSectionStyled = styled.div`
     display: flex;
     justify-content: center;
-    margin: 7% auto;
+    margin-top: 5%;
 `
 
 export const ButtonStyled = styled.button`
@@ -99,7 +105,7 @@ export const ButtonStyled = styled.button`
     background-color:  ${props => props.darkTheme ? '#04569e' : navBgLight};
     color: white;
     border-radius: 8%;
-    // border-color: #04569e;
+    cursor: pointer;
     &: hover{
         background-color: ${props => props.darkTheme ? 'white' : 'white'};
         color:${props => props.darkTheme ? 'rgb(123, 162, 241)' : navBgLight};
@@ -109,15 +115,17 @@ export const ButtonStyled = styled.button`
 
 export const LinksSectionStyled = styled.div`
     font-size: 1.6rem;
-    widht: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    ;
     a {
+        
         color: ${props => props.darkTheme ? '#66a6f4' : navBgLight};
     }
     span {
+        margin: 1% auto;
         align-self: center;
     }
 `

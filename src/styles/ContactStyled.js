@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     #btn-send{
         width: 20%;
         heigth: 100%;
-        background-color: ${props => props.darkTheme ? '#164682' : '#D5CAD6'};
+        background-color: ${props => props.darkTheme ? '#164682' : '#ACAAB3'};
         color: ${props => props.darkTheme ? 'white' : 'black'};
         border-color: ${props => props.darkTheme ? btnPrimary : 'black'};
         margin-top: 5px;
@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
         // padding: auto 20px;
 
         &:hover{
-            background-color: ${props => props.darkTheme ? '#2d6ab5;' : '#ACAAB3'};
+            background-color: ${props => props.darkTheme ? '#2d6ab5;' : '#9a999e'};
             cursor: pointer;
         }
     }
