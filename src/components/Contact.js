@@ -72,55 +72,53 @@ function Contact({ darkTheme }) {
     return (
 
         <Wrapper darkTheme={darkTheme} id="comment" className="container">
-            <div className="col d-flex justify-content-center">
-                <form id="commentForm" onSubmit={formik.handleSubmit}>
-                    <div className="form-group ">
-                        <input id="contact_number" type="text" className="hide"
-                            name="contact_number"
 
-                        />
-                        <Label id="labelName" htmlFor="name">Name:</Label>
-                        {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null}
-                        <Input id="name" name="name" type="text" className="form form-control"
-                            placeholder="Name" autoComplete="off"
-                            onBlur={formik.handleBlur}
-                            onChange={formik.handleChange}
-                            value={formik.values.name}
-                            darkTheme={darkTheme}
-                        />
-                        <Label id="labelEmail" htmlFor="email">Email:</Label>
-                        {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null}
-                        <Input
-                            id="email" name="email" type="email" className="form form-control"
-                            placeholder="my_name@email.com" autoComplete="off"
-                            onBlur={formik.handleBlur}
-                            onChange={formik.handleChange}
-                            value={formik.values.email}
-                            darkTheme={darkTheme}
-                        />
-                        <Label id="labelCommentBox" htmlFor="commentBox">Leave a comment:</Label>
-                        {formik.touched.commentBox && formik.errors.commentBox ? <span>{formik.errors.commentBox}</span> : null}
-                        <TextArea id="commentBox" name="commentBox" rows="4"
-                            className="form form-control" placeholder="Write a comment"
-                            onBlur={formik.handleBlur}
-                            onChange={formik.handleChange}
-                            value={formik.values.commentBox}
-                            darkTheme={darkTheme}
-                        ></TextArea>
-                        {/* <!-- </div>
+            <form id="commentForm" onSubmit={formik.handleSubmit}>
+
+                <div className="form-control">
+                    <Label id="labelName" htmlFor="name">Name:</Label>
+                    {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null}
+                    <Input id="name" name="name" type="text" className="form"
+                        placeholder="Name" autoComplete="off"
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        value={formik.values.name}
+                        darkTheme={darkTheme}
+                    />
+                </div>
+                <div className="form-control">
+                    <Label id="labelEmail" htmlFor="email">Email:</Label>
+                    {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null}
+                    <Input
+                        id="email" name="email" type="email" className="form"
+                        placeholder="my_name@email.com" autoComplete="off"
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                        darkTheme={darkTheme}
+                    />
+                </div>
+                <div className="form-control">
+                    <Label id="labelCommentBox" htmlFor="commentBox">Leave a comment:</Label>
+                    {formik.touched.commentBox && formik.errors.commentBox ? <span>{formik.errors.commentBox}</span> : null}
+                    <TextArea id="commentBox" name="commentBox" rows="4"
+                        className="form" placeholder="Write a comment"
+                        onBlur={formik.handleBlur}
+                        onChange={formik.handleChange}
+                        value={formik.values.commentBox}
+                        darkTheme={darkTheme}
+                    ></TextArea>
+                </div>
+                {/* <!-- </div>
                             <div className="d-flex button-form"> --> */}
-                        <div className="d-flex justify-content-center">
-                            <button id="btn-send" className="btn  btn-small " type="submit"
-                            >Send&nbsp;</button>
-                            {/* <button id="btn-reset" className="btn btn-danger btn-small" href="#!"
+                <div className="btn-send-section">
+                    <button id="btn-send" className="" type="submit"
+                    >Send&nbsp;</button>
+                    {/* <button id="btn-reset" className="btn btn-danger btn-small" href="#!"
                                 onClick={handleReset}
                             >Reset</button> */}
-                        </div>
-
-                    </div>
-
-                </form>
-            </div>
+                </div>
+            </form>
         </Wrapper>
 
     )

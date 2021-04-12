@@ -8,8 +8,25 @@ export const Wrapper = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
 `
+export const IconContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-content: center;
+`
+
 export const IconStyled = styled.img`
-          height: 80px;
-            width: auto;
-            padding: 0px 20px;
-    `
+    height: 80px;
+    width: auto;
+    padding: 0px 20px;
+   
+`
+
+export const TextStyled = styled.p`
+    position: absolute;
+    top: calc(100% + 10px);
+
+    &:hover {
+        visibility: visible;
+
+    }
+`

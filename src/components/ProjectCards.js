@@ -18,9 +18,9 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
         <ProjectBox
             darkTheme={darkTheme}
             onClick={() => handleClickDetails(id)}
-            className="px-5 project-box"
+            className=" project-box"
         >
-            <TopSection className="spacing top-section">
+            <TopSection className="top-section">
                 <h2>{title}</h2>
                 <span><Img src={screenshots[0]}
                     className="project-img"
@@ -28,16 +28,10 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
                 /></span>
             </TopSection>
 
-            <MidSection className="centered spacing">
+            <MidSection className="">
                 <p>{limitCharacter(description)}</p>
             </MidSection>
-            <MidSection className="centered spacing">
 
-                {/* <Button
-                    onClick={() => handleClickDetails(id)}
-                    darkTheme={darkTheme}
-                >See More</Button> */}
-            </MidSection>
 
         </ProjectBox>
     )

@@ -45,9 +45,7 @@ function App() {
   const [detailsId, setDetailsId] = useState(null);
   const [showSideBar, setShowSideBar] = useState(true);
   const [darkTheme, setDarkTheme] = useState(false);
-  const [columnStyle, setColumnStyle] = useState(
-    'col-sm-8 col-md-9 col-lg-10 col-7 '
-  );
+
   // col-sm-8 col-md-9 col-lg-10 col-7
   const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
   useEffect(() => {
@@ -55,9 +53,7 @@ function App() {
 
   }, [isSmallScreen])
 
-  useEffect(() => {
-    showSideBar ? setColumnStyle('col-sm-8 col-md-9 col-lg-10 ') : setColumnStyle('')
-  }, [showSideBar])
+
 
   const handleClickDetails = (id) => {
     setShowDetails(true);
@@ -69,12 +65,12 @@ function App() {
   }
 
   return (
-    <Wrapper className="row no-gutters" darkTheme={darkTheme}>
+    <Wrapper className="" darkTheme={darkTheme} sideBar={!isSmallScreen}>
       {/* <div > */}
       {showSideBar &&
         <div
           id=""
-          className="col-sm-4 col-md-3 col-lg-2 col-5"
+          className=""
         >
           <Navigation
             handleClickNav={data => handleClickNav(data)}
@@ -85,48 +81,45 @@ function App() {
         </div>
       }
 
-      <div id=""
-        className={`${columnStyle}`}>
+      {/* <div className=""> */}
+      <MainViewStyled id="main" >
+        {/* If true will show the detail page corresponding with id */}
+        {
+          !showDetails ? <>
+            <About darkTheme={darkTheme} />
 
-        <div className="row">
-          <MainViewStyled id="main" >
-            {/* If true will show the detail page corresponding with id */}
-            {
-              !showDetails ? <>
-                <About darkTheme={darkTheme} />
+            <Icons
+              iconsArr={Icon1}
+            />
+            <Projects
+              handleClickDetails={id => handleClickDetails(id)}
+              darkTheme={darkTheme}
+            />
+            <Icons
+              iconsArr={Icon2}
+            />
 
-                <Icons
-                  iconsArr={Icon1}
-                />
-                <Projects
-                  handleClickDetails={id => handleClickDetails(id)}
-                  darkTheme={darkTheme}
-                />
-                <Icons
-                  iconsArr={Icon2}
-                />
+            <Skills />
+            <Contact darkTheme={darkTheme} />
 
-                <Skills />
-                <Contact darkTheme={darkTheme} />
+            <Footer />
+          </>
+            :
+            <>
+              <ProjectDetails
+                id={detailsId}
+                handleClickNav={handleClickNav}
+                darkTheme={darkTheme}
+              />
 
-                <Footer />
-              </>
-                :
-                <>
-                  <ProjectDetails
-                    id={detailsId}
-                    handleClickNav={handleClickNav}
-                    darkTheme={darkTheme}
-                  />
+              <Footer />
+            </>
 
-                  <Footer />
-                </>
+        }
 
-            }
+      </MainViewStyled>
+      {/* </div> */}
 
-          </MainViewStyled>
-        </div>
-      </div>
       {/* </div> */}
     </Wrapper >
   );

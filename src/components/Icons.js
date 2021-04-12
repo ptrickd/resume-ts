@@ -24,7 +24,6 @@ function Icons({ iconsArr }) {
     return (
         <Wrapper >
             {WrappedInTooltips()}
-
         </Wrapper>
     )
 }

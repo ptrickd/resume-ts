@@ -6,8 +6,12 @@ export const Wrapper = styled.div`
   background-color: ${props => props.darkTheme ? navBgDark : navBgLight};
   text-align: center;
   font-size: 1.2rem;
-
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
   padding: 3% 0%;
+  overflow:hidden;
 
   .internal-link a{
     color: ${props => props.darkTheme ? fontColorDark : fontColorLight};
@@ -22,12 +26,66 @@ export const Wrapper = styled.div`
     margin: 0px 10px;
   }
 
+  .external-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+  
+  }
+
+  .internal-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      display: flex;
+      flex: 1 1 200px;
+      justify-content: center;
+    }
+  }
+
+  .btn-lnk {
+    width: 50%;
+    border: 1px solid black;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 5%;
+    background-color: #747b80;
+    box-shadow: 1px 2px;
+    &:hover {
+      background-color: #787a7a;
+    }
+  }
+  a {
+    text-decoration: none
+  }
+  li {
+      list-style-type: none;
+    }
+
   #toggle-switch{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
+    .toggle-label {
+      padding: 5% 0;
+    }
   }
 `
+
+
 export const Portrait = styled.img`
      height: 80px;
      width:  80px;

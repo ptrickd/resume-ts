@@ -2,15 +2,32 @@ import styled from 'styled-components';
 import { fontColorDark, contactFormBgDark, contactFormBgLight, btnPrimary } from '../constants/Colors';
 
 export const Wrapper = styled.div`
-    
-#btn-send{
-        background-color: ${props => props.darkTheme ? btnPrimary : '#D5CAD6'};
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    form {
+        width: 80%;
+        margin-bottom: 5%;
+    }
+
+    #btn-send{
+        width: 20%;
+        heigth: 100%;
+        background-color: ${props => props.darkTheme ? '#164682' : '#D5CAD6'};
         color: ${props => props.darkTheme ? 'white' : 'black'};
         border-color: ${props => props.darkTheme ? btnPrimary : 'black'};
         margin-top: 5px;
+        font-size: 1.4rem;
+        border-radius: 5%;
+        // padding: auto 20px;
 
         &:hover{
-            background-color: #b097b2;
+            background-color: ${props => props.darkTheme ? '#2d6ab5;' : '#ACAAB3'};
+            cursor: pointer;
         }
     }
 
@@ -19,44 +36,46 @@ export const Wrapper = styled.div`
         color: ${props => props.darkTheme ? 'white' : 'black'};
         border-color: ${props => props.darkTheme ? '#C82333' : 'black'};
     }
+    
+    .form-control {
+        width: 100%;
+        max-width: 600px;
+        flex: display;
+        flex-direction: column;
+        margin: 3% auto;
+        
+    }
+    .btn-send-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px auto;
+    }
 
 `
 
 export const Input = styled.input`
+    width: 100%;
     background-color: ${props => props.darkTheme ? contactFormBgDark : contactFormBgLight};
-    color: ${fontColorDark};
+    color: ${props => props.darkTheme ? fontColorDark : 'rgba(0,0,0,0.75)'};
     border-color:${props => props.darkTheme ? '' : 'black'};
-    width: 400px;
+    font-size: 1.4rem;
+    // border-radius: 5%;
+    // box-shadow:
 `
 export const TextArea = styled.textarea`
     background-color: ${props => props.darkTheme ? contactFormBgDark : contactFormBgLight};
-    color: ${fontColorDark};
+    color: ${props => props.darkTheme ? fontColorDark : 'rgba(0,0,0,0.75)'};
     border-color:${props => props.darkTheme ? '' : 'black'};
-    width: 400px;
+    width: 100%;
+    font-size: 1.4rem;
+    // border-radius: 3%;
 `
 
 export const Label = styled.label`
     margin-top:1.5rem;
     margin-bottom: 0;
+    font-size: 1.4rem;
 `
 
-// .form{
-//     background-color: #4f5f76;
-//     color: #DADADA;
-//     width: 400px;
-
-// }
-
-// label{
-//         margin-top:1.5rem;
-//         margin-bottom: 0;
-//     }
-
-// label.needed::after{
-//     content: '* required';
-//     color: #DADADA;
-
-// }
-// input.needed, textarea.needed{
-//     background-color: red;
-// }

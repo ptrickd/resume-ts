@@ -13,8 +13,7 @@ export const TooltipText = styled.div`
 export const TooltipBox = styled.div`
   position: absolute;
   top: calc(100% + 10px);
-  left: 40px;
-  z-index: 1;
+  left: 30px;
   visibility: hidden;
   color: transparent;
   background-color: transparent;
