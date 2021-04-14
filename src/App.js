@@ -11,6 +11,7 @@ import Skills from './components/Skills';
 import Icons from './components/Icons';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
+import OnSubmitModal from './components/OnSubmitModal';
 
 import reactIcon from './images/icon/react.svg';
 import postgresqlIcon from './images/icon/postgresql-icon.png'
@@ -45,6 +46,7 @@ function App() {
   const [detailsId, setDetailsId] = useState(null);
   const [showSideBar, setShowSideBar] = useState(true);
   const [darkTheme, setDarkTheme] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   // col-sm-8 col-md-9 col-lg-10 col-7
   const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
@@ -53,6 +55,9 @@ function App() {
 
   }, [isSmallScreen])
 
+  const toggleShowModal = (value) => {
+    console.log(value)
+  }
 
 
   const handleClickDetails = (id) => {
@@ -103,6 +108,7 @@ function App() {
             <Contact darkTheme={darkTheme} />
 
             <Footer />
+            <OnSubmitModal />
           </>
             :
             <>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
 import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.js';
@@ -35,7 +35,9 @@ function Contact({ darkTheme }) {
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-
+    // const [name, setName] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [commentBox, setCommentBox] = useState('');
     // const handleReset = () => {
     //     console.log('handleReset')
     // }
@@ -56,11 +58,12 @@ function Contact({ darkTheme }) {
             commentBox: ''
         },
         validate,
-        onSubmit: values => {
+        onSubmit: (values, { resetForm }) => {
             const templateParams = emailTemplate(values)
             emailjs.send(serviceId, templateId, templateParams, userId)
                 .then((result) => {
                     console.log(result.text);
+                    resetForm({ values: '' });
                 }, (error) => {
                     console.log(error.text);
                 })

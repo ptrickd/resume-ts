@@ -6,13 +6,22 @@ export const Wrapper = styled.div`
     padding: 0;
     padding-bottom: 20px;
     margin-bottom: 20px;
-    display: flex;
 
     width: 100%;
     display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+`
+export const CardsSection = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
 `
+
 export const ProjectBox = styled.div`
     height: 400px;
     overflow: hidden;

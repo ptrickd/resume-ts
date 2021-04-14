@@ -17,8 +17,7 @@ function Navigation({ handleClickNav, isDarkTheme, toggleTheme }) {
                     {/* <!-- <img src="image/doc_brown.jpg" alt="portrait"
                         className="portrait-r img-fluid d-flex flex-wrap" /> --> */}
                     <p className="pr-3">
-                        Hi. My name is Patrick and I'm a full-stack developer
-                        student at EvolveU in Calgary.
+                        Hi. My name is Patrick and I'm a full-stack developer in Calgary.
                             </p>
                 </div>
                 <div id="side-ext-link" className="external-link">

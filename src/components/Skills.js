@@ -1,32 +1,35 @@
 import React from 'react'
-import { Wrapper, SkillBox } from '../styles/SkillsStyled.js';
+import { Wrapper, SkillBox, SkillBoxSection } from '../styles/SkillsStyled.js';
 
 function Skills() {
     return (
 
         <Wrapper id="skills" className="">
-            <SkillBox className="skill-box box1">
-                <h2>Language</h2>
-                <p>
-                    HTML/CSS<br />
-                    Javascript<br />
-                    Python<br />
-                    SQL<br />
-                </p>
+            <h1>What I know</h1>
+            <SkillBoxSection>
+                <SkillBox className="box1">
+                    <h2>Language</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </SkillBox>
+      
+                <SkillBox className="box2">
+                    <h2>Framework</h2>
+                    <ul>
+                        <li>ReactJS</li>
+                        <li>NodeJs</li>
+                        <li>Flask</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                    </ul>
 
-            </SkillBox>
-            {/* <SkillBox className="skill-box">
-            </SkillBox> */}
-            <SkillBox className="skill-box box2">
-                <h2>Framework</h2>
-                <p>
-                    ReactJS<br />
-                    Flask<br />
-                    PostgreSQL<br />
-                    NodeJs <br />
-                    MongoDB<br />
-                </p>
-            </SkillBox>
+                </SkillBox>
+            </SkillBoxSection>
         </Wrapper>
 
 

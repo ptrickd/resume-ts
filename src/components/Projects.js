@@ -2,7 +2,7 @@ import React from 'react'
 
 import projectsData from '../files/projectsData';
 import ProjectCards from './ProjectCards';
-import { Wrapper } from '../styles/ProjectsStyled.js';
+import { Wrapper, CardsSection } from '../styles/ProjectsStyled.js';
 
 function Projects({ handleClickDetails, darkTheme }) {
 
@@ -25,8 +25,11 @@ function Projects({ handleClickDetails, darkTheme }) {
     }
 
     return (
-        <Wrapper id="projects" className="project-container">
-            {displayProjects()}
+        <Wrapper id="projects" className="">
+            <h1>My Projects</h1>
+            <CardsSection >
+                {displayProjects()}
+            </CardsSection>
         </Wrapper>
     )
 }
