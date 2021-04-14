@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
 import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.js';
