@@ -75,8 +75,8 @@ export const TopSection = styled.div`
     height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-content: space-evenly;
+    justify-content: space-evenly;
+    // align-content: space-evenly;
     flex: 1 0 flex;
     margin: auto auto;
     margin-top: 30px;
