@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
 
     width: 100%;
     display: flex;
-    // flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     font-size: 1.4rem;
@@ -19,11 +18,30 @@ export const CardsSection = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
     flex-wrap: wrap;
 `
 
+export const SkillsList = styled.ul`
+width: 100%;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin-bottom: 10px;
+    li{
+        width: 80%;
+        display: flex;
+        justify-content: flex-start;
+        // align-content: flex-start;
+    }
+
+`
+
 export const ProjectBox = styled.div`
-    height: 400px;
+    height: 480px;
     overflow: hidden;
     max-width: 300px;
     text-align: center;
@@ -33,43 +51,50 @@ export const ProjectBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: flex-start;
+    // align-self: flex-start;
+    // align-items: flex-start;
     box-shadow: 5% 10%;
     border-radius: 5%;
     background-color: ${props => props.darkTheme ? '#113869' : '#acaab3'};
     box-shadow: 1px 2px;
 
     &:hover{
-        // border:1px solid black;
+
         cursor: pointer;
-        
-        
-        // transform: scale(1.05);
-//          color: #ff7a59;
-//   border: #ff7a59 solid 1px;
-//   background:#fff;
+
     }
 `
 export const Img = styled.img`
     width: 85%;
     height: auto;
+    margin: 0 0;
+    padding: 0 0;
+    align-self: flex-end;
 `
 export const TopSection = styled.div`
-    min-height: 30%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: space-between;
-    margin: 7% auto;
+    justify-content: space-between;
+    align-content: space-evenly;
+    flex: 1 0 flex;
+    margin: auto auto;
+    margin-top: 30px;
+    h2{
+        margin: 0 auto;
+    }
+    
 
 `
 export const MidSection = styled.div`
     display: flex;
-    justify-content: center;
-    margin: 7% auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 5% auto;
     
     p {
-        margin: auto 15px;
+        margin: auto 5px;
     }
 `
 export const Button = styled.button`

@@ -10,9 +10,8 @@ const projectsData = [
         shortDescription: 'Personal Project',
         description: "It's a portfolio of projects. Originaly, it was made with HTML/CSS, Javascript and Jquery only. And I changed it to be a frontend react app.",
         skills: [
-            'Javascript', 'HTML',
-            'CSS', 'ReactJs',
-            'Styled-Components', 'Netlify'
+            'Javascript', 'ReactJs', 'Styled-Components',
+            'HTML', 'CSS', 'Netlify'
         ],
         haveRepo: true,
         haveWebsite: true,
@@ -51,9 +50,9 @@ const projectsData = [
         description: "This project is about to create an app to connect the residents and the manager in a multi-tenant building.",
         shortDescription: 'Team of 6',
         skills: [
-            'Agile', 'Javascript',
-            'ReactJs', 'NodeJs',
-            'MongoDb', 'Jest',
+            'Javascript', 'ReactJs',
+            'MongoDB', 'NodeJs',
+            'Jest', 'Agile',
             'JWT', 'Stripe',
             'Redux', "Twilio",
             "Google Api", 'Bootstrap',
@@ -101,7 +100,7 @@ const projectsData = [
         website: ''
     },
     {
-        title: 'Server Flask Postgres',
+        title: 'Flask PostgreSQL Server ',
         sceenshotsNum: 3,
         screenshots: [
             '/images/screenshot/catalog1.jpg',
@@ -111,9 +110,9 @@ const projectsData = [
         description: "This project use the Catalog Of Projects react app but is using a Python/Flask/Postgres backend",
         shortDescription: 'Personal',
         skills: [
-            'React', 'Python',
-            'Flask', 'SQLAlchemy',
-            'Postgres', 'SQL',
+            'Python', 'Flask',
+            'PostgreSQL', 'SQLAlchemy',
+            'SQL', 'React',
             'Flask Restful', 'Flask-Bcrypt',
             'PyJWT'
         ],

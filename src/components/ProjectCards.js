@@ -3,9 +3,10 @@ import {
     ProjectBox,
     Img,
     TopSection,
-    MidSection
+    MidSection,
+    SkillsList
 } from '../styles/ProjectsStyled';
-function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme }) {
+function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme, skills }) {
 
     const limitCharacter = (str) => {
 
@@ -21,7 +22,7 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
             className=" project-box"
         >
             <TopSection className="top-section">
-                <h2>{title}</h2>
+                <span><h2>{title}</h2></span>
                 <span><Img src={screenshots[0]}
                     className="project-img"
                     alt='screenshot'
@@ -31,6 +32,13 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
             <MidSection className="">
                 <p>{limitCharacter(description)}</p>
             </MidSection>
+            <SkillsList>
+                <li>{skills[0]}</li>
+                <li>{skills[1]}</li>
+                <li>{skills[2]}</li>
+            </SkillsList>
+
+
 
 
         </ProjectBox>

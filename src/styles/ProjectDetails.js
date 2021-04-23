@@ -19,6 +19,8 @@ export const TitleStyled = styled.h2`
         padding: 2% auto;
     `
 
+
+
 export const ImgSectionStyled = styled.div`
 
         .main{
