@@ -3,9 +3,6 @@ import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
 import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.js';
 
-
-// const myEmail = process.env.MY_EMAIL;
-
 const validate = values => {
     const errors = {};
     if (!values.name) {
@@ -30,17 +27,12 @@ const validate = values => {
 };
 
 
-function Contact({ darkTheme }) {
+function Contact({ darkTheme, toggleShowModal }) {
 
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [commentBox, setCommentBox] = useState('');
-    // const handleReset = () => {
-    //     console.log('handleReset')
-    // }
+
 
     const emailTemplate = (values) => {
         return {
@@ -64,6 +56,7 @@ function Contact({ darkTheme }) {
                 .then((result) => {
                     console.log(result.text);
                     resetForm({ values: '' });
+                    toggleShowModal(true);
                 }, (error) => {
                     console.log(error.text);
                 })
@@ -117,9 +110,7 @@ function Contact({ darkTheme }) {
                 <div className="btn-send-section">
                     <button id="btn-send" className="" type="submit"
                     >Send&nbsp;</button>
-                    {/* <button id="btn-reset" className="btn btn-danger btn-small" href="#!"
-                                onClick={handleReset}
-                            >Reset</button> */}
+
                 </div>
             </form>
         </Wrapper>

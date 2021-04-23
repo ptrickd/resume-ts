@@ -8,8 +8,8 @@ export const fontColorDark = '#DADADA';
 export const colorAboutDark = '#DADADA';
 export const contactFormBgDark = '#4f5f76';
 
-export const backgroundLight = '#B9B7BD';
-// export const backgroundLight = '#EFEFF0';
+export const backgroundLight = '#dad5e3';
+// export const backgroundLight = '#B9B7BD';
 export const navBgLight = '#868B8E';
 // export const navBgLight = '#6B5E62';
 export const fontColorLight = 'black';

@@ -46,7 +46,7 @@ function App() {
   const [detailsId, setDetailsId] = useState(null);
   const [showSideBar, setShowSideBar] = useState(true);
   const [darkTheme, setDarkTheme] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   // col-sm-8 col-md-9 col-lg-10 col-7
   const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
@@ -55,9 +55,10 @@ function App() {
 
   }, [isSmallScreen])
 
-  // const toggleShowModal = (value) => {
-  //   console.log(value)
-  // }
+  const toggleShowModal = (value) => {
+    console.log('toogle value: ', value)
+    setShowModal(value)
+  }
 
 
   const handleClickDetails = (id) => {
@@ -105,10 +106,10 @@ function App() {
             />
 
             <Skills />
-            <Contact darkTheme={darkTheme} />
+            <Contact darkTheme={darkTheme} showModal={showModal} toggleShowModal={toggleShowModal} />
 
             <Footer />
-            <OnSubmitModal />
+            <OnSubmitModal showModal={showModal} toggleShowModal={value => toggleShowModal(value)} />
           </>
             :
             <>

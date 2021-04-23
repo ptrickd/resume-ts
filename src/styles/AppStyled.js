@@ -17,7 +17,6 @@ export const Wrapper = styled.div`
 `
 
 export const MainViewStyled = styled.div`
-    // min-height: 200px;
     height: 100%;
     width: 100%;
     padding: 0;
