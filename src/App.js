@@ -11,7 +11,7 @@ import Skills from './components/Skills';
 import Icons from './components/Icons';
 import Footer from './components/Footer';
 import ProjectDetails from './components/ProjectDetails';
-import OnSubmitModal from './components/OnSubmitModal';
+// import OnSubmitModal from './components/OnSubmitModal';
 
 import reactIcon from './images/icon/react.svg';
 import postgresqlIcon from './images/icon/postgresql-icon.png'
@@ -109,7 +109,7 @@ function App() {
             <Contact darkTheme={darkTheme} showModal={showModal} toggleShowModal={toggleShowModal} />
 
             <Footer />
-            <OnSubmitModal showModal={showModal} toggleShowModal={value => toggleShowModal(value)} />
+            {/* <OnSubmitModal showModal={showModal} toggleShowModal={value => toggleShowModal(value)} /> */}
           </>
             :
             <>
