@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+interface IProps {
+    showModal: boolean,
+    toggleShowModal: (value: boolean) => void
+}
 
-const MODAL_STYLES = {
+const MODAL_STYLES: React.CSSProperties = {
     position: 'fixed',
     width: '30%',
     height: '30%',
-    position: 'fixed',
     top: '60%',
     left: 'calc(220px + 40%)',
     transform: 'translate(-50%, -50%)',
@@ -20,7 +23,7 @@ const MODAL_STYLES = {
     // border: '1px solid black'
 }
 
-const OVERLAY_STYLE = {
+const OVERLAY_STYLE: React.CSSProperties = {
     position: 'fixed',
     top: '35%',
     left: 'calc(220px + 20%)',
@@ -31,7 +34,7 @@ const OVERLAY_STYLE = {
 
 }
 
-const OnSubmitModal = ({ showModal, toggleShowModal }) => {
+const OnSubmitModal = ({ showModal, toggleShowModal }: IProps) => {
 
     if (!showModal) return null;
 
@@ -42,7 +45,7 @@ const OnSubmitModal = ({ showModal, toggleShowModal }) => {
                 <button onClick={() => toggleShowModal(false)}>Close</button>
             </div>
         </div>
-        , document.getElementById('modal')
+        , document.getElementById('modal')!
     )
 }
 

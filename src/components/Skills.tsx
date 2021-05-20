@@ -1,5 +1,6 @@
 import React from 'react'
-import { Wrapper, SkillBox, SkillBoxSection } from '../styles/SkillsStyled.js';
+//@ts-ignore
+import { Wrapper, SkillBox, SkillBoxSection } from '../styles/SkillsStyled.ts';
 
 function Skills() {
     return (
@@ -17,7 +18,7 @@ function Skills() {
                         <li>SQL</li>
                     </ul>
                 </SkillBox>
-      
+
                 <SkillBox className="box2">
                     <h2>Framework</h2>
                     <ul>

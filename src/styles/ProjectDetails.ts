@@ -99,7 +99,7 @@ export const ButtonSectionStyled = styled.div`
     margin-top: 5%;
 `
 
-export const ButtonStyled = styled.button`
+export const ButtonStyled = styled.button < { darkTheme: boolean } > `
     font-size: 1.4rem;
     width: auto;
     background-color:  ${props => props.darkTheme ? '#04569e' : navBgLight};
@@ -113,7 +113,7 @@ export const ButtonStyled = styled.button`
     }
 `
 
-export const LinksSectionStyled = styled.div`
+export const LinksSectionStyled = styled.div < { darkTheme: boolean } > `
     font-size: 1.6rem;
     width: 100%;
     display: flex;

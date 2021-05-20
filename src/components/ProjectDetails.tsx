@@ -11,11 +11,17 @@ import {
     ButtonStyled,
     ButtonSectionStyled,
     LinksSectionStyled
-} from '../styles/ProjectDetails';
+    //@ts-ignore
+} from '../styles/ProjectDetails.ts';
 import projectsData from '../files/projectsData';
 
+interface IProps {
+    id: number,
+    handleClickNav: () => void,
+    darkTheme: boolean
+}
 
-function ProjectDetails({ id, handleClickNav, darkTheme }) {
+function ProjectDetails({ id, handleClickNav, darkTheme }: IProps) {
 
     const {
         title,
@@ -38,7 +44,7 @@ function ProjectDetails({ id, handleClickNav, darkTheme }) {
         })
     }
 
-    const handleClickImage = (position) => {
+    const handleClickImage = (position: number) => {
         let newArray = [...images];
         let oldMainImage = newArray[0];
         newArray[0] = newArray[position];

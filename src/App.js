@@ -5,12 +5,12 @@ import { Wrapper, MainViewStyled } from './styles/AppStyled.js';
 
 import About from './components/About.tsx';
 import Contact from './components/Contact.tsx';
-import Navigation from './components/Navigation';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Icons from './components/Icons';
-import Footer from './components/Footer';
-import ProjectDetails from './components/ProjectDetails';
+import Navigation from './components/Navigation.tsx';
+import Projects from './components/Projects.tsx';
+import Skills from './components/Skills.tsx';
+import Icons from './components/Icons.tsx';
+import Footer from './components/Footer.tsx';
+import ProjectDetails from './components/ProjectDetails.tsx';
 // import OnSubmitModal from './components/OnSubmitModal';
 
 import reactIcon from './images/icon/react.svg';

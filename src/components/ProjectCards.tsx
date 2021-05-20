@@ -1,14 +1,27 @@
 import React from 'react';
+
 import {
     ProjectBox,
     Img,
     TopSection,
     MidSection,
     SkillsList
-} from '../styles/ProjectsStyled';
-function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme, skills }) {
+    //@ts-ignore 
+} from '../styles/ProjectsStyled.ts';
 
-    const limitCharacter = (str) => {
+interface IProps {
+    id: string,
+    title: string,
+    screenshots: string,
+    description: string,
+    handleClickDetails: (id: string) => void,
+    darkTheme: boolean,
+    skills: string[]
+}
+
+function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme, skills }: IProps) {
+
+    const limitCharacter = (str: string) => {
 
         if (str.length > 100) return str.substring(0, 100) + '...'
         return str

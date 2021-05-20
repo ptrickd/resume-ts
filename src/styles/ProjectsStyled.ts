@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { navBgDark, navBgLight } from '../constants/Colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div< { darkTheme: boolean } >`
     margin: 0;
     padding: 0;
     padding-bottom: 20px;
@@ -40,7 +40,7 @@ width: 100%;
 
 `
 
-export const ProjectBox = styled.div`
+export const ProjectBox = styled.div < { darkTheme: boolean } >`
     height: 480px;
     overflow: hidden;
     max-width: 300px;
@@ -97,7 +97,7 @@ export const MidSection = styled.div`
         margin: auto 5px;
     }
 `
-export const Button = styled.button`
+export const Button = styled.button< { darkTheme: boolean } >`
      width: auto;
      background-color:  ${props => props.darkTheme ? navBgDark : navBgLight};;
      color: white;

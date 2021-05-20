@@ -1,10 +1,17 @@
 import React from 'react'
 
 import projectsData from '../files/projectsData';
-import ProjectCards from './ProjectCards';
-import { Wrapper, CardsSection } from '../styles/ProjectsStyled.js';
+//@ts-ignore
+import ProjectCards from './ProjectCards.tsx';
+//@ts-ignore
+import { Wrapper, CardsSection } from '../styles/ProjectsStyled.ts';
 
-function Projects({ handleClickDetails, darkTheme }) {
+interface IProps {
+    handleClickDetails: (value: number) => void,
+    darkTheme: boolean
+}
+
+function Projects({ handleClickDetails, darkTheme }: IProps) {
 
     const displayProjects = () => {
         return projectsData.map((project, index) => {
@@ -17,7 +24,7 @@ function Projects({ handleClickDetails, darkTheme }) {
                     screenshots={project.screenshots}
                     description={project.description}
                     skills={project.skills}
-                    handleClickDetails={id => handleClickDetails(id)}
+                    handleClickDetails={handleClickDetails}
                     darkTheme={darkTheme}
                 />
             )

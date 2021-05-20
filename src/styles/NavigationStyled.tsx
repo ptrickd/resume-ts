@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { navBgDark, navBgLight, fontColorDark, fontColorLight, backgroundDark } from '../constants/Colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div< { darkTheme: boolean } >`
   height: 100vh;
   background-color: ${props => props.darkTheme ? navBgDark : navBgLight};
   text-align: center;

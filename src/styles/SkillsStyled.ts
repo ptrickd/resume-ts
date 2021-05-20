@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import backgroundImg from '../images/background/mike-yukhtenko-hvbIl1XfMlM-unsplash.jpg';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div< { backgroundImg: string } >`
     width: 90%;
     display: flex;
     flex-direction: column;

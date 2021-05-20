@@ -3,7 +3,11 @@ import React from 'react';
 import { Wrapper, IconStyled } from '../styles/Icons';
 import { TooltipText, TooltipBox, TooltipCard } from '../styles/TooltipStyled';
 
-function Icons({ iconsArr }) {
+interface IProps {
+    iconsArr: { text: string, icon: string }[]
+}
+
+function Icons({ iconsArr }: IProps) {
 
     const WrappedInTooltips = () => {
         return iconsArr.map(iconObj => {
