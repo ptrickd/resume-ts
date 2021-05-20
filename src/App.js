@@ -3,8 +3,8 @@ import { useMediaQuery } from 'react-responsive';
 
 import { Wrapper, MainViewStyled } from './styles/AppStyled.js';
 
-import About from './components/About';
-import Contact from './components/Contact';
+import About from './components/About.tsx';
+import Contact from './components/Contact.tsx';
 import Navigation from './components/Navigation';
 import Projects from './components/Projects';
 import Skills from './components/Skills';

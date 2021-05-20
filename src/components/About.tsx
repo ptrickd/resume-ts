@@ -1,8 +1,14 @@
 import React from 'react'
-import resumePdf from '../files/myresume.pdf';
-import { Wrapper } from '../styles/AboutStyled';
 
-function About({ darkTheme }) {
+import resumePdf from '../files/myresume.pdf';
+//@ts-ignore 
+import { Wrapper } from '../styles/AboutStyled.tsx';
+
+type Props = {
+    darkTheme: boolean
+}
+
+function About({ darkTheme }: Props) {
     return (
         <Wrapper
             darkTheme={darkTheme}

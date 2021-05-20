@@ -1,10 +1,24 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
-import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.js';
+//@ts-ignore 
+import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.tsx';
 
-const validate = values => {
-    const errors = {};
+type Props = {
+    darkTheme: boolean,
+    toggleShowModal: (value: boolean) => void
+}
+
+type Values = {
+    name: string,
+    email: string,
+    commentBox: string
+}
+
+const validate = (values: Values) => {
+    const errors: Values = {
+        name: '', email: '', commentBox: ''
+    };
     if (!values.name) {
         errors.name = 'Required'
     }
@@ -27,14 +41,14 @@ const validate = values => {
 };
 
 
-function Contact({ darkTheme, toggleShowModal }) {
+function Contact({ darkTheme, toggleShowModal }: Props) {
 
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || '';
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '';
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID || '';
 
 
-    const emailTemplate = (values) => {
+    const emailTemplate = (values: Values) => {
         return {
             email: values.email,
             name: values.name,
@@ -55,7 +69,7 @@ function Contact({ darkTheme, toggleShowModal }) {
             emailjs.send(serviceId, templateId, templateParams, userId)
                 .then((result) => {
                     console.log(result.text);
-                    resetForm({ values: '' });
+                    resetForm({ values: { name: '', email: '', commentBox: '' } });
                     toggleShowModal(true);
                 }, (error) => {
                     console.log(error.text);

@@ -6,7 +6,7 @@ import aboutImg3 from '../images/background/caleb-moreno.jpg'
 
 import { colorAboutDark, colorAboutLight } from '../constants/Colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div < { darkTheme: boolean } > `
     
     width: 100%;
     margin: 0 0;

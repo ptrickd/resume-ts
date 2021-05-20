@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { fontColorDark, contactFormBgDark, contactFormBgLight, btnPrimary } from '../constants/Colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div< { darkTheme: boolean } >`
 
     width: 100%;
     margin: 0;
@@ -55,7 +55,7 @@ export const Wrapper = styled.div`
 
 `
 
-export const Input = styled.input`
+export const Input = styled.input< { darkTheme: boolean } >`
     width: 100%;
     background-color: ${props => props.darkTheme ? contactFormBgDark : contactFormBgLight};
     color: ${props => props.darkTheme ? fontColorDark : 'rgba(0,0,0,0.75)'};
@@ -64,7 +64,7 @@ export const Input = styled.input`
     // border-radius: 5%;
     // box-shadow:
 `
-export const TextArea = styled.textarea`
+export const TextArea = styled.textarea< { darkTheme: boolean } >`
     background-color: ${props => props.darkTheme ? contactFormBgDark : contactFormBgLight};
     color: ${props => props.darkTheme ? fontColorDark : 'rgba(0,0,0,0.75)'};
     border-color:${props => props.darkTheme ? '' : 'black'};
