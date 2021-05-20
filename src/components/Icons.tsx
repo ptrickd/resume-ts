@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Wrapper, IconStyled } from '../styles/Icons';
+//@ts-ignore
+import { Wrapper, IconStyled } from '../styles/Icons.ts';
 import { TooltipText, TooltipBox, TooltipCard } from '../styles/TooltipStyled';
 
 interface IProps {

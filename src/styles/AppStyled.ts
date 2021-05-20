@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { backgroundDark, backgroundLight, fontColorDark, fontColorLight } from '../constants/Colors';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ darkTheme: boolean, sideBar: boolean }>`
     max-width: 100%;
     height: 100%;
     width: 100%;

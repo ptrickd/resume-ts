@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wrapper } from '../styles/Footer';
+//@ts-ignore
+import { Wrapper } from '../styles/Footer.ts';
 
 function Footer() {
 

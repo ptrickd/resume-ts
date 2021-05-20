@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { Wrapper, MainViewStyled } from './styles/AppStyled.js';
+//@ts-ignore
+import { Wrapper, MainViewStyled } from './styles/AppStyled.ts';
 
+//@ts-ignore
 import About from './components/About.tsx';
+//@ts-ignore
 import Contact from './components/Contact.tsx';
+//@ts-ignore
 import Navigation from './components/Navigation.tsx';
+//@ts-ignore
 import Projects from './components/Projects.tsx';
+//@ts-ignore
 import Skills from './components/Skills.tsx';
+//@ts-ignore
 import Icons from './components/Icons.tsx';
+//@ts-ignore
 import Footer from './components/Footer.tsx';
+//@ts-ignore
 import ProjectDetails from './components/ProjectDetails.tsx';
 // import OnSubmitModal from './components/OnSubmitModal';
 
@@ -42,11 +51,11 @@ const Icon2 = [
 ]
 function App() {
 
-  const [showDetails, setShowDetails] = useState(false);
-  const [detailsId, setDetailsId] = useState(null);
+  const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [detailsId, setDetailsId] = useState<number | null>(null);
   const [showSideBar, setShowSideBar] = useState(true);
-  const [darkTheme, setDarkTheme] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   // col-sm-8 col-md-9 col-lg-10 col-7
   const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
@@ -55,34 +64,36 @@ function App() {
 
   }, [isSmallScreen])
 
-  const toggleShowModal = (value) => {
+  const toggleShowModal = (value: boolean) => {
     console.log('toogle value: ', value)
     setShowModal(value)
   }
 
 
-  const handleClickDetails = (id) => {
+  const handleClickDetails = (id: number) => {
     setShowDetails(true);
     setDetailsId(id);
   }
 
-  const handleClickNav = (data) => {
+  const handleClickNav = () => {
     setShowDetails(false);
   }
 
   return (
-    <Wrapper className="" darkTheme={darkTheme} sideBar={!isSmallScreen}>
-      {/* <div > */}
-      {showSideBar &&
+    <Wrapper darkTheme={darkTheme} sideBar={!isSmallScreen}>
+
+      {
+        showSideBar &&
         <div
           id=""
           className=""
         >
           <Navigation
-            handleClickNav={data => handleClickNav(data)}
+            handleClickNav={handleClickNav}
             isDetailPage={showDetails}
             isDarkTheme={darkTheme}
-            toggleTheme={() => setDarkTheme(!darkTheme)}
+            toggleTheme={() => setDarkTheme(!darkTheme)
+            }
           />
         </div>
       }
@@ -94,18 +105,18 @@ function App() {
           !showDetails ? <>
             <About darkTheme={darkTheme} />
 
-            <Icons
+            < Icons
               iconsArr={Icon1}
             />
             <Projects
-              handleClickDetails={id => handleClickDetails(id)}
+              handleClickDetails={handleClickDetails}
               darkTheme={darkTheme}
             />
             <Icons
               iconsArr={Icon2}
             />
 
-            <Skills />
+            < Skills />
             <Contact darkTheme={darkTheme} showModal={showModal} toggleShowModal={toggleShowModal} />
 
             <Footer />
@@ -128,8 +139,10 @@ function App() {
       {/* </div> */}
 
       {/* </div> */}
-    </Wrapper >
+    </Wrapper>
   );
 }
 
 export default App;
+
+
