@@ -34,6 +34,8 @@ import cssIcon from './images/icon/css-icon-bw.png';
 import jsIcon from './images/icon/javascript-icon-bw.png';
 import nodeJsIcon from './images/icon/nodejs-icon-bw.ico';
 
+import { Container } from '@material-ui/core'
+
 const Icon1 = [
   { text: 'ReactJs', icon: reactIcon },
   { text: 'Postgres', icon: postgresqlIcon },
@@ -100,40 +102,44 @@ function App() {
 
       {/* <div className=""> */}
       <MainViewStyled id="main" >
-        {/* If true will show the detail page corresponding with id */}
-        {
-          !showDetails ? <>
-            <About darkTheme={darkTheme} />
+        <Container>
+          {/* If true will show the detail page corresponding with id */}
+          {
+            !showDetails ? <>
+              <About darkTheme={darkTheme} />
 
-            < Icons
-              iconsArr={Icon1}
-            />
-            <Projects
-              handleClickDetails={handleClickDetails}
-              darkTheme={darkTheme}
-            />
-            <Icons
-              iconsArr={Icon2}
-            />
-
-            < Skills />
-            <Contact darkTheme={darkTheme} showModal={showModal} toggleShowModal={toggleShowModal} />
-
-            <Footer />
-            {/* <OnSubmitModal showModal={showModal} toggleShowModal={value => toggleShowModal(value)} /> */}
-          </>
-            :
-            <>
-              <ProjectDetails
-                id={detailsId}
-                handleClickNav={handleClickNav}
+              < Icons
+                iconsArr={Icon1}
+              />
+              <Projects
+                handleClickDetails={handleClickDetails}
                 darkTheme={darkTheme}
               />
+              <Icons
+                iconsArr={Icon2}
+              />
+
+              < Skills />
+              <Contact darkTheme={darkTheme} showModal={showModal} toggleShowModal={toggleShowModal} />
 
               <Footer />
+              {/* <OnSubmitModal showModal={showModal} toggleShowModal={value => toggleShowModal(value)} /> */}
             </>
+              :
+              <>
+                <ProjectDetails
+                  id={detailsId}
+                  handleClickNav={handleClickNav}
+                  darkTheme={darkTheme}
+                />
 
-        }
+                <Footer />
+              </>
+
+          }
+
+        </Container>
+
 
       </MainViewStyled>
       {/* </div> */}

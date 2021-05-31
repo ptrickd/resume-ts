@@ -1,8 +1,8 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment } from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
 import { makeStyles } from '@material-ui/core/styles'
-import { Button, FormControl, Typography, TextField } from '@material-ui/core'
+import { Button, FormControl, Typography, TextField, Container } from '@material-ui/core'
 import SendIcon from '@material-ui/icons/Send';
 //@ts-ignore 
 
@@ -96,7 +96,7 @@ function Contact({ darkTheme, toggleShowModal }: Props) {
     })
 
     return (
-        <Fragment>
+        <Container>
             <Typography className={classes.title} variant="h6">Leave a comment:</Typography>
             <form onSubmit={formik.handleSubmit}>
                 <FormControl id="commentForm" fullWidth className={classes.root}>
@@ -175,7 +175,7 @@ function Contact({ darkTheme, toggleShowModal }: Props) {
                     </div>
                 </FormControl>
             </form>
-        </Fragment>
+        </Container>
 
 
 
