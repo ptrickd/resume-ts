@@ -95,7 +95,7 @@ function Navigation({ handleClickNav, isDarkTheme, toggleTheme }: IProps) {
                         </li>
                     </ul>
                 </div>
-                <div id="toggle-switch">
+                {/* <div id="toggle-switch">
                     <label className='toggle-label'>{isDarkTheme ? "Light Theme" : "Dark Theme"}</label>
                     <Switch >
 
@@ -106,7 +106,7 @@ function Navigation({ handleClickNav, isDarkTheme, toggleTheme }: IProps) {
                         />
                         <span className="slider round"></span>
                     </Switch>
-                </div>
+                </div> */}
             </Wrapper>
         </>
     )

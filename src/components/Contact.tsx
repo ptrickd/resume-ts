@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
+import { Button } from '@material-ui/core'
 //@ts-ignore 
 import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.tsx';
 
@@ -122,8 +123,13 @@ function Contact({ darkTheme, toggleShowModal }: Props) {
                 {/* <!-- </div>
                             <div className="d-flex button-form"> --> */}
                 <div className="btn-send-section">
-                    <button id="btn-send" className="" type="submit"
-                    >Send&nbsp;</button>
+                    <Button
+                        variant='contained'
+                        color='primary'
+                        id="btn-send"
+                        type="submit"
+                        size='small'
+                    >Send&nbsp;</Button>
 
                 </div>
             </form>

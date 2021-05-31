@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-
+import '@fontsource/roboto'
 //@ts-ignore
 import { Wrapper, MainViewStyled } from './styles/AppStyled.ts';
 

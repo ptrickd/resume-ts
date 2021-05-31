@@ -1,13 +1,17 @@
-import React from 'react';
-
+import React, { Fragment } from 'react';
+import { makeStyles } from '@material-ui/core/styles'
 import {
-    ProjectBox,
-    Img,
-    TopSection,
-    MidSection,
-    SkillsList
-    //@ts-ignore 
-} from '../styles/ProjectsStyled.ts';
+    Card,
+    CardContent,
+    CardMedia,
+    CardHeader,
+    List,
+    ListItem,
+    CardActionArea,
+    Divider,
+    Typography
+} from '@material-ui/core'
+
 
 interface IProps {
     id: string,
@@ -19,7 +23,24 @@ interface IProps {
     skills: string[]
 }
 
+const useStyles = makeStyles({
+    root: {
+        maxWidth: 280,
+        margin: 5,
+        backgroundColor: '#ccc3c3'
+    },
+    media: {
+        height: 140,
+        borderBottom: '1px solid black'
+    },
+    header: {
+        alignItems: 'center',
+        fontSize: '2rem'
+    }
+})
+
 function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme, skills }: IProps) {
+    const classes = useStyles()
 
     const limitCharacter = (str: string) => {
 
@@ -29,32 +50,39 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
     }
 
     return (
-        <ProjectBox
-            darkTheme={darkTheme}
-            onClick={() => handleClickDetails(id)}
-            className=" project-box"
-        >
-            <TopSection className="top-section">
-                <span><h2>{title}</h2></span>
-                <span><Img src={screenshots[0]}
-                    className="project-img"
-                    alt='screenshot'
-                /></span>
-            </TopSection>
 
-            <MidSection className="">
-                <p>{limitCharacter(description)}</p>
-            </MidSection>
-            <SkillsList>
-                <li>{skills[0]}</li>
-                <li>{skills[1]}</li>
-                <li>{skills[2]}</li>
-            </SkillsList>
+        <Fragment>
+            <Card className={classes.root} >
+
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={screenshots[0]}
+                        title='screenshot'
+                    />
+                    <CardHeader title={title} className={classes.header} />
+                </CardActionArea>
+                <Divider />
+                <CardContent>
+                    <Typography variant='subtitle1' component='h6'>{limitCharacter(description)}</Typography>
+
+                    <List >
+                        <ListItem dense> <Typography variant='subtitle1'>{skills[0]}</Typography></ListItem>
+                        <ListItem dense> <Typography variant='subtitle1'>{skills[1]}</Typography></ListItem>
+                        <ListItem dense> <Typography variant='subtitle1'>{skills[2]}</Typography></ListItem>
+                    </List>
+
+                </CardContent>
+
+            </Card>
+
+        </Fragment>
 
 
 
 
-        </ProjectBox>
+
+        // </ProjectBox>
     )
 }
 
