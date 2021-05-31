@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { useFormik } from 'formik';
 import emailjs from 'emailjs-com';
-import { Button } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import { Button, FormControl, Typography, TextField } from '@material-ui/core'
+import SendIcon from '@material-ui/icons/Send';
 //@ts-ignore 
-import { Input, TextArea, Label, Wrapper } from '../styles/ContactStyled.tsx';
+
 
 type Props = {
     darkTheme: boolean,
@@ -15,6 +17,20 @@ type Values = {
     email: string,
     commentBox: string
 }
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        '& .MuiTextField-root': {
+            margin: theme.spacing(2),
+        }
+    },
+    title: {
+        margin: theme.spacing(2)
+    },
+    button: {
+        margin: theme.spacing(2)
+    }
+}))
 
 const validate = (values: Values) => {
     const errors: Values = {
@@ -43,11 +59,10 @@ const validate = (values: Values) => {
 
 
 function Contact({ darkTheme, toggleShowModal }: Props) {
-
+    const classes = useStyles()
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || '';
     const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '';
     const userId = process.env.REACT_APP_EMAILJS_USER_ID || '';
-
 
     const emailTemplate = (values: Values) => {
         return {
@@ -81,59 +96,89 @@ function Contact({ darkTheme, toggleShowModal }: Props) {
     })
 
     return (
+        <Fragment>
+            <Typography className={classes.title} variant="h6">Leave a comment:</Typography>
+            <form onSubmit={formik.handleSubmit}>
+                <FormControl id="commentForm" fullWidth className={classes.root}>
 
-        <Wrapper darkTheme={darkTheme} id="comment" className="container">
-
-            <form id="commentForm" onSubmit={formik.handleSubmit}>
-
-                <div className="form-control">
-                    <Label id="labelName" htmlFor="name">Name:</Label>
-                    {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null}
-                    <Input id="name" name="name" type="text" className="form"
-                        placeholder="Name" autoComplete="off"
-                        onBlur={formik.handleBlur}
+                    {/* <div className="form-control"> */}
+                    {/* <InputLabel id="labelName" htmlFor="name">Name:</InputLabel> */}
+                    {/* {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null} */}
+                    {/* <Input id="name" name="name" type="text" className="form"
+                        autoComplete="off"
+                        // onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         value={formik.values.name}
-                        darkTheme={darkTheme}
+                        fullWidth
+                    /> */}
+                    <TextField
+                        id='name'
+                        label='Name'
+                        variant="filled"
+                        color="primary"
+                        onChange={formik.handleChange}
+                        value={formik.values.name}
                     />
-                </div>
-                <div className="form-control">
-                    <Label id="labelEmail" htmlFor="email">Email:</Label>
-                    {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null}
-                    <Input
-                        id="email" name="email" type="email" className="form"
-                        placeholder="my_name@email.com" autoComplete="off"
-                        onBlur={formik.handleBlur}
+                    {/* </div> */}
+                    {/* <div className="form-control"> */}
+                    {/* <InputLabel id="labelEmail" htmlFor="email">Email:</InputLabel> */}
+                    {/* {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null} */}
+                    {/* <Input
+                            id="email" name="email" type="email" className="form"
+                            autoComplete="off"
+                            // onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
+                            fullWidth
+                        /> */}
+                    <TextField
+                        id='email'
+                        label='Email'
+                        variant="filled"
+                        color="primary"
                         onChange={formik.handleChange}
                         value={formik.values.email}
-                        darkTheme={darkTheme}
                     />
-                </div>
-                <div className="form-control">
-                    <Label id="labelCommentBox" htmlFor="commentBox">Leave a comment:</Label>
-                    {formik.touched.commentBox && formik.errors.commentBox ? <span>{formik.errors.commentBox}</span> : null}
-                    <TextArea id="commentBox" name="commentBox" rows="4"
-                        className="form" placeholder="Write a comment"
-                        onBlur={formik.handleBlur}
+                    {/* </div> */}
+                    {/* <div className="form-control"> */}
+                    {/* <InputLabel id="labelCommentBox" htmlFor="commentBox">Leave a comment:</InputLabel> */}
+                    {/* {formik.touched.commentBox && formik.errors.commentBox ? <span>{formik.errors.commentBox}</span> : null} */}
+                    {/* <Input id="commentBox" name="commentBox" rows="4"
+                            className="form"
+                            // onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                            value={formik.values.commentBox}
+                            fullWidth
+                        /> */}
+                    {/* </div> */}
+                    <TextField
+                        id='comments'
+                        label='Comments'
+                        variant="filled"
+                        color="primary"
+                        multiline
+                        rows={4}
                         onChange={formik.handleChange}
                         value={formik.values.commentBox}
-                        darkTheme={darkTheme}
-                    ></TextArea>
-                </div>
-                {/* <!-- </div>
-                            <div className="d-flex button-form"> --> */}
-                <div className="btn-send-section">
-                    <Button
-                        variant='contained'
-                        color='primary'
-                        id="btn-send"
-                        type="submit"
-                        size='small'
-                    >Send&nbsp;</Button>
+                    />
+                    <div className="btn-send-section">
+                        <Button
+                            className={classes.button}
+                            variant="contained"
+                            color="primary"
+                            id="btn-send"
+                            type="submit"
+                            size="medium"
+                            endIcon={<SendIcon />}
+                        >Send&nbsp;</Button>
 
-                </div>
+                    </div>
+                </FormControl>
             </form>
-        </Wrapper>
+        </Fragment>
+
+
+
 
     )
 }
