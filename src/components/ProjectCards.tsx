@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 280,
         margin: 10,
-        backgroundColor: '#ccc3c3'
+        backgroundColor: '#d6cbcb'
     },
     media: {
         height: 140,
@@ -35,7 +35,8 @@ const useStyles = makeStyles({
     },
     header: {
         alignItems: 'center',
-        fontSize: '2rem'
+        fontSize: '2rem',
+        backgroundColor: '#bcafaf'
     }
 })
 
@@ -64,7 +65,7 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
                     <CardHeader title={title} className={classes.header} />
                 </CardActionArea>
                 <Divider />
-                <CardContent>
+                <CardContent >
                     <Typography variant='subtitle1' component='h6'>{limitCharacter(description)}</Typography>
 
                     <List >

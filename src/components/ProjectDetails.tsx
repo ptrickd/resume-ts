@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory, useParams } from 'react-router-dom'
 
 import projectsData from '../files/projectsData';
@@ -31,14 +31,30 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         [theme.breakpoints.up('sm')]: {
             width: `calc(100% - ${drawerWidth}px)`,
             marginLeft: drawerWidth
-        }
+        },
+        padding: theme.spacing(3)
+    },
+    title: {
+        marginTop: 20
+    },
+    description: {
+        minHeight: 50,
+        marginTop: 20
     },
     links: {
         width: '100%',
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'space-around'
     },
     button: {
         flexGrow: 0
+    },
+    listItemIcon: {
+        display: 'flex',
+        justifyContent: 'flex-end'
+    },
+    image: {
+        border: '1px solid black'
     }
 }))
 
@@ -50,6 +66,7 @@ function ProjectDetails() {
     const {
         title,
         screenshots,
+        sceenshotsNum,
         description,
         skills,
         repo,
@@ -58,14 +75,13 @@ function ProjectDetails() {
         haveWebsite
     } = projectsData[Number(id)];
 
-    // const [images, setImages] = useState(screenshots);
 
     const displayList = () => {
         return skills.map((skill, index) => {
             return (
                 <Grid item xs={6} md={4} lg={3}>
                     <ListItem dense key={index}>
-                        <ListItemIcon><ArrowRightIcon /></ListItemIcon>
+                        <ListItemIcon className={classes.listItemIcon}><ArrowRightIcon /></ListItemIcon>
                         <ListItemText primary={skill} />
                     </ListItem>
                 </Grid>
@@ -79,35 +95,37 @@ function ProjectDetails() {
     return (
 
         <Container className={classes.main} >
-            <Typography align="center" variant="h3">{title}</Typography>
-            <GridList>
-                <GridListTile>
+            <Typography align="center" variant="h4" gutterBottom>{title}</Typography>
+            <GridList spacing={2} cols={sceenshotsNum < 2 ? 1 : 2} >
+                <GridListTile className={classes.image}>
                     <img src={screenshots[0]} alt="screenshot" />
                 </GridListTile>
 
-
-                {screenshots[1] && <GridListTile>
+                {screenshots[1] && <GridListTile className={classes.image}>
                     <img src={screenshots[1]} alt="screenshot" />
                 </GridListTile>
                 }
 
-
-
-
-                {screenshots[1] && <GridListTile>
+                {screenshots[1] && <GridListTile className={classes.image}>
                     <img src={screenshots[2]} alt="screenshot" />
                 </GridListTile>
                 }
 
-
-
             </GridList>
-            <Typography variant="body1" gutterBottom>
+            <Divider />
+            <Typography
+                variant="body1"
+                paragraph
+                align="justify"
+                className={classes.description}
+            >
                 {description}
             </Typography>
             <Divider />
             <div>
-                <Typography variant="h6" align="center">Some of the technology used!</Typography>
+                <Typography variant="h6" align="center"
+                    className={classes.title}
+                >Some of the technology used!</Typography>
                 <List>
                     <Grid container >
 

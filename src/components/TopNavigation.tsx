@@ -8,7 +8,6 @@ import {
     Hidden,
     Drawer,
     Divider,
-    Paper,
     List,
     ListItem,
     ListItemText,

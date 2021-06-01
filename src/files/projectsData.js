@@ -8,10 +8,10 @@ const projectsData = [
             '/images/screenshot/resume4.jpg',
         ],
         shortDescription: 'Personal Project',
-        description: "It's a portfolio of projects. Originaly, it was made with HTML/CSS, Javascript and Jquery only. And I changed it to be a frontend react app.",
+        description: "It's a portfolio of projects. It changed overtime. Now it use ReactJS, Typescript and Material UI",
         skills: [
-            'Javascript', 'ReactJs', 'Styled-Components',
-            'HTML', 'CSS', 'Netlify'
+            'Typescript', 'ReactJs', 'Material UI',
+            'HTML', 'CSS', 'Netlify', 'Styled-Components'
         ],
         haveRepo: true,
         haveWebsite: true,
