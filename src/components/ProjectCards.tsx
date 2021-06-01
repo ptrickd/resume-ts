@@ -26,7 +26,7 @@ interface IProps {
 const useStyles = makeStyles({
     root: {
         maxWidth: 280,
-        margin: 5,
+        margin: 10,
         backgroundColor: '#ccc3c3'
     },
     media: {

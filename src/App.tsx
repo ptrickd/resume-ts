@@ -11,6 +11,8 @@ import Contact from './components/Contact.tsx';
 //@ts-ignore
 import Navigation from './components/Navigation.tsx';
 //@ts-ignore
+import TopNavigation from './components/TopNavigation.tsx';
+//@ts-ignore
 import Projects from './components/Projects.tsx';
 //@ts-ignore
 import Skills from './components/Skills.tsx';
@@ -62,8 +64,8 @@ function App() {
   // col-sm-8 col-md-9 col-lg-10 col-7
   const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
   useEffect(() => {
-    isSmallScreen ? setShowSideBar(false) : setShowSideBar(true)
-
+    // isSmallScreen ? setShowSideBar(false) : setShowSideBar(true)
+    isSmallScreen ? setShowSideBar(false) : setShowSideBar(false)
   }, [isSmallScreen])
 
   const toggleShowModal = (value: boolean) => {
@@ -82,8 +84,8 @@ function App() {
   }
 
   return (
-    <Wrapper darkTheme={darkTheme} sideBar={!isSmallScreen}>
-
+    <Wrapper darkTheme={darkTheme} sideBar={false}>
+      <TopNavigation />
       {
         showSideBar &&
         <div
