@@ -8,18 +8,22 @@ import {
     Hidden,
     Drawer,
     Divider,
+    Paper,
     List,
     ListItem,
     ListItemText,
     ListItemIcon,
-    Typography
+    Typography,
+    Box
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import EmailIcon from '@material-ui/icons/Email'
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import purple from '@material-ui/core/colors/purple'
+import { DRAWER_WIDTH } from '../constants/Styling'
 // import classes from '*.module.css'
-const drawerWidth = 240
+const drawerWidth = DRAWER_WIDTH
 const useStyles = makeStyles((theme: Theme) => createStyles({
     root: {
         display: 'flex'
@@ -54,6 +58,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     icon: {
         minWidth: 30,
         margin: 0
+    },
+    paper: {
+        backgroundColor: purple[500]
     }
 }))
 
@@ -73,40 +80,44 @@ const TopNavigation = () => {
 
     const drawer = (
         <div >
-            <div className={classes.toolbar} />
+            <Box className={classes.toolbar} bgcolor="primary.main" />
             <Divider />
-            <List>
-                {[
-                    { icon: <GitHubIcon />, link: 'https://github.com/ptrickd', text: "Github" },
-                    { icon: <EmailIcon />, link: 'mailto:patrickdion8@gmail.com', text: "Email" },
-                    { icon: <LinkedInIcon />, link: 'https://www.linkedin.com/in/patrick-dion-335a50207/', text: "Linked In" }
-                ].map((obj, index) => (
-                    <ListItem button key={index} component="a" href={`${obj.link}`}>
-                        <ListItemIcon >
-                            {obj.icon}
-                        </ListItemIcon>
-                        <ListItemText primary={`${obj.text}`} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {[
-                    { text: 'About Me', link: 'about-me' },
-                    { text: 'Projects', link: 'projects' },
-                    { text: 'Technologies', link: 'skills' },
-                    { text: 'Comments', link: 'comments' }].map((obj, index) => (
-                        <ListItem button key={index} component="a" href={`#${obj.link}`} >
-                            <ListItemText primary={obj.text} />
+            <Box >
+                <List>
+                    {[
+                        { icon: <GitHubIcon />, link: 'https://github.com/ptrickd', text: "Github" },
+                        { icon: <EmailIcon />, link: 'mailto:patrickdion8@gmail.com', text: "Email" },
+                        { icon: <LinkedInIcon />, link: 'https://www.linkedin.com/in/patrick-dion-335a50207/', text: "Linked In" }
+                    ].map((obj, index) => (
+                        <ListItem button key={index} component="a" href={`${obj.link}`}>
+                            <ListItemIcon >
+                                {obj.icon}
+                            </ListItemIcon>
+                            <ListItemText primary={`${obj.text}`} />
                         </ListItem>
                     ))}
-            </List>
+                </List>
+                <Divider />
+
+                <List>
+                    {[
+                        { text: 'About Me', link: 'about-me' },
+                        { text: 'Projects', link: 'projects' },
+                        { text: 'Technologies', link: 'skills' },
+                        { text: 'Comments', link: 'comments' }].map((obj, index) => (
+                            <ListItem button key={index} component="a" href={`#${obj.link}`} >
+                                <ListItemText primary={obj.text} />
+                            </ListItem>
+                        ))}
+                </List>
+            </Box >
 
         </div >
     )
 
     return (
         <div className={classes.root}>
+
             <CssBaseline />
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar >
@@ -146,6 +157,8 @@ const TopNavigation = () => {
                     </Drawer>
                 </Hidden>
             </nav>
+
+
 
         </div>
     )

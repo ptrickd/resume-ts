@@ -11,7 +11,7 @@ import {
     Divider,
     Typography
 } from '@material-ui/core'
-
+import { useHistory } from 'react-router-dom'
 
 interface IProps {
     id: string,
@@ -40,6 +40,7 @@ const useStyles = makeStyles({
 })
 
 function ProjectCards({ id, title, screenshots, description, handleClickDetails, darkTheme, skills }: IProps) {
+    const history = useHistory()
     const classes = useStyles()
 
     const limitCharacter = (str: string) => {
@@ -54,11 +55,11 @@ function ProjectCards({ id, title, screenshots, description, handleClickDetails,
         <Fragment>
             <Card className={classes.root} >
 
-                <CardActionArea>
+                <CardActionArea onClick={() => history.push(`/details/${id}`)}>
                     <CardMedia
                         className={classes.media}
                         image={screenshots[0]}
-                        title='screenshot'
+                        title='Click to see details'
                     />
                     <CardHeader title={title} className={classes.header} />
                 </CardActionArea>

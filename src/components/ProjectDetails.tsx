@@ -1,27 +1,51 @@
 import React, { useState } from 'react';
-import {
-    ContainerStyled,
-    TitleStyled,
-    ImgSectionStyled,
-    ImgStyled,
-    DescSectionStyled,
-    PStyled,
-    SkillsSectionStyled,
-    ListStyled,
-    ButtonStyled,
-    ButtonSectionStyled,
-    LinksSectionStyled
-    //@ts-ignore
-} from '../styles/ProjectDetails.ts';
-import projectsData from '../files/projectsData';
+import { useHistory, useParams } from 'react-router-dom'
 
-interface IProps {
-    id: number,
-    handleClickNav: () => void,
-    darkTheme: boolean
+import projectsData from '../files/projectsData';
+import { DRAWER_WIDTH } from '../constants/Styling'
+import {
+    Box,
+    Button,
+    Container,
+    Divider,
+    Grid,
+    GridList,
+    GridListTile,
+    Link,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    Typography,
+} from '@material-ui/core'
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+import ArrowRightIcon from '@material-ui/icons/ArrowRight'
+
+interface IParams {
+    id: string
 }
 
-function ProjectDetails({ id, handleClickNav, darkTheme }: IProps) {
+const drawerWidth = DRAWER_WIDTH
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    main: {
+        [theme.breakpoints.up('sm')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth
+        }
+    },
+    links: {
+        width: '100%',
+        display: 'flex'
+    },
+    button: {
+        flexGrow: 0
+    }
+}))
+
+function ProjectDetails() {
+    const classes = useStyles()
+    const history = useHistory()
+    const { id }: IParams = useParams()
 
     const {
         title,
@@ -32,83 +56,104 @@ function ProjectDetails({ id, handleClickNav, darkTheme }: IProps) {
         website,
         haveRepo,
         haveWebsite
-    } = projectsData[id];
+    } = projectsData[Number(id)];
 
-    const [images, setImages] = useState(screenshots);
+    // const [images, setImages] = useState(screenshots);
 
     const displayList = () => {
         return skills.map((skill, index) => {
             return (
-                <li key={index}>{skill}</li>
+                <Grid item xs={6} md={4} lg={3}>
+                    <ListItem dense key={index}>
+                        <ListItemIcon><ArrowRightIcon /></ListItemIcon>
+                        <ListItemText primary={skill} />
+                    </ListItem>
+                </Grid>
+
             )
         })
     }
 
-    const handleClickImage = (position: number) => {
-        let newArray = [...images];
-        let oldMainImage = newArray[0];
-        newArray[0] = newArray[position];
-        newArray[position] = oldMainImage;
-        setImages(newArray)
-    }
+
 
     return (
-        <>
-            <ContainerStyled >
-                <TitleStyled>{title}</TitleStyled>
-                <ImgSectionStyled>
-                    <ImgStyled
 
-                        src={images[0]}
-                        className='main'
-                    />
-                    <ImgStyled
-                        onClick={() => handleClickImage(1)}
-                        src={images[1]}
-                        className='side1'
-                    />
-                    <ImgStyled
-                        onClick={() => handleClickImage(2)}
-                        src={images[2]}
-                        className='side2'
-                    />
-                </ImgSectionStyled>
-                <DescSectionStyled>
-                    <PStyled>{description}</PStyled>
-                </DescSectionStyled>
-                <SkillsSectionStyled>
-                    <h4>Some of the technology used!</h4>
-                    <ListStyled>{displayList()}</ListStyled>
-                </SkillsSectionStyled>
-                <LinksSectionStyled
-                    darkTheme={darkTheme}
-                >
+        <Container className={classes.main} >
+            <Typography align="center" variant="h3">{title}</Typography>
+            <GridList>
+                <GridListTile>
+                    <img src={screenshots[0]} alt="screenshot" />
+                </GridListTile>
+
+
+                {screenshots[1] && <GridListTile>
+                    <img src={screenshots[1]} alt="screenshot" />
+                </GridListTile>
+                }
+
+
+
+
+                {screenshots[1] && <GridListTile>
+                    <img src={screenshots[2]} alt="screenshot" />
+                </GridListTile>
+                }
+
+
+
+            </GridList>
+            <Typography variant="body1" gutterBottom>
+                {description}
+            </Typography>
+            <Divider />
+            <div>
+                <Typography variant="h6" align="center">Some of the technology used!</Typography>
+                <List>
+                    <Grid container >
+
+                        {displayList()}
+
+                    </Grid>
+                </List>
+
+            </div>
+            <Box>
+                <List className={classes.links}>
 
                     {
-                        haveWebsite ? <span><a
-                            href={`${website}`}
-                        >Website</a></span>
+                        haveWebsite ? <ListItem alignItems="center">
+                            <Link
+                                href={`${website}`}
+                            >Website</Link>
+                        </ListItem>
                             : null//<span>Not yet available</span>
                     }
                     {
-                        haveRepo ? <span><a
-                            href={`${repo}`}
-                        >Github Repo</a></span>
+                        haveRepo ? <ListItem alignItems="center" >
+                            <Link
+                                href={`${repo}`}
+                            >Github Repo</Link>
+                        </ListItem>
                             : null//<span>Not yet available</span>
                     }
 
-                </LinksSectionStyled>
-                <ButtonSectionStyled>
-                    <ButtonStyled
-                        onClick={() => handleClickNav()}
-                        darkTheme={darkTheme}
+                </List>
+                <Box display="flex" justifyContent="center">
+                    <Button
+
+                        variant="contained"
+                        color="primary"
+                        onClick={() => history.push('/')}
+
                     >
                         Go Back
-                    </ButtonStyled>
-                </ButtonSectionStyled>
+                    </Button>
+                </Box>
 
-            </ContainerStyled>
-        </>
+            </Box>
+
+        </Container >
+
     )
 }
 

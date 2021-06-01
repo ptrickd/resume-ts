@@ -4,15 +4,26 @@ import projectsData from '../files/projectsData';
 //@ts-ignore
 import ProjectCards from './ProjectCards.tsx';
 //@ts-ignore
-import { Wrapper, CardsSection } from '../styles/ProjectsStyled.ts';
+import { CardsSection } from '../styles/ProjectsStyled.ts';
+import { Container, Typography } from '@material-ui/core'
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 
 interface IProps {
     handleClickDetails: (value: number) => void,
     darkTheme: boolean
 }
 
-function Projects({ handleClickDetails, darkTheme }: IProps) {
+const useStyles = makeStyles((theme: Theme) => createStyles({
+    root: {
+        flexGrow: 1
+    },
+    title: {
+        alignSelf: 'center'
+    }
+}))
 
+function Projects({ handleClickDetails, darkTheme }: IProps) {
+    const classes = useStyles()
     const displayProjects = () => {
         return projectsData.map((project, index) => {
 
@@ -32,12 +43,15 @@ function Projects({ handleClickDetails, darkTheme }: IProps) {
     }
 
     return (
-        <Wrapper id="projects" className="">
-            <h1>My Projects</h1>
+        <Container id="projects" className={classes.root}>
+            <Typography
+                variant="h3"
+                align='center'
+            >My Projects</Typography>
             <CardsSection >
                 {displayProjects()}
             </CardsSection>
-        </Wrapper>
+        </Container>
     )
 }
 

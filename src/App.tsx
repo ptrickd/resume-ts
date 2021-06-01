@@ -1,153 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React, { useState } from 'react';
 import '@fontsource/roboto'
-//@ts-ignore
-import { Wrapper, MainViewStyled } from './styles/AppStyled.ts';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+
 
 //@ts-ignore
-import About from './components/About.tsx';
-//@ts-ignore
-import Contact from './components/Contact.tsx';
-//@ts-ignore
-import Navigation from './components/Navigation.tsx';
+import MainPage from './components/MainPage.tsx';
 //@ts-ignore
 import TopNavigation from './components/TopNavigation.tsx';
-//@ts-ignore
-import Projects from './components/Projects.tsx';
-//@ts-ignore
-import Skills from './components/Skills.tsx';
-//@ts-ignore
-import Icons from './components/Icons.tsx';
+
 //@ts-ignore
 import Footer from './components/Footer.tsx';
 //@ts-ignore
 import ProjectDetails from './components/ProjectDetails.tsx';
 // import OnSubmitModal from './components/OnSubmitModal';
 
-import reactIcon from './images/icon/react.svg';
-import postgresqlIcon from './images/icon/postgresql-icon.png'
-import githubIcon from './images/icon/github_icon.ico';
-import jqueryIcon from './images/icon/jquery-icon.png';
-import pythonIcon from './images/icon/python-icon-bw.webp';
 
-import flaskIcon from './images/icon/flask-logo.png';
-import htmlIcon from './images/icon/html5-icon-bw.png';
-import cssIcon from './images/icon/css-icon-bw.png';
-import jsIcon from './images/icon/javascript-icon-bw.png';
-import nodeJsIcon from './images/icon/nodejs-icon-bw.ico';
 
-import { Container } from '@material-ui/core'
 
-const Icon1 = [
-  { text: 'ReactJs', icon: reactIcon },
-  { text: 'Postgres', icon: postgresqlIcon },
-  { text: 'GitHub', icon: githubIcon },
-  { text: 'JQuery', icon: jqueryIcon },
-  { text: 'Python', icon: pythonIcon }
-]
+import { DRAWER_WIDTH } from './constants/Styling'
 
-const Icon2 = [
-  { text: 'Flask', icon: flaskIcon },
-  { text: 'HTML', icon: htmlIcon },
-  { text: 'CSS', icon: cssIcon },
-  { text: 'JavaScript', icon: jsIcon },
-  { text: 'NodeJs', icon: nodeJsIcon }
-]
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+const drawerWidth = DRAWER_WIDTH
+const useStyles = makeStyles((theme: Theme) => createStyles({
+  footer: {
+    [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth
+    }
+  },
+  //necessary for content to be below app bar
+  toolbar: theme.mixins.toolbar,
+}))
+
 function App() {
 
-  const [showDetails, setShowDetails] = useState<boolean>(false);
-  const [detailsId, setDetailsId] = useState<number | null>(null);
-  const [showSideBar, setShowSideBar] = useState(true);
-  const [darkTheme, setDarkTheme] = useState<boolean>(false);
-  const [showModal, setShowModal] = useState<boolean>(false);
-
-  // col-sm-8 col-md-9 col-lg-10 col-7
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 800px' })
-  useEffect(() => {
-    // isSmallScreen ? setShowSideBar(false) : setShowSideBar(true)
-    isSmallScreen ? setShowSideBar(false) : setShowSideBar(false)
-  }, [isSmallScreen])
-
-  const toggleShowModal = (value: boolean) => {
-    console.log('toogle value: ', value)
-    setShowModal(value)
-  }
+  const classes = useStyles()
 
 
-  const handleClickDetails = (id: number) => {
-    setShowDetails(true);
-    setDetailsId(id);
-  }
 
-  const handleClickNav = () => {
-    setShowDetails(false);
-  }
-
+  //#B4B2B8 #B6B8B2
+  //primary #3F51B5  complemantary #B5A33F
   return (
-    <Wrapper darkTheme={darkTheme} sideBar={false}>
-      <TopNavigation />
-      {
-        showSideBar &&
-        <div
-          id=""
-          className=""
-        >
-          <Navigation
-            handleClickNav={handleClickNav}
-            isDetailPage={showDetails}
-            isDarkTheme={darkTheme}
-            toggleTheme={() => setDarkTheme(!darkTheme)
-            }
-          />
+    <Router>
+      <Route>
+        <TopNavigation />
+
+        <div className={classes.toolbar} />
+        <Switch>
+
+          <Route path='/details/:id'>
+            <ProjectDetails />
+          </Route>
+          <Route path='/'><MainPage /></Route>
+        </Switch>
+
+
+        <div className={classes.footer}>
+          <Footer />
         </div>
-      }
 
-      {/* <div className=""> */}
-      <MainViewStyled id="main" >
-        <Container>
-          {/* If true will show the detail page corresponding with id */}
-          {
-            !showDetails ? <>
-              <About darkTheme={darkTheme} />
+      </Route>
+    </Router>
 
-              < Icons
-                iconsArr={Icon1}
-              />
-              <Projects
-                handleClickDetails={handleClickDetails}
-                darkTheme={darkTheme}
-              />
-              <Icons
-                iconsArr={Icon2}
-              />
-
-              < Skills />
-              <Contact darkTheme={darkTheme} showModal={showModal} toggleShowModal={toggleShowModal} />
-
-              <Footer />
-              {/* <OnSubmitModal showModal={showModal} toggleShowModal={value => toggleShowModal(value)} /> */}
-            </>
-              :
-              <>
-                <ProjectDetails
-                  id={detailsId}
-                  handleClickNav={handleClickNav}
-                  darkTheme={darkTheme}
-                />
-
-                <Footer />
-              </>
-
-          }
-
-        </Container>
-
-
-      </MainViewStyled>
-      {/* </div> */}
-
-      {/* </div> */}
-    </Wrapper>
   );
 }
 
