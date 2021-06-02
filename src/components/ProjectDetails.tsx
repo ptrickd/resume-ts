@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom'
-
+import ImageModal from './ImageModal'
 import projectsData from '../files/projectsData';
 import { DRAWER_WIDTH } from '../constants/Styling'
 import {
@@ -43,24 +43,29 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     links: {
         width: '100%',
-        display: 'flex',
-        justifyContent: 'space-around'
+        display: 'flex'
     },
     button: {
         flexGrow: 0
+    },
+    listItem: {
+        justifyContent: 'center'
     },
     listItemIcon: {
         display: 'flex',
         justifyContent: 'flex-end'
     },
     image: {
-        border: '1px solid black'
+        border: '1px solid black',
+        cursor: 'pointer'
     }
 }))
 
 function ProjectDetails() {
     const classes = useStyles()
     const history = useHistory()
+    const [openModal, setOpenModal] = useState(false)
+    const [image, setImage] = useState('')
     const { id }: IParams = useParams()
 
     const {
@@ -90,23 +95,28 @@ function ProjectDetails() {
         })
     }
 
-
-
+    const handleOpenModal = (index: number) => {
+        setImage(screenshots[index])
+        setOpenModal(true)
+    }
+    const handleCloseModal = () => {
+        setOpenModal(false)
+    }
     return (
 
         <Container className={classes.main} >
             <Typography align="center" variant="h4" gutterBottom>{title}</Typography>
             <GridList spacing={2} cols={sceenshotsNum < 2 ? 1 : 2} >
-                <GridListTile className={classes.image}>
+                <GridListTile className={classes.image} onClick={() => handleOpenModal(0)}>
                     <img src={screenshots[0]} alt="screenshot" />
                 </GridListTile>
 
-                {screenshots[1] && <GridListTile className={classes.image}>
+                {screenshots[1] && <GridListTile className={classes.image} onClick={() => handleOpenModal(1)}>
                     <img src={screenshots[1]} alt="screenshot" />
                 </GridListTile>
                 }
 
-                {screenshots[1] && <GridListTile className={classes.image}>
+                {screenshots[1] && <GridListTile className={classes.image} onClick={() => handleOpenModal(2)}>
                     <img src={screenshots[2]} alt="screenshot" />
                 </GridListTile>
                 }
@@ -139,7 +149,7 @@ function ProjectDetails() {
                 <List className={classes.links}>
 
                     {
-                        haveWebsite ? <ListItem alignItems="center">
+                        haveWebsite ? <ListItem className={classes.listItem}>
                             <Link
                                 href={`${website}`}
                             >Website</Link>
@@ -147,7 +157,7 @@ function ProjectDetails() {
                             : null//<span>Not yet available</span>
                     }
                     {
-                        haveRepo ? <ListItem alignItems="center" >
+                        haveRepo ? <ListItem className={classes.listItem}>
                             <Link
                                 href={`${repo}`}
                             >Github Repo</Link>
@@ -156,7 +166,7 @@ function ProjectDetails() {
                     }
 
                 </List>
-                <Box display="flex" justifyContent="center">
+                <Box display="flex" justifyContent="center" >
                     <Button
 
                         variant="contained"
@@ -170,6 +180,11 @@ function ProjectDetails() {
 
             </Box>
 
+            <ImageModal
+                open={openModal}
+                handleClose={handleCloseModal}
+                image={image}
+            />
         </Container >
 
     )

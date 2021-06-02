@@ -15,8 +15,6 @@ import ProjectDetails from './components/ProjectDetails.tsx';
 // import OnSubmitModal from './components/OnSubmitModal';
 
 
-
-
 import { DRAWER_WIDTH } from './constants/Styling'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
