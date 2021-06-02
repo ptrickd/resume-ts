@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom'
+
 import { useState } from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import {
@@ -71,7 +71,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const TopNavigation = () => {
     const classes = useStyles()
     const [drawerOpen, setDrawerOpen] = useState(false)
-    const history = useHistory()
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen)
     }

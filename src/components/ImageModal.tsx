@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { Button, ButtonGroup, Modal } from '@material-ui/core'
+import { Modal } from '@material-ui/core'
 
 interface IProps {
     open: boolean
