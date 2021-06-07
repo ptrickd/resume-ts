@@ -1,5 +1,23 @@
 const projectsData = [
     {
+        title: 'Kitchen Inventory',
+        sceenshotsNum: 1,
+        screenshots: [
+            '/images/screenshot/inventory1.jpg',
+        ],
+        shortDescription: 'Personal Project',
+        description: "The goal of this projects it is to provide a free and open source alternative for chef in restaurant to make and keep track of their inventory without using pen and paper",
+        skills: [
+            'Typescript', 'NextJs', 'API', 'Material UI', 'React-Hook-Form',
+            'Luxon', 'Mongoose', 'GraphQL',
+            'HTML', 'CSS', 'useContext'
+        ],
+        haveRepo: true,
+        haveWebsite: false,
+        repo: 'https://github.com/ptrickd/inventory-app',
+        website: 'https://main--silly-almeida-71acd2.netlify.app/'
+    },
+    {
         title: 'Webpage Resume',
         sceenshotsNum: 3,
         screenshots: [
@@ -65,23 +83,23 @@ const projectsData = [
         repo: 'https://github.com/raquelm9/Homy',
         website: 'https://adoring-leakey-4abb67.netlify.app/'
     },
-    {
-        title: 'Desktop Staff Scheduler',
-        sceenshotsNum: 1,
-        screenshots: [
-            '/images/screenshot/scheduler1.jpg'
-        ],
-        description: "This project is about to create a desktop app to help schedule staff in commercial kitchen",
-        shortDescription: 'Personal',
-        skills: [
-            'Python', 'SQLite',
-            'TKinter', 'Desktop App'
-        ],
-        haveRepo: true,
-        haveWebsite: false,
-        repo: 'https://github.com/ptrickd/scheduler',
-        website: ''
-    },
+    // {
+    //     title: 'Desktop Staff Scheduler',
+    //     sceenshotsNum: 1,
+    //     screenshots: [
+    //         '/images/screenshot/scheduler1.jpg'
+    //     ],
+    //     description: "This project is about to create a desktop app to help schedule staff in commercial kitchen",
+    //     shortDescription: 'Personal',
+    //     skills: [
+    //         'Python', 'SQLite',
+    //         'TKinter', 'Desktop App'
+    //     ],
+    //     haveRepo: true,
+    //     haveWebsite: false,
+    //     repo: 'https://github.com/ptrickd/scheduler',
+    //     website: ''
+    // },
     {
         title: 'Mobile App Projects Catalog',
         sceenshotsNum: 1,
