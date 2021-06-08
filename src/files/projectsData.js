@@ -1,7 +1,7 @@
 const projectsData = [
     {
         title: 'Kitchen Inventory',
-        sceenshotsNum: 1,
+        screenshotsNum: 1,
         screenshots: [
             '/images/screenshot/inventory1.jpg',
         ],
@@ -19,7 +19,7 @@ const projectsData = [
     },
     {
         title: 'Webpage Resume',
-        sceenshotsNum: 3,
+        screenshotsNum: 3,
         screenshots: [
             '/images/screenshot/resume2.jpg',
             '/images/screenshot/resume3.jpg',
@@ -38,7 +38,7 @@ const projectsData = [
     },
     {
         title: 'Catalog Of Projects',
-        sceenshotsNum: 3,
+        screenshotsNum: 3,
         screenshots: [
             '/images/screenshot/catalog1.jpg',
             '/images/screenshot/catalog3.jpg',
@@ -59,7 +59,7 @@ const projectsData = [
     },
     {
         title: 'Building Manager',
-        sceenshotsNum: 3,
+        screenshotsNum: 3,
         screenshots: [
             '/images/screenshot/homy1.jpg',
             '/images/screenshot/homy3.jpg',
@@ -85,7 +85,7 @@ const projectsData = [
     },
     // {
     //     title: 'Desktop Staff Scheduler',
-    //     sceenshotsNum: 1,
+    //     screenshotsNum: 1,
     //     screenshots: [
     //         '/images/screenshot/scheduler1.jpg'
     //     ],
@@ -102,7 +102,7 @@ const projectsData = [
     // },
     {
         title: 'Mobile App Projects Catalog',
-        sceenshotsNum: 1,
+        screenshotsNum: 1,
         screenshots: [
             '/images/screenshot/react-native1.jpg',
         ],
@@ -119,7 +119,7 @@ const projectsData = [
     },
     {
         title: 'Flask PostgreSQL Server ',
-        sceenshotsNum: 3,
+        screenshotsNum: 3,
         screenshots: [
             '/images/screenshot/catalog1.jpg',
             '/images/screenshot/catalog3.jpg',

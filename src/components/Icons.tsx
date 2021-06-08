@@ -23,9 +23,9 @@ function Icons({ iconsArr }: IProps) {
     const classes = useStyles()
 
     const WrappedInTooltips = () => {
-        return iconsArr.map(iconObj => {
+        return iconsArr.map((iconObj, index) => {
             return (
-                <Avatar alt="icon" src={iconObj.icon} className={classes.icon} />
+                <Avatar alt="icon" src={iconObj.icon} className={classes.icon} key={index} />
             )
         })
     }
