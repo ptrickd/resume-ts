@@ -23,14 +23,14 @@ const drawerWidth = DRAWER_WIDTH
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   main: {
-    minHeight: '100vh'
+    minHeight: '86vh'
   },
-  footer: {
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth
-    }
-  },
+  // footer: {
+  //   [theme.breakpoints.up('sm')]: {
+  //     width: `calc(100% - ${drawerWidth}px)`,
+  //     marginLeft: drawerWidth
+  //   }
+  // },
   //necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
 }))
@@ -58,12 +58,12 @@ function App() {
               <Route path='/'><MainPage /></Route>
             </Switch>
 
-            <div className={classes.footer}>
-              <Divider />
-              <Footer />
-            </div>
-          </div>
 
+          </div>
+          <div>
+
+            <Footer />
+          </div>
 
         </Route>
       </Router>
