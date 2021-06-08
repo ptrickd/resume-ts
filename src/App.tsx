@@ -1,7 +1,7 @@
 import React from 'react';
 import '@fontsource/roboto'
 import { makeStyles, Theme, createStyles, ThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
-import { Divider } from '@material-ui/core'
+
 
 //@ts-ignore
 import MainPage from './components/MainPage.tsx';
@@ -14,25 +14,13 @@ import Footer from './components/Footer.tsx';
 import ProjectDetails from './components/ProjectDetails.tsx';
 // import OnSubmitModal from './components/OnSubmitModal';
 
-
-import { DRAWER_WIDTH } from './constants/Styling'
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
-const drawerWidth = DRAWER_WIDTH
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   main: {
     minHeight: '86vh'
   },
-  // footer: {
-  //   [theme.breakpoints.up('sm')]: {
-  //     width: `calc(100% - ${drawerWidth}px)`,
-  //     marginLeft: drawerWidth
-  //   }
-  // },
-  //necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  toolbar: theme.mixins.toolbar
 }))
 
 let theme = createMuiTheme()
