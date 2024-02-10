@@ -20,7 +20,7 @@ import Footer from "./components/Footer.tsx";
 import ProjectDetails from "./components/ProjectDetails.tsx";
 // import OnSubmitModal from './components/OnSubmitModal';
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,31 +34,35 @@ const useStyles = makeStyles((theme: Theme) =>
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
+///////////////////////////////////////////////
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainPage />,
+    // errorElement: <ErrorPage />,
+  },
+  {
+    path: "/details/:id",
+    element: <ProjectDetails />,
+  },
+]);
+
+///////////////////////////////////////////////
+
 function App() {
   const classes = useStyles();
 
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <Route>
-          <TopNavigation />
+      <TopNavigation />
 
-          <div className={classes.toolbar} />
-          <div className={classes.main}>
-            <Routes>
-              <Route path="/details/:id">
-                <ProjectDetails />
-              </Route>
-              <Route path="/">
-                <MainPage />
-              </Route>
-            </Routes>
-          </div>
-          <div>
-            <Footer />
-          </div>
-        </Route>
-      </Router>
+      <div className={classes.toolbar} />
+      <div className={classes.main}>
+        <RouterProvider router={router} />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
