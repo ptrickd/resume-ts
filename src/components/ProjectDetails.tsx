@@ -39,10 +39,6 @@ import {
 
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-interface IParams {
-  id: string;
-}
-
 const drawerWidth = DRAWER_WIDTH;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

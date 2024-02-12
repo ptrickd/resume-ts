@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const MainPage = () => {
   const classes = useStyles();
-  const [showModal, setShowModal] = useState<boolean>(false);
+  const [, setShowModal] = useState<boolean>(false);
 
   const handleClickDetails = (id: number) => {
     // setShowDetails(true);

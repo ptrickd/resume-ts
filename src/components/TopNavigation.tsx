@@ -5,7 +5,6 @@ import {
   Toolbar,
   IconButton,
   CssBaseline,
-  Hidden,
   Drawer,
   Divider,
   List,
@@ -136,7 +135,7 @@ const TopNavigation = () => {
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer}>
-        {/* <Hidden smUp implementation="css"> */}
+        {/* <Hidden smUp> */}
         <Drawer
           variant="temporary"
           open={drawerOpen}
@@ -146,7 +145,7 @@ const TopNavigation = () => {
           {drawer}
         </Drawer>
         {/* </Hidden> */}
-        {/* <Hidden xsDown implementation="css"> */}
+        {/* <Hidden xsDown> */}
         <Drawer
           variant="permanent"
           open
