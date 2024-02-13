@@ -1,7 +1,8 @@
 import React from "react";
 import "@fontsource/roboto";
-import { makeStyles, createStyles } from "@mui/styles";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import { Toolbar, Box } from "@mui/material";
 
 //@ts-ignore
 import MainPage from "./components/MainPage.tsx";
@@ -15,15 +16,6 @@ import ProjectDetails from "./components/ProjectDetails.tsx";
 // import OnSubmitModal from './components/OnSubmitModal';
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    main: {
-      minHeight: "86vh",
-    },
-    toolbar: theme.mixins.toolbar,
-  })
-);
 
 let theme = createTheme();
 theme = responsiveFontSizes(theme);
@@ -44,19 +36,19 @@ const router = createBrowserRouter([
 ///////////////////////////////////////////////
 
 function App() {
-  const classes = useStyles();
-
   return (
     <ThemeProvider theme={theme}>
       <TopNavigation />
 
-      <div className={classes.toolbar} />
-      <div className={classes.main}>
-        <RouterProvider router={router} />
-      </div>
-      <div>
-        <Footer />
-      </div>
+      {/* <div className={classes.toolbar} /> */}
+      <Toolbar>
+        <Box component="div" sx={{ minHeight: "86vh" }}>
+          <RouterProvider router={router} />
+        </Box>
+        <div>
+          <Footer />
+        </div>
+      </Toolbar>
     </ThemeProvider>
   );
 }

@@ -1,35 +1,39 @@
 import React from "react";
 import { Typography, Button, Container, Paper } from "@mui/material";
-import { makeStyles } from "@mui/material/styles";
+
 import resumePdf from "../files/myresume.pdf";
 //@ts-ignore
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    background:
-      "linear-gradient(90deg, rgba(238,237,231,1) 0%, rgba(134,139,142,1) 35%, rgba(185,183,189,1) 66%, rgba(231,210,204,1) 100%);",
-    margin: theme.spacing(2),
-  },
-  section: {
-    margin: theme.spacing(1),
-    marginLeft: theme.spacing(2),
-  },
-  button: {
-    margin: theme.spacing(1),
-    marginLeft: theme.spacing(2),
-  },
-}));
-
 function About() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <Container id="about-me" maxWidth="lg">
-      <Paper className={classes.root}>
-        <Typography variant="h4" className={classes.section} gutterBottom>
+      <Paper
+        sx={{
+          background:
+            "linear-gradient(90deg, rgba(238,237,231,1) 0%, rgba(134,139,142,1) 35%, rgba(185,183,189,1) 66%, rgba(231,210,204,1) 100%);",
+          margin: (theme) => theme.spacing(2),
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            margin: (theme) => theme.spacing(1),
+            marginLeft: (theme) => theme.spacing(2),
+          }}
+          gutterBottom
+        >
           More about me
         </Typography>
         {/* <!-- <h5>Full Stack Developer</h5> --> */}
-        <Typography variant="body1" className={classes.section} gutterBottom>
+        <Typography
+          variant="body1"
+          sx={{
+            margin: (theme) => theme.spacing(1),
+            marginLeft: (theme) => theme.spacing(2),
+          }}
+          gutterBottom
+        >
           &nbsp; Living in Calgary, I like the mountains, outdoor activities,
           snowboard, hiking or others. Comfortable with JavaScript and Python,
           front and back-end, experimenting with React Native and mobile
@@ -38,7 +42,10 @@ function About() {
         </Typography>
         <Button
           id="buttons"
-          className={classes.button}
+          sx={{
+            margin: (theme) => theme.spacing(1),
+            marginLeft: (theme) => theme.spacing(2),
+          }}
           variant="contained"
           color="primary"
           href={resumePdf}

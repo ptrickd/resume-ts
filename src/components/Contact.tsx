@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import emailjs from "emailjs-com";
-import { makeStyles } from "@mui/styles";
+
 import {
   Button,
   FormControl,
@@ -21,20 +21,6 @@ type Values = {
   email: string;
   commentBox: string;
 };
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(2),
-    },
-  },
-  title: {
-    margin: theme.spacing(2),
-  },
-  button: {
-    margin: theme.spacing(2),
-  },
-}));
 
 const validate = (values: Values) => {
   const errors: Values = {
@@ -61,7 +47,6 @@ const validate = (values: Values) => {
 };
 
 function Contact({ toggleShowModal }: Props) {
-  const classes = useStyles();
   const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
   const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "";
   const userId = process.env.REACT_APP_EMAILJS_USER_ID || "";
@@ -101,11 +86,19 @@ function Contact({ toggleShowModal }: Props) {
 
   return (
     <Container>
-      <Typography className={classes.title} variant="h6">
+      <Typography sx={{ margin: (theme) => theme.spacing(2) }} variant="h6">
         Leave a comment:
       </Typography>
       <form onSubmit={formik.handleSubmit}>
-        <FormControl id="commentForm" fullWidth className={classes.root}>
+        <FormControl
+          id="commentForm"
+          fullWidth
+          sx={{
+            "& .MuiTextField-root": {
+              margin: (theme) => theme.spacing(2),
+            },
+          }}
+        >
           {/* <div className="form-control"> */}
           {/* <InputLabel id="labelName" htmlFor="name">Name:</InputLabel> */}
           {/* {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null} */}
@@ -168,7 +161,7 @@ function Contact({ toggleShowModal }: Props) {
           />
           <div className="btn-send-section">
             <Button
-              className={classes.button}
+              sx={{ margin: (theme) => theme.spacing(2) }}
               variant="contained"
               color="primary"
               id="btn-send"

@@ -9,7 +9,7 @@ import ImageModal from "./ImageModal";
 import projectsData from "../files/projectsData";
 
 //Constants
-import { DRAWER_WIDTH } from "../constants/Styling";
+// import { DRAWER_WIDTH } from "../constants/Styling";
 
 //Material - UI
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -31,78 +31,73 @@ import {
 } from "@mui/material";
 
 import {
-  makeStyles,
-  Theme,
-  createStyles,
   useTheme,
+  // styled,
 } from "@mui/material/styles";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-const drawerWidth = DRAWER_WIDTH;
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    main: {
-      [theme.breakpoints.up("sm")]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-      },
-      padding: theme.spacing(3),
-    },
-    title: {
-      marginTop: 20,
-    },
-    description: {
-      minHeight: 50,
-      marginTop: 20,
-    },
-    links: {
-      width: "100%",
-      display: "flex",
-    },
-    button: {
-      flexGrow: 0,
-    },
-    listItem: {
-      justifyContent: "center",
-    },
-    listItemIcon: {
-      display: "flex",
-      justifyContent: "flex-end",
-    },
-    imageContainer: {
-      maxWidth: "100%",
-      width: "100%",
-      height: "100%",
-      // background: '#d0d5f2',
-      // border: '1px solid black',
-      // cursor: 'pointer',
-      overflow: "hidden",
-    },
-    gridList: {
-      // width: '80%',
-      // height: '100%',
-    },
-  })
-);
+// const drawerWidth = DRAWER_WIDTH;
+// const
+// const useStyles = makeStyles((theme: Theme) =>
+// createStyles({
+// main: {
+//   [theme.breakpoints.up("sm")]: {
+//     width: `calc(100% - ${drawerWidth}px)`,
+//     marginLeft: drawerWidth,
+//   },
+//   padding: theme.spacing(3),
+// },
+// title: {
+//   marginTop: 20,
+// },
+// description: {
+//   minHeight: 50,
+//   marginTop: 20,
+// },
+// links: {
+//   width: "100%",
+//   display: "flex",
+// },
+// button: {
+//   flexGrow: 0,
+// },
+// listItem: {
+//   justifyContent: "center",
+// },
+//
+// imageContainer: {
+//   maxWidth: "100%",
+//   width: "100%",
+//   height: "100%",
+//   // background: '#d0d5f2',
+//   // border: '1px solid black',
+//   // cursor: 'pointer',
+//   overflow: "hidden",
+// },
+// gridList: {
+//   // width: '80%',
+//   // height: '100%',
+// },
+//   })
+// );
 
-const imgStyles = {
-  maxWidth: "100%",
-  maxHeight: "100%",
-  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
-  cursor: "pointer",
-  marginTop: 10,
-  marginBottom: 10,
-  border: "3px solid #d0d5f2",
-};
+// const imgStyles = {
+//   maxWidth: "100%",
+//   maxHeight: "100%",
+//   display: "block",
+//   marginLeft: "auto",
+//   marginRight: "auto",
+//   cursor: "pointer",
+//   marginTop: 10,
+//   marginBottom: 10,
+//   border: "3px solid #d0d5f2",
+// };
 
 function ProjectDetails() {
-  // const classes = useStyles();
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
-  const [image, setImage] = useState("");
+  const [image] = useState("");
   const { id } = useParams();
   const theme = useTheme();
   const widthIsSmall = useMediaQuery(theme.breakpoints.up("sm"));
@@ -111,8 +106,8 @@ function ProjectDetails() {
 
   const {
     title,
-    screenshots,
-    screenshotsNum,
+    // screenshots,
+    // screenshotsNum,
     description,
     skills,
     repo,
@@ -127,19 +122,19 @@ function ProjectDetails() {
     console.log("widthIsLarge", widthIsLarge);
   }, [widthIsSmall, widthIsMedium, widthIsLarge]);
 
-  const getGridImageCols = () => {
-    if (screenshotsNum > 1) {
-      if (widthIsLarge) {
-        return 3;
-      } else if (widthIsMedium) {
-        return 2;
-      } else if (widthIsSmall) {
-        return 1;
-      }
-      return 1;
-    }
-    return 1;
-  };
+  // const getGridImageCols = () => {
+  //   if (screenshotsNum > 1) {
+  //     if (widthIsLarge) {
+  //       return 3;
+  //     } else if (widthIsMedium) {
+  //       return 2;
+  //     } else if (widthIsSmall) {
+  //       return 1;
+  //     }
+  //     return 1;
+  //   }
+  //   return 1;
+  // };
 
   const displayList = () => {
     return skills.map((skill, index) => {
@@ -156,10 +151,10 @@ function ProjectDetails() {
     });
   };
 
-  const handleOpenModal = (index: number) => {
-    setImage(screenshots[index]);
-    setOpenModal(true);
-  };
+  // const handleOpenModal = (index: number) => {
+  //   setImage(screenshots[index]);
+  //   setOpenModal(true);
+  // };
   const handleCloseModal = () => {
     setOpenModal(false);
   };
