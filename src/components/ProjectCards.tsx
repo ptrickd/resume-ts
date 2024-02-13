@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import {
   Card,
   CardContent,
@@ -10,7 +9,7 @@ import {
   CardActionArea,
   Divider,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 interface IProps {
@@ -23,23 +22,6 @@ interface IProps {
   skills: string[];
 }
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 280,
-    margin: 10,
-    backgroundColor: "#d6cbcb",
-  },
-  media: {
-    height: 140,
-    borderBottom: "1px solid black",
-  },
-  header: {
-    alignItems: "center",
-    fontSize: "2rem",
-    backgroundColor: "#bcafaf",
-  },
-});
-
 function ProjectCards({
   id,
   title,
@@ -50,7 +32,6 @@ function ProjectCards({
   skills,
 }: IProps) {
   const navigate = useNavigate();
-  const classes = useStyles();
 
   const limitCharacter = (str: string) => {
     if (str.length > 100) return str.substring(0, 100) + "...";
@@ -59,14 +40,24 @@ function ProjectCards({
 
   return (
     <Fragment>
-      <Card className={classes.root}>
+      <Card sx={{ maxWidth: 280, margin: 10, backgroundColor: "#d6cbcb" }}>
         <CardActionArea onClick={() => navigate(`/details/${id}`)}>
           <CardMedia
-            className={classes.media}
+            sx={{
+              height: 140,
+              borderBottom: "1px solid black",
+            }}
             image={screenshots[0]}
             title="Click to see details"
           />
-          <CardHeader title={title} className={classes.header} />
+          <CardHeader
+            title={title}
+            sx={{
+              alignItems: "center",
+              fontSize: "2rem",
+              backgroundColor: "#bcafaf",
+            }}
+          />
         </CardActionArea>
         <Divider />
         <CardContent>

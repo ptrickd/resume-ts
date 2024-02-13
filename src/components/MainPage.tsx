@@ -25,8 +25,8 @@ import jsIcon from "../images/icon/javascript-icon-bw.png";
 import nodeJsIcon from "../images/icon/nodejs-icon-bw.ico";
 
 import { Divider, Container } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { DRAWER_WIDTH } from "../constants/Styling";
-import { makeStyles, createStyles } from "@mui/styles";
 
 const Icon1 = [
   { text: "ReactJs", icon: reactIcon },
@@ -45,21 +45,13 @@ const Icon2 = [
 ];
 
 const drawerWidth = DRAWER_WIDTH;
-const useStyles = makeStyles(() =>
-  createStyles({
-    main: {
-      [theme.breakpoints.up("sm")]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-      },
-    },
-    //necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
-  })
-);
-
+const StyledContainer = styled(Container)(({ theme }) => ({
+  [theme.breakpoints.up("sm")]: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+  },
+}));
 const MainPage = () => {
-  const classes = useStyles();
   const [, setShowModal] = useState<boolean>(false);
 
   const handleClickDetails = (id: number) => {
@@ -75,9 +67,10 @@ const MainPage = () => {
 
   return (
     <MainViewStyled id="main">
-      <Container className={classes.main}>
+      <StyledContainer>
+        {/* //necessary for content to be below app bar // toolbar:
+        theme.mixins.toolbar, */}
         <About />
-
         <Icons iconsArr={Icon1} />
         <Divider />
         <Projects handleClickDetails={handleClickDetails} />
@@ -86,7 +79,7 @@ const MainPage = () => {
         <Skills />
         <Divider />
         <Contact toggleShowModal={toggleShowModal} />
-      </Container>
+      </StyledContainer>
     </MainViewStyled>
   );
 };

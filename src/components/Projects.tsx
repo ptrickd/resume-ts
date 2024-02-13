@@ -6,25 +6,12 @@ import ProjectCards from "./ProjectCards.tsx";
 //@ts-ignore
 import { CardsSection } from "../styles/ProjectsStyled.ts";
 import { Container, Typography } from "@mui/material";
-import { makeStyles, Theme, createStyles } from "@mui/styles";
 
 interface IProps {
   handleClickDetails: (value: number) => void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    title: {
-      alignSelf: "center",
-    },
-  })
-);
-
 function Projects({ handleClickDetails }: IProps) {
-  const classes = useStyles();
   const displayProjects = () => {
     return projectsData.map((project, index) => {
       return (
@@ -42,7 +29,7 @@ function Projects({ handleClickDetails }: IProps) {
   };
 
   return (
-    <Container id="projects" className={classes.root}>
+    <Container id="projects" sx={{ flexGrow: 1 }}>
       <Typography variant="h3" align="center">
         My Projects
       </Typography>

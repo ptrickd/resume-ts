@@ -1,6 +1,6 @@
 import React from "react";
-import { Typography, Button, Container, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { Typography, Button, Container, Paper } from "@mui/material";
+import { makeStyles } from "@mui/material/styles";
 import resumePdf from "../files/myresume.pdf";
 //@ts-ignore
 

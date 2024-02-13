@@ -1,6 +1,7 @@
 import React from "react";
 import "@fontsource/roboto";
-import { makeStyles, createStyles, ThemeProvider } from "@mui/styles";
+import { makeStyles, createStyles } from "@mui/styles";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 //@ts-ignore
 import MainPage from "./components/MainPage.tsx";
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-let theme = createMuiTheme();
+let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 ///////////////////////////////////////////////
