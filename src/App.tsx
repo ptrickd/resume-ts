@@ -1,13 +1,6 @@
 import React from "react";
 import "@fontsource/roboto";
-import {
-  makeStyles,
-  Theme,
-  createStyles,
-  ThemeProvider,
-  createMuiTheme,
-  responsiveFontSizes,
-} from "@material-ui/core/styles";
+import { makeStyles, createStyles, ThemeProvider } from "@mui/styles";
 
 //@ts-ignore
 import MainPage from "./components/MainPage.tsx";

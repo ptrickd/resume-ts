@@ -5,8 +5,8 @@ import projectsData from "../files/projectsData";
 import ProjectCards from "./ProjectCards.tsx";
 //@ts-ignore
 import { CardsSection } from "../styles/ProjectsStyled.ts";
-import { Container, Typography } from "@material-ui/core";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { Container, Typography } from "@mui/material";
+import { makeStyles, Theme, createStyles } from "@mui/styles";
 
 interface IProps {
   handleClickDetails: (value: number) => void;

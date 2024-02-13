@@ -1,15 +1,15 @@
 import React from "react";
 import { useFormik } from "formik";
 import emailjs from "emailjs-com";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import {
   Button,
   FormControl,
   Typography,
   TextField,
   Container,
-} from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 //@ts-ignore
 
 type Props = {

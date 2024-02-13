@@ -12,7 +12,7 @@ import projectsData from "../files/projectsData";
 import { DRAWER_WIDTH } from "../constants/Styling";
 
 //Material - UI
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import {
   Box,
@@ -20,24 +20,24 @@ import {
   Container,
   Divider,
   Grid,
-  GridList,
-  GridListTile,
+  // GridList,
+  // GridListTile,
   Link,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
   Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 
 import {
   makeStyles,
   Theme,
   createStyles,
   useTheme,
-} from "@material-ui/core/styles";
+} from "@mui/material/styles";
 
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const drawerWidth = DRAWER_WIDTH;
 const useStyles = makeStyles((theme: Theme) =>
@@ -99,7 +99,7 @@ const imgStyles = {
 };
 
 function ProjectDetails() {
-  const classes = useStyles();
+  // const classes = useStyles();
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
   const [image, setImage] = useState("");
@@ -146,7 +146,7 @@ function ProjectDetails() {
       return (
         <Grid item xs={6} md={4} lg={3} key={index}>
           <ListItem dense>
-            <ListItemIcon className={classes.listItemIcon}>
+            <ListItemIcon>
               <ArrowRightIcon />
             </ListItemIcon>
             <ListItemText primary={skill} />
@@ -164,7 +164,7 @@ function ProjectDetails() {
     setOpenModal(false);
   };
   return (
-    <Container className={classes.main}>
+    <Container>
       <Typography align="center" variant="h4" gutterBottom>
         {title}
       </Typography>
@@ -175,7 +175,7 @@ function ProjectDetails() {
           alignItems: "center",
         }}
       >
-        <GridList
+        {/* <GridList
           className={classes.gridList}
           spacing={1}
           cols={getGridImageCols()}
@@ -201,19 +201,19 @@ function ProjectDetails() {
               </span>
             </GridListTile>
           )}
-        </GridList>
+        </GridList> */}
         <Divider />
         <Typography
           variant="body1"
           paragraph
           align="justify"
-          className={classes.description}
+          // className={classes.description}
         >
           {description}
         </Typography>
         <Divider />
         <div>
-          <Typography variant="h6" align="center" className={classes.title}>
+          <Typography variant="h6" align="center">
             Some of the technology used!
           </Typography>
           <List>
@@ -221,17 +221,20 @@ function ProjectDetails() {
           </List>
         </div>
         <Box>
-          <List className={classes.links}>
+          <List>
+            {/* //className={classes.links} */}
             {
               haveWebsite ? (
-                <ListItem className={classes.listItem}>
+                <ListItem>
+                  {/* className={classes.listItem} */}
                   <Link href={`${website}`}>Website</Link>
                 </ListItem>
               ) : null //<span>Not yet available</span>
             }
             {
               haveRepo ? (
-                <ListItem className={classes.listItem}>
+                <ListItem>
+                  {/* className={classes.listItem} */}
                   <Link href={`${repo}`}>Github Repo</Link>
                 </ListItem>
               ) : null //<span>Not yet available</span>

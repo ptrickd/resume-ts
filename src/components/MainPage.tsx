@@ -24,9 +24,9 @@ import cssIcon from "../images/icon/css-icon-bw.png";
 import jsIcon from "../images/icon/javascript-icon-bw.png";
 import nodeJsIcon from "../images/icon/nodejs-icon-bw.ico";
 
-import { Divider, Container } from "@material-ui/core";
+import { Divider, Container } from "@mui/material";
 import { DRAWER_WIDTH } from "../constants/Styling";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@mui/styles";
 
 const Icon1 = [
   { text: "ReactJs", icon: reactIcon },
@@ -45,7 +45,7 @@ const Icon2 = [
 ];
 
 const drawerWidth = DRAWER_WIDTH;
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     main: {
       [theme.breakpoints.up("sm")]: {
