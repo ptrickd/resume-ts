@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 import {
   Button,
