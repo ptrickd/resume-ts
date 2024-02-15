@@ -1,7 +1,7 @@
 import React from "react";
 
 //@ts-ignore
-import { Wrapper } from "../styles/Icons.ts";
+// import { Wrapper } from "../styles/Icons.ts";
 
 import { Avatar } from "@mui/material";
 
@@ -26,7 +26,7 @@ function Icons({ iconsArr }: IProps) {
     });
   };
 
-  return <Wrapper>{WrappedInTooltips()}</Wrapper>;
+  return <div>{WrappedInTooltips()}</div>;
 }
 
 export default Icons;

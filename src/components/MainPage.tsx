@@ -1,7 +1,5 @@
 import { useState } from "react";
 //@ts-ignore
-import { MainViewStyled } from "../styles/AppStyled.ts";
-//@ts-ignore
 import About from "../components/About.tsx";
 //@ts-ignore
 import Contact from "../components/Contact.tsx";
@@ -24,8 +22,7 @@ import cssIcon from "../images/icon/css-icon-bw.png";
 import jsIcon from "../images/icon/javascript-icon-bw.png";
 import nodeJsIcon from "../images/icon/nodejs-icon-bw.ico";
 
-import { Divider, Container } from "@mui/material";
-import { styled } from "@mui/material/styles";
+import { Divider, Container, Toolbar } from "@mui/material";
 import { DRAWER_WIDTH } from "../constants/Styling";
 
 const Icon1 = [
@@ -45,12 +42,7 @@ const Icon2 = [
 ];
 
 const drawerWidth = DRAWER_WIDTH;
-const StyledContainer = styled(Container)(({ theme }) => ({
-  [theme.breakpoints.up("sm")]: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-  },
-}));
+
 const MainPage = () => {
   const [, setShowModal] = useState<boolean>(false);
 
@@ -66,10 +58,16 @@ const MainPage = () => {
   };
 
   return (
-    <MainViewStyled id="main">
-      <StyledContainer>
-        {/* //necessary for content to be below app bar // toolbar:
+    <Container
+      // maxWidth="lg"
+      sx={{
+        width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
+        marginLeft: { xs: 0, md: drawerWidth },
+      }}
+    >
+      {/* //necessary for content to be below app bar // toolbar:
         theme.mixins.toolbar, */}
+      <Toolbar>
         <About />
         <Icons iconsArr={Icon1} />
         <Divider />
@@ -79,8 +77,8 @@ const MainPage = () => {
         <Skills />
         <Divider />
         <Contact toggleShowModal={toggleShowModal} />
-      </StyledContainer>
-    </MainViewStyled>
+      </Toolbar>
+    </Container>
   );
 };
 

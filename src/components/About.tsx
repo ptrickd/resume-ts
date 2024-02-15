@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Container, Paper } from "@mui/material";
+import { Typography, Button, Paper, Box } from "@mui/material";
 
 import resumePdf from "../files/myresume.pdf";
 //@ts-ignore
@@ -7,7 +7,7 @@ import resumePdf from "../files/myresume.pdf";
 function About() {
   // const classes = useStyles();
   return (
-    <Container id="about-me" maxWidth="lg">
+    <Box id="about-me">
       <Paper
         sx={{
           background:
@@ -54,7 +54,7 @@ function About() {
           View Resume &raquo;
         </Button>
       </Paper>
-    </Container>
+    </Box>
   );
 }
 

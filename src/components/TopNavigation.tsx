@@ -22,26 +22,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 // import purple from "@mui/material/colors/purple";
 import { DRAWER_WIDTH } from "../constants/Styling";
 
-// import classes from '*.module.css'
 const drawerWidth = DRAWER_WIDTH;
-const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  [theme.breakpoints.up("sm")]: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-  },
-}));
-
-const StyledIconButton = styled(IconButton)(({ theme }) => ({
-  [theme.breakpoints.up("sm")]: {
-    display: "none",
-  },
-}));
-const StyledNav = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.up("sm")]: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-}));
 
 //necessary for content to be below app bar
 // toolbar: theme.mixins.toolbar,
@@ -55,7 +36,7 @@ const TopNavigation = () => {
   const drawer = (
     <div>
       {/* <Box className={classes.toolbar} bgcolor="primary.main" /> */}
-      <Toolbar>
+      <Toolbar variant="dense">
         <Divider />
         <Box>
           <List>
@@ -104,41 +85,56 @@ const TopNavigation = () => {
   return (
     <Box component="div" sx={{ display: "flex" }}>
       <CssBaseline />
-      <StyledAppBar position="fixed">
+      <AppBar
+        position="fixed"
+        sx={{
+          width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
+          marginLeft: { xs: 0, md: drawerWidth },
+        }}
+      >
         <Toolbar>
-          <StyledIconButton
+          <IconButton
             sx={{
+              display: { xs: "block", md: "none" },
               marginRight: (theme: Theme) => theme.spacing(2),
             }}
             color="inherit"
             onClick={handleDrawerToggle}
           >
             <MenuIcon />
-          </StyledIconButton>
+          </IconButton>
           <Typography variant="h6">Website</Typography>
         </Toolbar>
-      </StyledAppBar>
-      <StyledNav component="nav">
-        {/* <Hidden smUp> */}
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{
+          width: { xs: "none", md: drawerWidth },
+          flexShrink: 0,
+        }}
+      >
         <Drawer
           variant="temporary"
           open={drawerOpen}
           onClose={handleDrawerToggle}
-          sx={{ [`& .MuiDrawer-paper`]: { width: drawerWidth } }}
+          sx={{
+            [`& .MuiDrawer-paper`]: { width: drawerWidth },
+            display: { xs: "block", md: "none" },
+          }}
         >
           {drawer}
         </Drawer>
-        {/* </Hidden> */}
-        {/* <Hidden xsDown> */}
         <Drawer
           variant="permanent"
           open
-          sx={{ [`& .MuiDrawer-paper`]: { width: drawerWidth } }}
+          sx={{
+            [`& .MuiDrawer-paper`]: { width: drawerWidth },
+            display: { xs: "none", md: "block" },
+          }}
         >
           {drawer}
         </Drawer>
-        {/* </Hidden> */}
-      </StyledNav>
+      </Box>
     </Box>
   );
 };

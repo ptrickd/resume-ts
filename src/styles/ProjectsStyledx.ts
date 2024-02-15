@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-import { navBgDark, navBgLight } from '../constants/Colors';
-
-export const Wrapper = styled.div< { darkTheme: boolean } >`
+import { navBgDark, navBgLight } from "../constants/Colors";
+/*
+export const Wrapper = < { darkTheme: boolean } >`
     margin: 0;
     padding: 0;
     padding-bottom: 20px;
@@ -13,7 +12,7 @@ export const Wrapper = styled.div< { darkTheme: boolean } >`
     flex-wrap: wrap;
     font-size: 1.4rem;
 `
-export const CardsSection = styled.div`
+export const CardsSection = `
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -22,7 +21,7 @@ export const CardsSection = styled.div`
     flex-wrap: wrap;
 `
 
-export const SkillsList = styled.ul`
+export const SkillsList = 
 width: 100%;
     margin: auto 0;
     display: flex;
@@ -40,7 +39,7 @@ width: 100%;
 
 `
 
-export const ProjectBox = styled.div < { darkTheme: boolean } >`
+export const ProjectBox =  < { darkTheme: boolean } >`
     height: 480px;
     overflow: hidden;
     max-width: 300px;
@@ -64,14 +63,14 @@ export const ProjectBox = styled.div < { darkTheme: boolean } >`
 
     }
 `
-export const Img = styled.img`
+export const Img = `
     width: 85%;
     height: auto;
     margin: 0 0;
     padding: 0 0;
     align-self: flex-end;
 `
-export const TopSection = styled.div`
+export const TopSection = `
     height: 50%;
     display: flex;
     flex-direction: column;
@@ -115,3 +114,4 @@ export const ClickableTitle = styled.span`
         color:#04569e;
     }
 `
+*/

@@ -2,13 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import emailjs from "@emailjs/browser";
 
-import {
-  Button,
-  FormControl,
-  Typography,
-  TextField,
-  Container,
-} from "@mui/material";
+import { Button, FormControl, Typography, TextField, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 //@ts-ignore
 
@@ -85,7 +79,7 @@ function Contact({ toggleShowModal }: Props) {
   });
 
   return (
-    <Container>
+    <Box component="div">
       <Typography sx={{ margin: (theme) => theme.spacing(2) }} variant="h6">
         Leave a comment:
       </Typography>
@@ -174,7 +168,7 @@ function Contact({ toggleShowModal }: Props) {
           </div>
         </FormControl>
       </form>
-    </Container>
+    </Box>
   );
 }
 

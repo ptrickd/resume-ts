@@ -3,10 +3,9 @@ import React from "react";
 import projectsData from "../files/projectsData";
 //@ts-ignore
 import ProjectCards from "./ProjectCards.tsx";
-//@ts-ignore
-import { CardsSection } from "../styles/ProjectsStyled.ts";
-import { Container, Typography } from "@mui/material";
 
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 interface IProps {
   handleClickDetails: (value: number) => void;
 }
@@ -29,12 +28,23 @@ function Projects({ handleClickDetails }: IProps) {
   };
 
   return (
-    <Container id="projects" sx={{ flexGrow: 1 }}>
+    <Box component="div" id="projects" sx={{ flexGrow: 1 }}>
       <Typography variant="h3" align="center">
         My Projects
       </Typography>
-      <CardsSection>{displayProjects()}</CardsSection>
-    </Container>
+      <Box
+        component="div"
+        sx={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        {displayProjects()}
+      </Box>
+    </Box>
   );
 }
 

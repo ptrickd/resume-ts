@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  Container,
+  Box,
   Grid,
   List,
   ListItem,
@@ -24,7 +24,7 @@ const frameworks = [
 
 function Skills() {
   return (
-    <Container id="skills" sx={{ flexGrow: 1 }}>
+    <Box component="div" id="skills" sx={{ flexGrow: 1 }}>
       <Typography variant="h3" sx={{ alignSelf: "center" }} align="center">
         What I know
       </Typography>
@@ -117,7 +117,7 @@ function Skills() {
           </List>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 }
 
