@@ -22,7 +22,7 @@ function Footer() {
         padding: (theme) => theme.spacing(5),
         flexGrow: 1,
         width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-        marginLeft: { xs: "auto", md: drawerWidth },
+        marginLeft: { xs: 0, md: drawerWidth },
       }}
     >
       <Divider sx={{ marginBottom: 10 }} />

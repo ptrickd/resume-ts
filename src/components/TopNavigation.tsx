@@ -83,13 +83,21 @@ const TopNavigation = () => {
   );
 
   return (
-    <Box component="div" sx={{ display: "flex" }}>
+    <Box
+      component="div"
+      sx={{
+        margin: 0,
+        padding: 0,
+        display: "flex",
+        flexGrow: 1,
+      }}
+    >
       <CssBaseline />
       <AppBar
-        position="fixed"
+        position="static"
         sx={{
-          width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-          marginLeft: { xs: 0, md: drawerWidth },
+          width: { xs: "100%", md: `calc(100% - ${drawerWidth})` },
+          marginLeft: { xs: 0, md: `${drawerWidth}px` },
         }}
       >
         <Toolbar>
@@ -110,7 +118,7 @@ const TopNavigation = () => {
         component="nav"
         sx={{
           width: { xs: "none", md: drawerWidth },
-          flexShrink: 0,
+          // flexShrink: 0,
         }}
       >
         <Drawer

@@ -22,7 +22,7 @@ import cssIcon from "../images/icon/css-icon-bw.png";
 import jsIcon from "../images/icon/javascript-icon-bw.png";
 import nodeJsIcon from "../images/icon/nodejs-icon-bw.ico";
 
-import { Divider, Container, Toolbar } from "@mui/material";
+import { Divider, Container, Toolbar, Box } from "@mui/material";
 import { DRAWER_WIDTH } from "../constants/Styling";
 
 const Icon1 = [
@@ -58,27 +58,33 @@ const MainPage = () => {
   };
 
   return (
-    <Container
-      // maxWidth="lg"
+    <Box
+      component="span"
       sx={{
+        height: "100%",
+        padding: 0,
+        marginRight: 0,
+        marginTop: 0,
+        marginBottom: 0,
+        display: "block",
         width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-        marginLeft: { xs: 0, md: drawerWidth },
+        marginLeft: { xs: 0, md: `${drawerWidth}px` },
       }}
     >
       {/* //necessary for content to be below app bar // toolbar:
         theme.mixins.toolbar, */}
-      <Toolbar>
-        <About />
-        <Icons iconsArr={Icon1} />
-        <Divider />
-        <Projects handleClickDetails={handleClickDetails} />
-        <Icons iconsArr={Icon2} />
-        <Divider />
-        <Skills />
-        <Divider />
-        <Contact toggleShowModal={toggleShowModal} />
-      </Toolbar>
-    </Container>
+      {/* <Toolbar> */}
+      <About />
+      {/* <Icons iconsArr={Icon1} /> */}
+      {/* <Divider />
+      <Projects handleClickDetails={handleClickDetails} />
+      <Icons iconsArr={Icon2} />
+      <Divider />
+      <Skills />
+      <Divider />
+      <Contact toggleShowModal={toggleShowModal} />
+      {/* </Toolbar> */}
+    </Box>
   );
 };
 

@@ -3,7 +3,7 @@ import "@fontsource/roboto";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import { Toolbar, Box, Container } from "@mui/material";
-
+import { DRAWER_WIDTH } from "./constants/Styling";
 //@ts-ignore
 import MainPage from "./components/MainPage.tsx";
 //@ts-ignore
@@ -14,15 +14,16 @@ import Footer from "./components/Footer.tsx";
 //@ts-ignore
 import ProjectDetails from "./components/ProjectDetails.tsx";
 // import OnSubmitModal from './components/OnSubmitModal';
-import { DRAWER_WIDTH } from "./constants/Styling";
+// import { DRAWER_WIDTH } from "./constants/Styling";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-const drawerWidth = DRAWER_WIDTH;
+// const drawerWidth = DRAWER_WIDTH;
 let theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
       // sm: Number(`calc(100% - ${drawerWidth}px)`),
-      sm: Number(drawerWidth),
+      // sm: Number(drawerWidth),
+      sm: 600,
       md: 900,
       lg: 1200,
       xl: 1536,
@@ -47,9 +48,11 @@ const router = createBrowserRouter([
 ///////////////////////////////////////////////
 
 function App() {
+  // const drawerWidth = DRAWER_WIDTH;
+
   return (
-    <Container sx={{ height: "100%", width: "100%", padding: 0, margin: 0 }}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <Container maxWidth="lg" disableGutters sx={{ margin: 0, padding: 0 }}>
         <TopNavigation />
 
         {/* <div className={classes.toolbar} /> */}
@@ -61,8 +64,8 @@ function App() {
             <Footer />
           </div>
         </Toolbar>
-      </ThemeProvider>
-    </Container>
+      </Container>
+    </ThemeProvider>
   );
 }
 
