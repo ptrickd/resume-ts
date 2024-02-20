@@ -71,12 +71,10 @@ const MainPage = () => {
         marginLeft: { xs: 0, md: `${drawerWidth}px` },
       }}
     >
-      {/* //necessary for content to be below app bar // toolbar:
-        theme.mixins.toolbar, */}
       {/* <Toolbar> */}
       <About />
-      {/* <Icons iconsArr={Icon1} /> */}
-      {/* <Divider />
+      <Icons iconsArr={Icon1} />
+      <Divider />
       <Projects handleClickDetails={handleClickDetails} />
       <Icons iconsArr={Icon2} />
       <Divider />

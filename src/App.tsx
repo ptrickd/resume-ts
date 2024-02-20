@@ -48,15 +48,17 @@ const router = createBrowserRouter([
 ///////////////////////////////////////////////
 
 function App() {
-  // const drawerWidth = DRAWER_WIDTH;
-
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="lg" disableGutters sx={{ margin: 0, padding: 0 }}>
+      <Container
+        maxWidth="lg"
+        disableGutters
+        sx={{ display: "flex", flexDirection: "column" }}
+      >
         <TopNavigation />
 
         {/* <div className={classes.toolbar} /> */}
-        <Toolbar>
+        <Toolbar sx={{ display: "flex", flexDirection: "column" }}>
           <Box component="div" sx={{ minHeight: "86vh" }}>
             <RouterProvider router={router} />
           </Box>

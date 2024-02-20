@@ -1,9 +1,8 @@
 import React from "react";
 
-//@ts-ignore
-// import { Wrapper } from "../styles/Icons.ts";
-
-import { Avatar } from "@mui/material";
+//Material UI
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
 
 interface IProps {
   iconsArr: { text: string; icon: string }[];
@@ -26,7 +25,20 @@ function Icons({ iconsArr }: IProps) {
     });
   };
 
-  return <div>{WrappedInTooltips()}</div>;
+  return (
+    <Box
+      component="div"
+      sx={{
+        width: "100%",
+        m: 1,
+        p: 1,
+        display: "flex",
+        justifyContent: "space-around",
+      }}
+    >
+      {WrappedInTooltips()}
+    </Box>
+  );
 }
 
 export default Icons;

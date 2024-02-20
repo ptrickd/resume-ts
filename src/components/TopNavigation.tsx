@@ -118,7 +118,7 @@ const TopNavigation = () => {
         component="nav"
         sx={{
           width: { xs: "none", md: drawerWidth },
-          // flexShrink: 0,
+          flexShrink: 0,
         }}
       >
         <Drawer
