@@ -1,10 +1,10 @@
-import {
-  navBgDark,
-  navBgLight,
-  fontColorDark,
-  fontColorLight,
-  backgroundDark,
-} from "../constants/Colors";
+// import {
+//   navBgDark,
+//   navBgLight,
+//   fontColorDark,
+//   fontColorLight,
+//   backgroundDark,
+// } from "../constants/Colors";
 /*
 export const Wrapper = styled.div< { darkTheme: boolean } >`
   height: 100vh;

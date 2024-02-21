@@ -25,22 +25,31 @@ const frameworks = [
 function Skills() {
   return (
     <Box component="div" id="skills" sx={{ flexGrow: 1 }}>
-      <Typography variant="h3" sx={{ alignSelf: "center" }} align="center">
+      <Typography
+        variant="h3"
+        sx={{ marginTop: 2, alignSelf: "center" }}
+        align="center"
+      >
         What I know
       </Typography>
-      <Grid container spacing={3} sx={{ justifyContent: "content" }}>
+      <Grid container spacing={3} sx={{ justifyContent: "space-between" }}>
         <Grid
           item
           xs={12}
           sm={6}
           sx={{
-            width: "25%",
+            width: "35%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
           }}
         >
-          <Typography variant="h5">Language</Typography>
+          <Typography
+            variant="h5"
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            Language
+          </Typography>
           <List>
             {languages.map((text, index) => (
               <ListItem
@@ -66,7 +75,7 @@ function Skills() {
                   primary={text}
                   sx={{
                     flexGrow: 1,
-                    justifyContent: "center",
+                    justifyContent: "flex-start",
                     alignSelf: "flex-start",
                   }}
                 />
@@ -76,7 +85,12 @@ function Skills() {
         </Grid>
         {/* <Grid item xs={12} sm={12} md={4} /> */}
         <Grid item xs={12} sm={6}>
-          <Typography variant="h5">Framework</Typography>
+          <Typography
+            variant="h5"
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            Framework
+          </Typography>
           <List
             sx={{
               width: "25%",

@@ -2,7 +2,7 @@ import React from "react";
 import "@fontsource/roboto";
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
-import { Toolbar, Box, Container } from "@mui/material";
+import { Toolbar, Box, Container, CssBaseline } from "@mui/material";
 import { DRAWER_WIDTH } from "./constants/Styling";
 //@ts-ignore
 import MainPage from "./components/MainPage.tsx";
@@ -49,25 +49,28 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Container
-        maxWidth="lg"
-        disableGutters
-        sx={{ display: "flex", flexDirection: "column" }}
-      >
-        <TopNavigation />
+    <React.Fragment>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container
+          disableGutters
+          sx={{ display: "flex", flexDirection: "column" }}
+        >
+          <Toolbar
+            disableGutters
+            sx={{ display: "flex", flexDirection: "column" }}
+          >
+            <TopNavigation />
 
-        {/* <div className={classes.toolbar} /> */}
-        <Toolbar sx={{ display: "flex", flexDirection: "column" }}>
-          <Box component="div" sx={{ minHeight: "86vh" }}>
-            <RouterProvider router={router} />
-          </Box>
-          <div>
+            <Box component="div" sx={{ minHeight: "86vh" }}>
+              <RouterProvider router={router} />
+            </Box>
+
             <Footer />
-          </div>
-        </Toolbar>
-      </Container>
-    </ThemeProvider>
+          </Toolbar>
+        </Container>
+      </ThemeProvider>
+    </React.Fragment>
   );
 }
 

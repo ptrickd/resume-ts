@@ -28,7 +28,7 @@ function Projects({ handleClickDetails }: IProps) {
   };
 
   return (
-    <Box component="div" id="projects" sx={{ flexGrow: 1 }}>
+    <Box component="div" id="projects" sx={{ marginTop: 2, flexGrow: 1 }}>
       <Typography variant="h3" align="center">
         My Projects
       </Typography>

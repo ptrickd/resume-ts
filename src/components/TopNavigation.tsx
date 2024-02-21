@@ -4,7 +4,6 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  CssBaseline,
   Drawer,
   Divider,
   List,
@@ -35,7 +34,6 @@ const TopNavigation = () => {
 
   const drawer = (
     <div>
-      {/* <Box className={classes.toolbar} bgcolor="primary.main" /> */}
       <Toolbar variant="dense">
         <Divider />
         <Box>
@@ -86,17 +84,18 @@ const TopNavigation = () => {
     <Box
       component="div"
       sx={{
+        width: "100%",
         margin: 0,
         padding: 0,
         display: "flex",
         flexGrow: 1,
       }}
     >
-      <CssBaseline />
       <AppBar
-        position="static"
+        position="relative"
+        color="primary"
         sx={{
-          width: { xs: "100%", md: `calc(100% - ${drawerWidth})` },
+          width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
           marginLeft: { xs: 0, md: `${drawerWidth}px` },
         }}
       >
@@ -115,7 +114,7 @@ const TopNavigation = () => {
         </Toolbar>
       </AppBar>
       <Box
-        component="nav"
+        component="div"
         sx={{
           width: { xs: "none", md: drawerWidth },
           flexShrink: 0,
