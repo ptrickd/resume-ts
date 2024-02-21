@@ -1,49 +1,39 @@
 {
-  "name": "resume",
-  "version": "0.1.0",
+  "name": "resume-ts",
+  "version": "1.0.0",
   "private": true,
+  "description": "resume-ts",
+  "author": "ptrickd",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
-    "@emailjs/browser": "^4.1.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.15.10",
     "@mui/material": "^5.15.10",
-    "@mui/styles": "^5.15.10",
-    "formik": "^2.2.6",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-emotion": "^8.13.1",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0",
-    "react-scripts": "^5.0.1",
-    "typescript": "^5.3.3"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.17",
+    "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "@types/react-router-dom": "^5.1.7"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "typescript": "^5.3.3"
   }
 }

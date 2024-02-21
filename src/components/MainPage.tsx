@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { StaticImage } from "gatsby-plugin-image";
 //@ts-ignore
 import About from "../components/About.tsx";
 //@ts-ignore
@@ -10,19 +11,47 @@ import Skills from "../components/Skills.tsx";
 //@ts-ignore
 import Icons from "../components/Icons.tsx";
 
-import reactIcon from "../images/icon/react.svg";
-import postgresqlIcon from "../images/icon/postgresql-icon.png";
-import githubIcon from "../images/icon/github_icon.ico";
-import jqueryIcon from "../images/icon/jquery-icon.png";
-import pythonIcon from "../images/icon/python-icon-bw.webp";
+const reactIcon = () => (
+  <StaticImage alt="react icon" src="../images/icons/react" />
+);
+const postgresqlIcon = () => (
+  <StaticImage
+    alt="posctgresql icon"
+    src="../images/icons/postgresql-icon.png"
+  />
+);
+const githubIcon = () => (
+  <StaticImage alt="github icon" src="../images/icons/github_icon.ico" />
+);
+const jqueryIcon = () => (
+  <StaticImage alt="jquery icon" src="../images/icons/jquery-icon.png" />
+);
+const pythonIcon = () => (
+  <StaticImage alt="python icon" src="../images/icons/python-icon-bw.webp" />
+);
 
-import flaskIcon from "../images/icon/flask-logo.png";
-import htmlIcon from "../images/icon/html5-icon-bw.png";
-import cssIcon from "../images/icon/css-icon-bw.png";
-import jsIcon from "../images/icon/javascript-icon-bw.png";
-import nodeJsIcon from "../images/icon/nodejs-icon-bw.ico";
+const flaskIcon = () => (
+  <StaticImage alt="flask icon" src="../images/icons/flask-logo.png" />
+);
+const htmlIcon = () => (
+  <StaticImage alt="html icon" src="../images/icons/html5-icon-bw.png" />
+);
+const cssIcon = () => (
+  <StaticImage alt="css icon" src="../images/icons/css-icon-bw.png" />
+);
+const jsIcon = () => (
+  <StaticImage
+    alt="javascript icon"
+    src="../images/icons/javascript-icon-bw.png"
+  />
+);
+const nodeJsIcon = () => (
+  <StaticImage alt="node js icon" src="../images/icons/nodejs-icon-bw.ico" />
+);
 
-import { Divider, Container, Toolbar, Box } from "@mui/material";
+import Divider from "@mui/material/Divider";
+import Box from "@mui/material/Box";
+
 import { DRAWER_WIDTH } from "../constants/Styling";
 
 const Icon1 = [
@@ -72,14 +101,14 @@ const MainPage = () => {
       }}
     >
       <About />
-      <Icons iconsArr={Icon1} />
+      {/* <Icons iconsArr={Icon1} /> */}
       <Divider />
-      <Projects handleClickDetails={handleClickDetails} />
-      <Icons iconsArr={Icon2} />
+      {/* <Projects handleClickDetails={handleClickDetails} /> */}
+      {/* <Icons iconsArr={Icon2} /> */}
       <Divider />
       <Skills />
       <Divider />
-      <Contact toggleShowModal={toggleShowModal} />
+      {/* <Contact toggleShowModal={toggleShowModal} /> */}
     </Box>
   );
 };
