@@ -71,7 +71,6 @@ const MainPage = () => {
         marginLeft: { xs: 0, md: `${drawerWidth}px` },
       }}
     >
-      {/* <Toolbar> */}
       <About />
       <Icons iconsArr={Icon1} />
       <Divider />
@@ -81,7 +80,6 @@ const MainPage = () => {
       <Skills />
       <Divider />
       <Contact toggleShowModal={toggleShowModal} />
-      {/* </Toolbar> */}
     </Box>
   );
 };
