@@ -11,43 +11,16 @@ import Skills from "../components/Skills.tsx";
 //@ts-ignore
 import Icons from "../components/Icons.tsx";
 
-const reactIcon = () => (
-  <StaticImage alt="react icon" src="../images/icons/react" />
-);
-const postgresqlIcon = () => (
-  <StaticImage
-    alt="posctgresql icon"
-    src="../images/icons/postgresql-icon.png"
-  />
-);
-const githubIcon = () => (
-  <StaticImage alt="github icon" src="../images/icons/github_icon.ico" />
-);
-const jqueryIcon = () => (
-  <StaticImage alt="jquery icon" src="../images/icons/jquery-icon.png" />
-);
-const pythonIcon = () => (
-  <StaticImage alt="python icon" src="../images/icons/python-icon-bw.webp" />
-);
-
-const flaskIcon = () => (
-  <StaticImage alt="flask icon" src="../images/icons/flask-logo.png" />
-);
-const htmlIcon = () => (
-  <StaticImage alt="html icon" src="../images/icons/html5-icon-bw.png" />
-);
-const cssIcon = () => (
-  <StaticImage alt="css icon" src="../images/icons/css-icon-bw.png" />
-);
-const jsIcon = () => (
-  <StaticImage
-    alt="javascript icon"
-    src="../images/icons/javascript-icon-bw.png"
-  />
-);
-const nodeJsIcon = () => (
-  <StaticImage alt="node js icon" src="../images/icons/nodejs-icon-bw.ico" />
-);
+import reactIcon from "../images/icons/react.svg";
+import githubIcon from "../images/icons/github_icon.ico";
+import postgresqlIcon from "../images/icons/postgresql-icon.png";
+import jqueryIcon from "../images/icons/jquery-icon.png";
+import pythonIcon from "../images/icons/python-icon-bw.webp";
+import flaskIcon from "../images/icons/flask-logo.png";
+import htmlIcon from "../images/icons/html5-icon-bw.png";
+import cssIcon from "../images/icons/css-icon-bw.png";
+import jsIcon from "../images/icons/javascript-icon-bw.png";
+import nodeJsIcon from "../images/icons/nodejs-icon-bw.ico";
 
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
@@ -74,7 +47,7 @@ const drawerWidth = DRAWER_WIDTH;
 
 const MainPage = () => {
   const [, setShowModal] = useState<boolean>(false);
-
+  console.log(reactIcon);
   const handleClickDetails = (id: number) => {
     // setShowDetails(true);
     // setDetailsId(id);
@@ -101,10 +74,10 @@ const MainPage = () => {
       }}
     >
       <About />
-      {/* <Icons iconsArr={Icon1} /> */}
+      <Icons iconsArr={Icon1} />
       <Divider />
       {/* <Projects handleClickDetails={handleClickDetails} /> */}
-      {/* <Icons iconsArr={Icon2} /> */}
+      <Icons iconsArr={Icon2} />
       <Divider />
       <Skills />
       <Divider />

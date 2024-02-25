@@ -3,12 +3,14 @@ import React from "react";
 //Material UI
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
+// import { IronSharp } from "@mui/icons-material";
 
 interface IProps {
   iconsArr: { text: string; icon: string }[];
 }
 
 function Icons({ iconsArr }: IProps) {
+  console.log(iconsArr);
   const WrappedInTooltips = () => {
     return iconsArr.map((iconObj, index) => {
       return (
