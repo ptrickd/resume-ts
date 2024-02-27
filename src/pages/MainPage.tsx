@@ -77,7 +77,7 @@ const MainPage = () => {
       <Divider />
       <Skills />
       <Divider />
-      {/* <Contact toggleShowModal={toggleShowModal} /> */}
+      <Contact toggleShowModal={toggleShowModal} />
     </Box>
   );
 };
