@@ -43,7 +43,6 @@ const drawerWidth = DRAWER_WIDTH;
 
 const MainPage = () => {
   const [, setShowModal] = useState<boolean>(false);
-  console.log(reactIcon);
   const handleClickDetails = (id: number) => {
     // setShowDetails(true);
     // setDetailsId(id);

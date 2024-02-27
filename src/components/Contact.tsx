@@ -2,7 +2,13 @@
 import React from "react";
 
 //Forms
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import {
+  useForm,
+  Controller,
+  SubmitHandler,
+  UseControllerProps,
+  useController,
+} from "react-hook-form";
 
 //UI
 import Box from "@mui/material/Box";
@@ -24,7 +30,12 @@ interface IFormInputs {
 }
 
 function Contact({ toggleShowModal }: Props) {
-  const { handleSubmit, control, reset } = useForm<IFormInputs>({
+  const {
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<IFormInputs>({
     defaultValues: {
       name: "",
       email: "",
@@ -58,6 +69,16 @@ function Contact({ toggleShowModal }: Props) {
               />
             )}
           />
+          {errors.name?.type === "required" && (
+            <Typography
+              variant="body1"
+              color="error"
+              align="left"
+              sx={{ m: 1 }}
+            >
+              * Required
+            </Typography>
+          )}
           <Controller
             name="email"
             control={control}
@@ -73,8 +94,18 @@ function Contact({ toggleShowModal }: Props) {
               />
             )}
           />
+          {errors.email?.type === "required" && (
+            <Typography
+              variant="body1"
+              color="error"
+              align="left"
+              sx={{ m: 1 }}
+            >
+              * Required
+            </Typography>
+          )}
           <Controller
-            name="email"
+            name="commentBox"
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
@@ -90,6 +121,16 @@ function Contact({ toggleShowModal }: Props) {
               />
             )}
           />
+          {errors.commentBox?.type === "required" && (
+            <Typography
+              variant="body1"
+              color="error"
+              align="left"
+              sx={{ m: 1 }}
+            >
+              * Required
+            </Typography>
+          )}
           <Button
             sx={{ margin: (theme) => theme.spacing(2) }}
             variant="contained"
