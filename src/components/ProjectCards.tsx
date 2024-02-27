@@ -15,6 +15,8 @@ import ListItem from "@mui/material/ListItem";
 import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
+import { imagesList } from "../constants/ImagesList";
+
 interface IProps {
   id: number;
   title: string;
@@ -50,7 +52,7 @@ function ProjectCards({
               height: 140,
               borderBottom: "1px solid black",
             }}
-            image={screenshots[0]}
+            image={imagesList[screenshots[0]]}
             title="Click to see details"
           />
           <CardHeader
