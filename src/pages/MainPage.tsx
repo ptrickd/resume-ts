@@ -42,16 +42,8 @@ const Icon2 = [
 const drawerWidth = DRAWER_WIDTH;
 
 const MainPage = () => {
-  const [, setShowModal] = useState<boolean>(false);
   const handleClickDetails = (id: number) => {
-    // setShowDetails(true);
-    // setDetailsId(id);
     console.log("handle");
-  };
-
-  const toggleShowModal = (value: boolean) => {
-    console.log("toogle value: ", value);
-    setShowModal(value);
   };
 
   return (
@@ -76,7 +68,7 @@ const MainPage = () => {
       <Divider />
       <Skills />
       <Divider />
-      <Contact toggleShowModal={toggleShowModal} />
+      <Contact />
     </Box>
   );
 };
