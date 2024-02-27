@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { StaticImage } from "gatsby-plugin-image";
-//@ts-ignore
-import About from "../components/About.tsx";
-//@ts-ignore
-import Contact from "../components/Contact.tsx";
-//@ts-ignore
-import Projects from "../components/Projects.tsx";
-//@ts-ignore
-import Skills from "../components/Skills.tsx";
-//@ts-ignore
-import Icons from "../components/Icons.tsx";
+
+import About from "../components/About";
+import Contact from "../components/Contact";
+import Projects from "./Projects";
+import Skills from "../components/Skills";
+import Icons from "../components/Icons";
 
 import reactIcon from "../images/icons/react.svg";
 import githubIcon from "../images/icons/github_icon.ico";
@@ -76,7 +72,7 @@ const MainPage = () => {
       <About />
       <Icons iconsArr={Icon1} />
       <Divider />
-      {/* <Projects handleClickDetails={handleClickDetails} /> */}
+      <Projects handleClickDetails={handleClickDetails} />
       <Icons iconsArr={Icon2} />
       <Divider />
       <Skills />

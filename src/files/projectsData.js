@@ -2,7 +2,7 @@ const projectsData = [
   {
     title: "Kitchen Inventory",
     screenshotsNum: 1,
-    screenshots: ["/images/screenshot/inventory1.jpg"],
+    screenshots: ["inventory1"],
     shortDescription: "Personal Project",
     description:
       "The goal of this projects it is to provide a free and open source alternative for chef in restaurant to make and keep track of their inventory without using pen and paper",
@@ -27,11 +27,7 @@ const projectsData = [
   {
     title: "Webpage Resume",
     screenshotsNum: 3,
-    screenshots: [
-      "/images/screenshot/resume2.jpg",
-      "/images/screenshot/resume3.jpg",
-      "/images/screenshot/resume4.jpg",
-    ],
+    screenshots: ["resume2", "resume3", "resume4"],
     shortDescription: "Personal Project",
     description:
       "It's a portfolio of projects. It changed overtime. Now it use ReactJS, Typescript and Material UI",
@@ -52,11 +48,7 @@ const projectsData = [
   {
     title: "Catalog Of Projects",
     screenshotsNum: 3,
-    screenshots: [
-      "/images/screenshot/catalog1.jpg",
-      "/images/screenshot/catalog3.jpg",
-      "/images/screenshot/catalog4.jpg",
-    ],
+    screenshots: ["catalog1", "catalog3", "catalog4"],
     description:
       "This app has been created with a goal in mind to showcase the projects of the EvolveU learners.",
     shortDescription: "Team of 4",
@@ -79,11 +71,7 @@ const projectsData = [
   {
     title: "Building Manager",
     screenshotsNum: 3,
-    screenshots: [
-      "/images/screenshot/homy1.jpg",
-      "/images/screenshot/homy3.jpg",
-      "/images/screenshot/homy4.jpg",
-    ],
+    screenshots: ["homy1", "homy3", "homy4"],
     description:
       "This project is about to create an app to connect the residents and the manager in a multi-tenant building.",
     shortDescription: "Team of 6",
@@ -115,7 +103,7 @@ const projectsData = [
   //     title: 'Desktop Staff Scheduler',
   //     screenshotsNum: 1,
   //     screenshots: [
-  //         '/images/screenshot/scheduler1.jpg'
+  //         'scheduler1'
   //     ],
   //     description: "This project is about to create a desktop app to help schedule staff in commercial kitchen",
   //     shortDescription: 'Personal',
@@ -131,7 +119,7 @@ const projectsData = [
   {
     title: "Mobile App Projects Catalog",
     screenshotsNum: 1,
-    screenshots: ["/images/screenshot/react-native1.jpg"],
+    screenshots: ["reactNative1"],
     description:
       "This project is the continuation of the projects catalog, with a react-native mobile app to get access to the API",
     shortDescription: "Personal",
@@ -144,11 +132,7 @@ const projectsData = [
   {
     title: "Flask PostgreSQL Server ",
     screenshotsNum: 3,
-    screenshots: [
-      "/images/screenshot/catalog1.jpg",
-      "/images/screenshot/catalog3.jpg",
-      "/images/screenshot/flask1.jpg",
-    ],
+    screenshots: ["flask1"],
     description:
       "This project use the Catalog Of Projects react app but is using a Python/Flask/Postgres backend",
     shortDescription: "Personal",

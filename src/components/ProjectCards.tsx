@@ -1,16 +1,19 @@
+//React
 import React, { Fragment } from "react";
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  CardHeader,
-  List,
-  ListItem,
-  CardActionArea,
-  Divider,
-  Typography,
-} from "@mui/material";
-import { useNavigate } from "react-router-dom";
+
+//Gatsby
+import { navigate } from "gatsby";
+
+//Material UI
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import CardHeader from "@mui/material/CardHeader";
+import CardActionArea from "@mui/material/CardActionArea";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import Divider from "@mui/material/Divider";
+import Typography from "@mui/material/Typography";
 
 interface IProps {
   id: number;
@@ -31,7 +34,7 @@ function ProjectCards({
   // darkTheme,
   skills,
 }: IProps) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const limitCharacter = (str: string) => {
     if (str.length > 100) return str.substring(0, 100) + "...";

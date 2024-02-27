@@ -1,15 +1,14 @@
 //React
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
-
+import { navigate } from "gatsby";
 //Components
-import ProjectImageDisplay from "./ProjectImageDisplay";
+import ProjectImageDisplay from "../../components/ProjectImageDisplay";
 
 //Data
-import projectsData from "../files/projectsData";
+import projectsData from "../../files/projectsData.js";
 
 //Constants
-import { DRAWER_WIDTH } from "../constants/Styling";
+import { DRAWER_WIDTH } from "../../constants/Styling";
 
 //Material - UI
 import Box from "@mui/material/Box";
@@ -28,15 +27,18 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const drawerWidth = DRAWER_WIDTH;
 
-function ProjectDetails() {
-  const navigate = useNavigate();
-  const { id } = useParams();
+interface IParams {
+  id: string;
+}
 
+function ProjectDetails(params: IParams) {
+  console.log(params);
+  const id: string = params[`id`];
+  console.log(id);
   const { title, description, skills, repo, website, haveRepo, haveWebsite } =
     projectsData[Number(id)];
-
   const displayList = () => {
-    return skills.map((skill, index) => {
+    return skills.map((skill: string[], index: number) => {
       return (
         <Grid item xs={6} md={4} lg={3} key={index}>
           <ListItem dense>
@@ -73,7 +75,7 @@ function ProjectDetails() {
           alignItems: "center",
         }}
       >
-        <ProjectImageDisplay />
+        <ProjectImageDisplay id={id} />
 
         <Divider />
         <Typography
