@@ -1,5 +1,5 @@
 //React
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 
@@ -26,6 +26,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { Screenshot } from "@mui/icons-material";
 
 const drawerWidth = DRAWER_WIDTH;
 
@@ -33,28 +34,68 @@ interface IParams {
   id: string;
 }
 
+interface IProject {
+  title: string;
+  screenshotsNum: number;
+  screenshots: string[];
+  shortDescription: string;
+  description: string;
+  skills: string[];
+  haveRepo: boolean;
+  haveWebsite: boolean;
+  repo: string;
+  website: string;
+}
+
 function ProjectDetails(params: IParams) {
-  // const projectsData = useStaticQuery(graphql`
-  //   {
-  //     allFile(filter: { name: { eq: "projectsData.js" } }) {
-  //       edges {
-  //         node {
-  //           data
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-  console.log("data", projectsData);
-  console.log(params);
+  const [project, setProject] = useState<null | IProject>(null);
   const id: string = params[`id`];
-  console.log(id);
-  const { title, description, skills, repo, website, haveRepo, haveWebsite } =
-    projectsData[Number(id)];
-  console.log(title);
-  console.log(projectsData[Number(id)]);
+  const data = useStaticQuery(graphql`
+    query ProjectDetailsQuery {
+      allFile(filter: { name: { eq: "projectsData" } }) {
+        nodes {
+          name
+          childrenJson {
+            data {
+              title
+              screenshotsNum
+              screenshots
+              shortDescription
+              description
+              skills
+              haveRepo
+              haveWebsite
+              repo
+              website
+            }
+          }
+        }
+      }
+    }
+  `);
+  useEffect(() => {
+    if (data.allFile.nodes[0].childrenJson[0].data && id) {
+      setProject(data.allFile.nodes[0].childrenJson[0].data[id]);
+    }
+    console.log(data.allFile.nodes[0].childrenJson[0].data);
+  }, [data]);
+
+  if (!project) return null;
+
+  const {
+    title,
+    description,
+    skills,
+    screenshots,
+    screenshotsNum,
+    repo,
+    website,
+    haveRepo,
+    haveWebsite,
+  } = project;
+
   const displayList = () => {
-    return skills.map((skill: string[], index: number) => {
+    return skills.map((skill: string, index: number) => {
       return (
         <Grid item xs={6} md={4} lg={3} key={index}>
           <ListItem dense>
@@ -91,7 +132,11 @@ function ProjectDetails(params: IParams) {
           alignItems: "center",
         }}
       >
-        <ProjectImageDisplay id={id} />
+        <ProjectImageDisplay
+          id={id}
+          screenshots={screenshots}
+          screenshotsNum={screenshotsNum}
+        />
 
         <Divider />
         <Typography

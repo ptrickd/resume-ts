@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import projectsData from "../files/projectsData.json";
-
 import ProjectCards from "./ProjectCards";
 
 import Box from "@mui/material/Box";
@@ -19,7 +17,7 @@ interface IProjects {
 function Projects() {
   const [projectsLists, setProjectsList] = useState([]);
   const data = useStaticQuery(graphql`
-    query HomePageQuery {
+    query ProjectsPageQuery {
       allFile(filter: { name: { eq: "projectsData" } }) {
         nodes {
           name

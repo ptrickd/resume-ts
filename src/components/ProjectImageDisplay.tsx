@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import projectsData from "../files/projectsData.json";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
@@ -17,15 +16,17 @@ import { imagesList } from "../constants/ImagesList";
 
 interface IProps {
   id: string;
+  screenshots: string[];
+  screenshotsNum: number;
 }
 
-const ProjectImageDisplay = ({ id }: IProps) => {
+const ProjectImageDisplay = ({ id, screenshots, screenshotsNum }: IProps) => {
   console.log(id);
-  console.log(projectsData);
+
   const theme = useTheme();
   const [image, setImage] = useState("");
   const [openModal, setOpenModal] = useState(false);
-  const { screenshots, screenshotsNum } = projectsData[Number(id)];
+
   const widthIsSmall = useMediaQuery(theme.breakpoints.up("sm"));
   const widthIsMedium = useMediaQuery(theme.breakpoints.up("md"));
   const widthIsLarge = useMediaQuery(theme.breakpoints.up("lg"));
