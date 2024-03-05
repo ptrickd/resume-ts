@@ -5,3 +5,4 @@ declare module "*.ico";
 declare module "*.png";
 declare module "*.webp";
 declare module "*.js";
+declare module "*.json";

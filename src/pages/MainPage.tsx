@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Projects from "./Projects";
+import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Icons from "../components/Icons";
 
@@ -63,7 +63,7 @@ const MainPage = () => {
       <About />
       <Icons iconsArr={Icon1} />
       <Divider />
-      <Projects handleClickDetails={handleClickDetails} />
+      <Projects />
       <Icons iconsArr={Icon2} />
       <Divider />
       <Skills />

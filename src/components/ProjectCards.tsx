@@ -22,7 +22,6 @@ interface IProps {
   title: string;
   screenshots: string[];
   description: string;
-  handleClickDetails: (id: number) => void;
   // darkTheme: boolean;
   skills: string[];
 }
@@ -32,7 +31,6 @@ function ProjectCards({
   title,
   screenshots,
   description,
-  handleClickDetails,
   // darkTheme,
   skills,
 }: IProps) {

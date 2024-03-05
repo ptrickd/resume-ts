@@ -1,11 +1,13 @@
 //React
 import React from "react";
 import { navigate } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
+
 //Components
 import ProjectImageDisplay from "../../components/ProjectImageDisplay";
 
 //Data
-import projectsData from "../../files/projectsData.js";
+import projectsData from "../../files/projectsData.json";
 
 //Constants
 import { DRAWER_WIDTH } from "../../constants/Styling";
@@ -32,11 +34,25 @@ interface IParams {
 }
 
 function ProjectDetails(params: IParams) {
+  // const projectsData = useStaticQuery(graphql`
+  //   {
+  //     allFile(filter: { name: { eq: "projectsData.js" } }) {
+  //       edges {
+  //         node {
+  //           data
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+  console.log("data", projectsData);
   console.log(params);
   const id: string = params[`id`];
   console.log(id);
   const { title, description, skills, repo, website, haveRepo, haveWebsite } =
     projectsData[Number(id)];
+  console.log(title);
+  console.log(projectsData[Number(id)]);
   const displayList = () => {
     return skills.map((skill: string[], index: number) => {
       return (

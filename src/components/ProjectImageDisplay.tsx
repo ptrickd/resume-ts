@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import projectsData from "../files/projectsData.js";
+import projectsData from "../files/projectsData.json";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";

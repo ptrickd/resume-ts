@@ -1,7 +1,6 @@
 import React from "react";
 import { Typography, Button, Paper, Box } from "@mui/material";
 
-import resumePdf from "../files/myresume.pdf";
 //@ts-ignore
 
 function About() {
@@ -40,7 +39,7 @@ function About() {
           development. Love to learn new languages and fameworks. Available to
           work remote or in an office.
         </Typography>
-        <Button
+        {/* <Button
           id="buttons"
           sx={{
             margin: (theme) => theme.spacing(1),
@@ -52,7 +51,7 @@ function About() {
         >
           {" "}
           View Resume &raquo;
-        </Button>
+        </Button> */}
       </Paper>
     </Box>
   );

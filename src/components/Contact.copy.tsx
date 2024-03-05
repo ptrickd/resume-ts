@@ -1,3 +1,4 @@
+/*
 import React from "react";
 // import { useFormik } from "formik";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -142,3 +143,4 @@ function Contact({ toggleShowModal }: Props) {
 }
 
 export default Contact;
+*/
