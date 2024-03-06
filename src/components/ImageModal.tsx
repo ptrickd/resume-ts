@@ -39,21 +39,7 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
     "/static/a937eb89336556548ec6f09969dae57e/resume3.jpg"
   );
 
-  const useImageQuery = () => {
-    const imageQuery = useStaticQuery(graphql`
-      query GetImage {
-        allFile(filter: { name: { eq: "resume3" } }) {
-          nodes {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED)
-            }
-          }
-        }
-      }
-    `);
-    return imageQuery.allFile.nodes[0].childImageSharp.gatsbyImageData;
-  };
-  console.log(useImageQuery());
+  // console.log(useImageQuery());
   // useEffect(() => {
   //   // const newImagePath = useImageQuery();
   //   // setImagePath(useImageQuery());
@@ -90,10 +76,10 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
             onClick={handleClose}
           >
             {/* <StaticImage src={imagePath} alt="" /> */}
-            <GatsbyImage
+            {/* <GatsbyImage
               image={useImageQuery()}
               alt="Showing image in a modal"
-            />
+            /> */}
             {/* <StyledImg
               sx={{
                 width: "100%",

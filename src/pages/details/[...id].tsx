@@ -3,6 +3,10 @@ import React, { useState, useEffect } from "react";
 import { navigate } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 
+//Query
+import useProjectsDetailsQuery from "../../queries/useProjectsDetailsQuery";
+import useImagesQuery from "../../queries/useImagesQuery";
+
 //Components
 import ProjectImageDisplay from "../../components/ProjectImageDisplay";
 
@@ -26,7 +30,6 @@ import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { Screenshot } from "@mui/icons-material";
 
 const drawerWidth = DRAWER_WIDTH;
 
@@ -50,37 +53,13 @@ interface IProject {
 function ProjectDetails(params: IParams) {
   const [project, setProject] = useState<null | IProject>(null);
   const id: string = params[`id`];
-  const data = useStaticQuery(graphql`
-    query ProjectDetailsQuery {
-      allFile(filter: { name: { eq: "projectsData" } }) {
-        nodes {
-          name
-          childrenJson {
-            data {
-              title
-              screenshotsNum
-              screenshots
-              shortDescription
-              description
-              skills
-              haveRepo
-              haveWebsite
-              repo
-              website
-            }
-          }
-        }
-      }
-    }
-  `);
-  useEffect(() => {
-    if (data.allFile.nodes[0].childrenJson[0].data && id) {
-      setProject(data.allFile.nodes[0].childrenJson[0].data[id]);
-    }
-    console.log(data.allFile.nodes[0].childrenJson[0].data);
-  }, [data]);
+  // console.log(useProjectsDetailsQuery());
+  const projectsDetails = useProjectsDetailsQuery();
+  const images = useImagesQuery();
 
-  if (!project) return null;
+  console.log(images);
+
+  if (!projectsDetails[id]) return null;
 
   const {
     title,
@@ -92,7 +71,7 @@ function ProjectDetails(params: IParams) {
     website,
     haveRepo,
     haveWebsite,
-  } = project;
+  } = projectsDetails[id];
 
   const displayList = () => {
     return skills.map((skill: string, index: number) => {
