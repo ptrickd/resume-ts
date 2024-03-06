@@ -10,9 +10,6 @@ import useImagesQuery from "../../queries/useImagesQuery";
 //Components
 import ProjectImageDisplay from "../../components/ProjectImageDisplay";
 
-//Data
-import projectsData from "../../files/projectsData.json";
-
 //Constants
 import { DRAWER_WIDTH } from "../../constants/Styling";
 
@@ -51,13 +48,10 @@ interface IProject {
 }
 
 function ProjectDetails(params: IParams) {
-  const [project, setProject] = useState<null | IProject>(null);
   const id: string = params[`id`];
-  // console.log(useProjectsDetailsQuery());
+
   const projectsDetails = useProjectsDetailsQuery();
   const images = useImagesQuery();
-
-  console.log(images);
 
   if (!projectsDetails[id]) return null;
 
@@ -66,7 +60,6 @@ function ProjectDetails(params: IParams) {
     description,
     skills,
     screenshots,
-    screenshotsNum,
     repo,
     website,
     haveRepo,
@@ -113,8 +106,8 @@ function ProjectDetails(params: IParams) {
       >
         <ProjectImageDisplay
           id={id}
-          screenshots={screenshots}
-          screenshotsNum={screenshotsNum}
+          screenshotsNames={screenshots}
+          images={images}
         />
 
         <Divider />

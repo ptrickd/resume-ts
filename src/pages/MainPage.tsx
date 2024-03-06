@@ -1,12 +1,14 @@
+//React
 import React, { useState } from "react";
-import { StaticImage } from "gatsby-plugin-image";
 
+//Components
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Icons from "../components/Icons";
 
+//Icons
 import reactIcon from "../images/icons/react.svg";
 import githubIcon from "../images/icons/github_icon.ico";
 import postgresqlIcon from "../images/icons/postgresql-icon.png";
@@ -18,9 +20,11 @@ import cssIcon from "../images/icons/css-icon-bw.png";
 import jsIcon from "../images/icons/javascript-icon-bw.png";
 import nodeJsIcon from "../images/icons/nodejs-icon-bw.ico";
 
+//Material UI
 import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 
+//Constants
 import { DRAWER_WIDTH } from "../constants/Styling";
 
 const Icon1 = [
@@ -42,10 +46,6 @@ const Icon2 = [
 const drawerWidth = DRAWER_WIDTH;
 
 const MainPage = () => {
-  const handleClickDetails = (id: number) => {
-    console.log("handle");
-  };
-
   return (
     <Box
       component="span"

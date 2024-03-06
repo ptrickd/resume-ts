@@ -1,8 +1,13 @@
+//React
 import React, { useState, useEffect } from "react";
-import { graphql, useStaticQuery } from "gatsby";
 
+//Components
 import ProjectCards from "./ProjectCards";
 
+//Queries
+import useProjectsDetailsQuery from "../queries/useProjectsDetailsQuery";
+
+//Material UI
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
@@ -15,41 +20,10 @@ interface IProjects {
 
 //data props is comming from the pageQuery above
 function Projects() {
-  const [projectsLists, setProjectsList] = useState([]);
-  const data = useStaticQuery(graphql`
-    query ProjectsPageQuery {
-      allFile(filter: { name: { eq: "projectsData" } }) {
-        nodes {
-          name
-          childrenJson {
-            data {
-              title
-              screenshotsNum
-              screenshots
-              shortDescription
-              description
-              skills
-              haveRepo
-              haveWebsite
-              repo
-              website
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  useEffect(() => {
-    if (data.allFile.nodes[0].childrenJson[0].data) {
-      setProjectsList(data.allFile.nodes[0].childrenJson[0].data);
-    }
-  }, [data]);
+  const [projectsLists] = useState(useProjectsDetailsQuery());
 
   const displayProjects = () => {
     return projectsLists.map((project: IProjects, index: number) => {
-      console.log(project);
-      console.log(index);
       return (
         <ProjectCards
           key={index}

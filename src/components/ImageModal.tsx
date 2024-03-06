@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from "react";
-import {
-  GatsbyImage,
-  getSrc,
-  getImage,
-  StaticImage,
-} from "gatsby-plugin-image";
-import { imagesList } from "../constants/ImagesList";
-import { graphql, useStaticQuery } from "gatsby";
-import { styled } from "@mui/material/styles";
+import React, { useState } from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+
+interface IImage {
+  name: string;
+  childImageSharp: any;
+}
 
 interface IProps {
   open: boolean;
   handleClose: () => void;
-  image: string;
+  image: IImage | null;
 }
-const StyledImg = styled("img")(() => ({
-  width: "100%",
-  height: "100%",
-  backgroundColor: "yellow",
-}));
+
 function getModalStyle() {
-  // const top = -50;
-  // const left = 0;
   const top = 30;
   const left = 30;
   return {
@@ -35,17 +26,8 @@ function getModalStyle() {
 
 const ImageModal = ({ open, handleClose, image }: IProps) => {
   const [modalStyle] = useState(getModalStyle);
-  const [imagePath, setImagePath] = useState(
-    "/static/a937eb89336556548ec6f09969dae57e/resume3.jpg"
-  );
 
-  // console.log(useImageQuery());
-  // useEffect(() => {
-  //   // const newImagePath = useImageQuery();
-  //   // setImagePath(useImageQuery());
-  //   console.log(useImageQuery());
-  // }, []);
-  // if (imagePath.length < 5) return null;
+  if (!image) return null;
   return (
     <Box component="div">
       <Modal
@@ -66,31 +48,18 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
             boxShadow: (theme) => theme.shadows[5],
           }}
         >
-          {/* */}
           <Box
             component="div"
             sx={{
               width: "100%",
-              // backgroundColor: "yellow",
             }}
             onClick={handleClose}
           >
-            {/* <StaticImage src={imagePath} alt="" /> */}
-            {/* <GatsbyImage
-              image={useImageQuery()}
+            <GatsbyImage
+              image={image.childImageSharp.gatsbyImageData}
               alt="Showing image in a modal"
-            /> */}
-            {/* <StyledImg
-              sx={{
-                width: "100%",
-                height: "auto",
-                // backgroundColor: "yellow",
-              }}
-              alt="Showing in a modal"
-              src={image}
-            /> */}
+            />
           </Box>
-          {/* <Button onClick={handleClose}>Dismiss</Button> */}
         </Box>
       </Modal>
     </Box>
