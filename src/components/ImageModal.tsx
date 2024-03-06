@@ -1,4 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import {
+  GatsbyImage,
+  getSrc,
+  getImage,
+  StaticImage,
+} from "gatsby-plugin-image";
+import { imagesList } from "../constants/ImagesList";
+import { graphql, useStaticQuery } from "gatsby";
 import { styled } from "@mui/material/styles";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -27,7 +35,31 @@ function getModalStyle() {
 
 const ImageModal = ({ open, handleClose, image }: IProps) => {
   const [modalStyle] = useState(getModalStyle);
+  const [imagePath, setImagePath] = useState(
+    "/static/a937eb89336556548ec6f09969dae57e/resume3.jpg"
+  );
 
+  const useImageQuery = () => {
+    const imageQuery = useStaticQuery(graphql`
+      query GetImage {
+        allFile(filter: { name: { eq: "resume3" } }) {
+          nodes {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED)
+            }
+          }
+        }
+      }
+    `);
+    return imageQuery.allFile.nodes[0].childImageSharp.gatsbyImageData;
+  };
+  console.log(useImageQuery());
+  // useEffect(() => {
+  //   // const newImagePath = useImageQuery();
+  //   // setImagePath(useImageQuery());
+  //   console.log(useImageQuery());
+  // }, []);
+  // if (imagePath.length < 5) return null;
   return (
     <Box component="div">
       <Modal
@@ -53,20 +85,24 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
             component="div"
             sx={{
               width: "100%",
-              height: "100%",
-              backgroundColor: "yellow",
+              // backgroundColor: "yellow",
             }}
             onClick={handleClose}
           >
-            <StyledImg
+            {/* <StaticImage src={imagePath} alt="" /> */}
+            <GatsbyImage
+              image={useImageQuery()}
+              alt="Showing image in a modal"
+            />
+            {/* <StyledImg
               sx={{
                 width: "100%",
-                height: "100%",
-                backgroundColor: "yellow",
+                height: "auto",
+                // backgroundColor: "yellow",
               }}
               alt="Showing in a modal"
               src={image}
-            />
+            /> */}
           </Box>
           {/* <Button onClick={handleClose}>Dismiss</Button> */}
         </Box>

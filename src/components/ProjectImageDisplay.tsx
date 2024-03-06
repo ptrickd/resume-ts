@@ -1,5 +1,5 @@
 //React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //Material UI
 import Box from "@mui/material/Box";
@@ -22,6 +22,7 @@ interface IProps {
 
 const ProjectImageDisplay = ({ id, screenshots, screenshotsNum }: IProps) => {
   console.log(id);
+  console.log(screenshots);
 
   const theme = useTheme();
   const [image, setImage] = useState("");
@@ -38,6 +39,10 @@ const ProjectImageDisplay = ({ id, screenshots, screenshotsNum }: IProps) => {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
+  useEffect(() => {
+    console.log(image);
+  }, [image]);
 
   const getGridImageCols = () => {
     if (screenshotsNum > 1) {
