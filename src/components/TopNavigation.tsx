@@ -97,6 +97,7 @@ const TopNavigation = () => {
         sx={{
           width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
           marginLeft: { xs: 0, md: `${drawerWidth}px` },
+          display: { xs: "block", md: "none" },
         }}
       >
         <Toolbar>

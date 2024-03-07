@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Icons from "../components/Icons";
+import TopNavigation from "../components/TopNavigation";
 
 //Icons
 import reactIcon from "../images/icons/react.svg";
@@ -60,6 +61,7 @@ const MainPage = () => {
         marginLeft: { xs: 0, md: `${drawerWidth}px` },
       }}
     >
+      <TopNavigation />
       <About />
       <Icons iconsArr={Icon1} />
       <Divider />
