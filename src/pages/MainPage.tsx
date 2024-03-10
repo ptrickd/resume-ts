@@ -8,6 +8,7 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Icons from "../components/Icons";
 import TopNavigation from "../components/TopNavigation";
+import Layout from "../components/Layout";
 
 //Icons
 import reactIcon from "../images/icons/react.svg";
@@ -48,30 +49,32 @@ const drawerWidth = DRAWER_WIDTH;
 
 const MainPage = () => {
   return (
-    <Box
-      component="span"
-      sx={{
-        height: "100%",
-        padding: 0,
-        marginRight: 0,
-        marginTop: 0,
-        marginBottom: 0,
-        display: "block",
-        width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-        marginLeft: { xs: 0, md: `${drawerWidth}px` },
-      }}
-    >
-      <TopNavigation />
-      <About />
-      <Icons iconsArr={Icon1} />
-      <Divider />
-      <Projects />
-      <Icons iconsArr={Icon2} />
-      <Divider />
-      <Skills />
-      <Divider />
-      <Contact />
-    </Box>
+    <Layout>
+      <Box
+        component="span"
+        sx={{
+          height: "100%",
+          padding: 0,
+          marginRight: 0,
+          marginTop: 0,
+          marginBottom: 0,
+          display: "block",
+          width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
+          marginLeft: { xs: 0, md: `${drawerWidth}px` },
+        }}
+      >
+        {/* <TopNavigation /> */}
+        <About />
+        <Icons iconsArr={Icon1} />
+        <Divider />
+        <Projects />
+        <Icons iconsArr={Icon2} />
+        <Divider />
+        <Skills />
+        <Divider />
+        {/* <Contact /> */}
+      </Box>
+    </Layout>
   );
 };
 

@@ -43,7 +43,7 @@ function Contact() {
 
   // const sendEmail = (form: IFormInputs) => {
   //   emailjs
-  //     .sendForm(serviceId, templateId, form.current, {
+  //     .sendForm(serviceId, templateId, form, {
   //       publicKey: userId,
   //     })
   //     .then(

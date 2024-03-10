@@ -12,12 +12,15 @@ function About() {
           background:
             "linear-gradient(90deg, rgba(238,237,231,1) 0%, rgba(134,139,142,1) 35%, rgba(185,183,189,1) 66%, rgba(231,210,204,1) 100%);",
           margin: (theme) => theme.spacing(2),
+          padding: (theme) => theme.spacing(2),
+          textAlign: "center",
         }}
       >
         <Typography
           variant="h4"
           sx={{
             margin: (theme) => theme.spacing(1),
+
             marginLeft: (theme) => theme.spacing(2),
           }}
           gutterBottom

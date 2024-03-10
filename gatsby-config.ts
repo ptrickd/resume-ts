@@ -1,5 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 
+//Add support to environment variable
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `resume-ts`,

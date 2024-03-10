@@ -9,6 +9,7 @@ import useImagesQuery from "../../queries/useImagesQuery";
 
 //Components
 import ProjectImageDisplay from "../../components/ProjectImageDisplay";
+import Layout from "../../components/Layout";
 
 //Constants
 import { DRAWER_WIDTH } from "../../constants/Styling";
@@ -89,74 +90,76 @@ function ProjectDetails(params: IParams) {
         padding: (theme) => theme.spacing(3),
       }}
     >
-      <Typography
-        align="center"
-        variant="h4"
-        gutterBottom
-        sx={{ marginTop: 20 }}
-      >
-        {title}
-      </Typography>
-      <span
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <ProjectImageDisplay
-          id={id}
-          screenshotsNames={screenshots}
-          images={images}
-        />
-
-        <Divider />
+      <Layout>
         <Typography
-          variant="body1"
-          paragraph
-          align="justify"
-          sx={{ minHeight: 50, marginTop: 20 }}
+          align="center"
+          variant="h4"
+          gutterBottom
+          sx={{ marginTop: 20 }}
         >
-          {description}
+          {title}
         </Typography>
-        <Divider />
-        <div>
-          <Typography variant="h6" align="center">
-            Some of the technology used!
+        <span
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <ProjectImageDisplay
+            id={id}
+            screenshotsNames={screenshots}
+            images={images}
+          />
+
+          <Divider />
+          <Typography
+            variant="body1"
+            paragraph
+            align="justify"
+            sx={{ minHeight: 50, marginTop: 20 }}
+          >
+            {description}
           </Typography>
-          <List>
-            <Grid container>{displayList()}</Grid>
-          </List>
-        </div>
-        <Box>
-          <List sx={{ width: "100%", display: "flex" }}>
-            {
-              haveWebsite ? (
-                <ListItem sx={{ justifyContent: "center" }}>
-                  <Link href={`${website}`}>Website</Link>
-                </ListItem>
-              ) : null //<span>Not yet available</span>
-            }
-            {
-              haveRepo ? (
-                <ListItem sx={{ justifyContent: "center" }}>
-                  <Link href={`${repo}`}>Github Repo</Link>
-                </ListItem>
-              ) : null //<span>Not yet available</span>
-            }
-          </List>
-          <Box display="flex" justifyContent="center">
-            <Button
-              sx={{ flexGrow: 0 }}
-              variant="contained"
-              color="primary"
-              onClick={() => navigate("/")}
-            >
-              Go Back
-            </Button>
+          <Divider />
+          <div>
+            <Typography variant="h6" align="center">
+              Some of the technology used!
+            </Typography>
+            <List>
+              <Grid container>{displayList()}</Grid>
+            </List>
+          </div>
+          <Box>
+            <List sx={{ width: "100%", display: "flex" }}>
+              {
+                haveWebsite ? (
+                  <ListItem sx={{ justifyContent: "center" }}>
+                    <Link href={`${website}`}>Website</Link>
+                  </ListItem>
+                ) : null //<span>Not yet available</span>
+              }
+              {
+                haveRepo ? (
+                  <ListItem sx={{ justifyContent: "center" }}>
+                    <Link href={`${repo}`}>Github Repo</Link>
+                  </ListItem>
+                ) : null //<span>Not yet available</span>
+              }
+            </List>
+            <Box display="flex" justifyContent="center">
+              <Button
+                sx={{ flexGrow: 0 }}
+                variant="contained"
+                color="primary"
+                onClick={() => navigate("/")}
+              >
+                Go Back
+              </Button>
+            </Box>
           </Box>
-        </Box>
-      </span>
+        </span>
+      </Layout>
     </Container>
   );
 }
