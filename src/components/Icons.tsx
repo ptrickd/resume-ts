@@ -10,7 +10,6 @@ interface IProps {
 }
 
 function Icons({ iconsArr }: IProps) {
-  console.log(iconsArr);
   const WrappedInTooltips = () => {
     return iconsArr.map((iconObj, index) => {
       return (
