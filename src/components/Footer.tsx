@@ -21,10 +21,9 @@ function Footer() {
         padding: (theme) => theme.spacing(5),
         flexGrow: 1,
         width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-        marginLeft: { xs: 0, md: `${drawerWidth}` },
+        marginLeft: { xs: 0, md: `${drawerWidth}px` },
       }}
     >
-      <Divider sx={{ marginBottom: 10 }} />
       <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
         <Grid item xs={12} md={4}>
           <Typography variant="body2" align="center">
