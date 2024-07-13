@@ -25,6 +25,30 @@
       "website": "https://inventory-app-eta-two.vercel.app/"
     },
     {
+      "title": "Vehicle Maintenance Tracker",
+      "screenshotsNum": 2,
+      "screenshots": ["cars1", "cars2"],
+      "description": "App to track whats need to be done on your vehicle. Add the vehicle manufaturer list of recommended maintenance and your current mileage, and the app will tell you what's need to be done next.",
+      "shortDescription": "Personal",
+      "skills": ["Vue", "Primevue", "IndexedDb", "Local App"],
+      "haveRepo": true,
+      "haveWebsite": true,
+      "repo": "https://github.com/ptrickd/cars",
+      "website": "https://legendary-starlight-dfd6f3.netlify.app"
+    },
+    {
+      "title": "Scheduler For Employee",
+      "screenshotsNum": 1,
+      "screenshots": ["shifts1", "shifts2"],
+      "description": "",
+      "shortDescription": "Personal",
+      "skills": ["React", "NextJS", "Cypress", "Ruby On Rails", "Typescript"],
+      "haveRepo": true,
+      "haveWebsite": true,
+      "repo": "https://github.com/ptrickd/shifts",
+      "website": "https://shifts-orcin.vercel.app"
+    },
+    {
       "title": "Webpage Resume",
       "screenshotsNum": 3,
       "screenshots": ["resume2", "resume3", "resume4"],
@@ -95,45 +119,6 @@
       "haveWebsite": true,
       "repo": "https://github.com/raquelm9/Homy",
       "website": "https://adoring-leakey-4abb67.netlify.app/"
-    },
-    {
-      "title": "Mobile App Projects Catalog",
-      "screenshotsNum": 1,
-      "screenshots": ["reactNative1"],
-      "description": "This project is the continuation of the projects catalog, with a react-native mobile app to get access to the API",
-      "shortDescription": "Personal",
-      "skills": [
-        "React Native",
-        "React Navigation",
-        "Android Studio",
-        "Mobile"
-      ],
-      "haveRepo": true,
-      "haveWebsite": false,
-      "repo": "https://github.com/ptrickd/projects_catalog_rn",
-      "website": ""
-    },
-    {
-      "title": "Flask PostgreSQL Server ",
-      "screenshotsNum": 3,
-      "screenshots": ["flask1"],
-      "description": "This project use the Catalog Of Projects react app but is using a Python/Flask/Postgres backend",
-      "shortDescription": "Personal",
-      "skills": [
-        "Python",
-        "Flask",
-        "PostgreSQL",
-        "SQLAlchemy",
-        "SQL",
-        "React",
-        "Flask Restful",
-        "Flask-Bcrypt",
-        "PyJWT"
-      ],
-      "haveRepo": true,
-      "haveWebsite": false,
-      "repo": "https://github.com/ptrickd/flask-postgres-server",
-      "website": ""
     }
   ]
 }

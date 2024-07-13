@@ -1,4 +1,8 @@
 //Import all images
+import cars1 from "../images/screenshot/cars1.jpg";
+import cars2 from "../images/screenshot/cars2.jpg";
+import shifts1 from "../images/screenshot/shifts1.jpg";
+import shifts2 from "../images/screenshot/shifts2.jpg";
 import catalog1 from "../images/screenshot/catalog1.jpg";
 import catalog3 from "../images/screenshot/catalog3.jpg";
 import catalog4 from "../images/screenshot/catalog4.jpg";
@@ -16,6 +20,10 @@ import scheduler1 from "../images/screenshot/scheduler1.jpg";
 import scheduler2 from "../images/screenshot/scheduler2.jpg";
 
 export const imagesList: { [index: string]: any } = {
+  cars1: cars1,
+  cars2: cars2,
+  shifts1: shifts1,
+  shifts2: shifts2,
   catalog1: catalog1,
   catalog3: catalog3,
   catalog4: catalog4,
