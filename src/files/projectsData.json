@@ -1,6 +1,30 @@
 {
   "data": [
     {
+      "title": "Vehicle Maintenance Tracker",
+      "screenshotsNum": 2,
+      "screenshots": ["cars1", "cars2"],
+      "description": "App to track whats need to be done on your vehicle. Add the vehicle manufaturer list of recommended maintenance and your current mileage, and the app will tell you what's need to be done next.",
+      "shortDescription": "Personal",
+      "skills": ["Vue", "Primevue", "IndexedDb", "Local App"],
+      "haveRepo": true,
+      "haveWebsite": true,
+      "repo": "https://github.com/ptrickd/cars",
+      "website": "https://legendary-starlight-dfd6f3.netlify.app"
+    },
+    {
+      "title": "Scheduler For Employee",
+      "screenshotsNum": 2,
+      "screenshots": ["shifts1", "shifts2"],
+      "description": "App to schedule shifts employees for small businesses. Show number of hours by employee and for a day in a week.",
+      "shortDescription": "Personal",
+      "skills": ["React", "NextJS", "Cypress", "Ruby On Rails", "Typescript"],
+      "haveRepo": true,
+      "haveWebsite": true,
+      "repo": "https://github.com/ptrickd/shifts",
+      "website": "https://shifts-orcin.vercel.app"
+    },
+    {
       "title": "Kitchen Inventory",
       "screenshotsNum": 1,
       "screenshots": ["inventory1"],
@@ -24,30 +48,7 @@
       "repo": "https://github.com/ptrickd/inventory-app",
       "website": "https://inventory-app-eta-two.vercel.app/"
     },
-    {
-      "title": "Vehicle Maintenance Tracker",
-      "screenshotsNum": 2,
-      "screenshots": ["cars1", "cars2"],
-      "description": "App to track whats need to be done on your vehicle. Add the vehicle manufaturer list of recommended maintenance and your current mileage, and the app will tell you what's need to be done next.",
-      "shortDescription": "Personal",
-      "skills": ["Vue", "Primevue", "IndexedDb", "Local App"],
-      "haveRepo": true,
-      "haveWebsite": true,
-      "repo": "https://github.com/ptrickd/cars",
-      "website": "https://legendary-starlight-dfd6f3.netlify.app"
-    },
-    {
-      "title": "Scheduler For Employee",
-      "screenshotsNum": 1,
-      "screenshots": ["shifts1", "shifts2"],
-      "description": "",
-      "shortDescription": "Personal",
-      "skills": ["React", "NextJS", "Cypress", "Ruby On Rails", "Typescript"],
-      "haveRepo": true,
-      "haveWebsite": true,
-      "repo": "https://github.com/ptrickd/shifts",
-      "website": "https://shifts-orcin.vercel.app"
-    },
+
     {
       "title": "Webpage Resume",
       "screenshotsNum": 3,
@@ -65,30 +66,8 @@
       ],
       "haveRepo": true,
       "haveWebsite": true,
-      "repo": "https://github.com/ptrickd/resume",
+      "repo": "https://github.com/ptrickd/resume-ts",
       "website": "https://main--silly-almeida-71acd2.netlify.app/"
-    },
-    {
-      "title": "Catalog Of Projects",
-      "screenshotsNum": 3,
-      "screenshots": ["catalog1", "catalog3", "catalog4"],
-      "description": "This app has been created with a goal in mind to showcase the projects of the EvolveU learners.",
-      "shortDescription": "Team of 4",
-      "skills": [
-        "Javascript",
-        "ReactJs",
-        "NodeJs",
-        "MongoDb",
-        "JWT",
-        "Redux",
-        "TalwindCSS",
-        "Heroku",
-        "React Router"
-      ],
-      "haveRepo": false,
-      "haveWebsite": true,
-      "repo": "Not yet available",
-      "website": "https://evolveu-projects.herokuapp.com/"
     },
     {
       "title": "Building Manager",
@@ -119,6 +98,28 @@
       "haveWebsite": true,
       "repo": "https://github.com/raquelm9/Homy",
       "website": "https://adoring-leakey-4abb67.netlify.app/"
+    },
+    {
+      "title": "Catalog Of Projects",
+      "screenshotsNum": 3,
+      "screenshots": ["catalog1", "catalog3", "catalog4"],
+      "description": "This app has been created with a goal in mind to showcase the projects of the EvolveU learners.",
+      "shortDescription": "Team of 4",
+      "skills": [
+        "Javascript",
+        "ReactJs",
+        "NodeJs",
+        "MongoDb",
+        "JWT",
+        "Redux",
+        "TalwindCSS",
+        "Heroku",
+        "React Router"
+      ],
+      "haveRepo": false,
+      "haveWebsite": true,
+      "repo": "Not yet available",
+      "website": "https://evolveu-projects.herokuapp.com/"
     }
   ]
 }

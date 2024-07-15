@@ -4,7 +4,7 @@ import React from "react";
 //Material UI
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
+
 import Box from "@mui/material/Box";
 
 //Constants
@@ -21,7 +21,8 @@ function Footer() {
         padding: (theme) => theme.spacing(5),
         flexGrow: 1,
         width: { xs: "100%", md: `calc(100% - ${drawerWidth}px)` },
-        marginLeft: { xs: 0, md: `${drawerWidth}px` },
+        marginLeft: { xs: -5, md: 0 }, //dont know why -5. TO find later
+        display: "flex",
       }}
     >
       <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
