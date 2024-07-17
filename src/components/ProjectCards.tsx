@@ -22,7 +22,7 @@ interface IProps {
   title: string;
   screenshots: string[];
   description: string;
-  // darkTheme: boolean;
+
   skills: string[];
 }
 
@@ -31,11 +31,9 @@ function ProjectCards({
   title,
   screenshots,
   description,
-  // darkTheme,
+
   skills,
 }: IProps) {
-  // const navigate = useNavigate();
-
   const limitCharacter = (str: string) => {
     if (str.length > 100) return str.substring(0, 100) + "...";
     return str;

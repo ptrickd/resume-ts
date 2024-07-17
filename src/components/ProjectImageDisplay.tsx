@@ -50,23 +50,23 @@ const ProjectImageDisplay = ({ id, screenshotsNames, images }: IProps) => {
   const getGridImageCols = () => {
     if (screenshotsNames.length > 1) {
       if (widthIsLarge) {
-        return 3;
+        if (screenshotsNames.length > 2) return 3;
+        else return 2;
       } else if (widthIsMedium) {
         return 2;
       } else if (widthIsSmall) {
         return 1;
       }
       return 1;
-    }
-    return 1;
+    } else return 1;
   };
 
   return (
-    <Box component="div">
+    <Box component="span" sx={{ display: "flex", justifyContent: "center" }}>
       <ImageList
-        variant="woven"
+        variant="masonry"
         sx={{ width: "80%", height: "100%" }}
-        gap={1}
+        gap={4}
         cols={getGridImageCols()}
       >
         {screenshotsNames.map((screenshotName: string) => (
@@ -82,7 +82,7 @@ const ProjectImageDisplay = ({ id, screenshotsNames, images }: IProps) => {
           >
             <span
               onClick={() => handleOpenModal(screenshotName)}
-              style={{ padding: 5 }}
+              // style={{ padding: 5 }}
             >
               <Box
                 component="img"
@@ -99,6 +99,7 @@ const ProjectImageDisplay = ({ id, screenshotsNames, images }: IProps) => {
                 }}
                 src={imagesList[screenshotName]}
                 alt="screenshot"
+                loading="lazy"
               />
             </span>
           </ImageListItem>

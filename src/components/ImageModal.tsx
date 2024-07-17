@@ -41,8 +41,8 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
           style={modalStyle}
           sx={{
             position: "absolute",
-            width: "80%",
-            height: "80%",
+            // width: "80%",
+            // height: "80%",
             backgroundColor: (theme) => theme.palette.background.paper,
             border: "2px solid #000",
             boxShadow: (theme) => theme.shadows[5],
@@ -52,6 +52,7 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
             component="div"
             sx={{
               width: "100%",
+              justifyContent: "center",
             }}
             onClick={handleClose}
           >
@@ -59,6 +60,7 @@ const ImageModal = ({ open, handleClose, image }: IProps) => {
               image={image.childImageSharp.gatsbyImageData}
               alt="Showing image in a modal"
             />
+            {/* <img src="./" alt="" /> */}
           </Box>
         </Box>
       </Modal>
